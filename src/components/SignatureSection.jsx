@@ -22,7 +22,7 @@ export default function SignatureSection() {
         >
           <div className="relative cinema overflow-hidden shadow-deep">
             <img
-              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1800&q=60"
+              src="https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC06942.jpg?auto=format&fit=crop&w=1800&q=60"
               alt="Royal Plaza signature suite"
               className="w-full h-[640px] object-cover"
               loading="lazy"

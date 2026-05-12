@@ -1,39 +1,142 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useT } from '../contexts/LanguageContext.jsx';
 import { FAMILY } from '../data/content.js';
 
+const slideVariants = {
+  enter:  (d) => ({ opacity: 0, scale: 1.06, x: d > 0 ?  60 : -60, filter: 'blur(8px)' }),
+  center:      ({ opacity: 1, scale: 1.0,  x: 0,          filter: 'blur(0px)' }),
+  exit:   (d) => ({ opacity: 0, scale: 1.02, x: d > 0 ? -60 :  60, filter: 'blur(8px)' }),
+};
+
+const TRANSITION = {
+  opacity: { duration: 0.9,  ease: [0.22, 1, 0.36, 1] },
+  scale:   { duration: 1.4,  ease: [0.22, 1, 0.36, 1] },
+  x:       { duration: 0.9,  ease: [0.22, 1, 0.36, 1] },
+  filter:  { duration: 0.7,  ease: [0.22, 1, 0.36, 1] },
+};
+
 export default function FamilySection() {
   const t = useT();
+  const photos = FAMILY.photos;
+  const [idx, setIdx]   = useState(0);
+  const [dir, setDir]   = useState(1);
+
+  /* autoplay */
+  useEffect(() => {
+    const id = setInterval(() => {
+      setDir(1);
+      setIdx((i) => (i + 1) % photos.length);
+    }, 5500);
+    return () => clearInterval(id);
+  }, [photos.length]);
+
+  const goNext = () => { setDir(1);  setIdx((i) => (i + 1) % photos.length); };
+  const goPrev = () => { setDir(-1); setIdx((i) => (i - 1 + photos.length) % photos.length); };
 
   return (
     <section id="family" className="relative section-pad bg-ivory overflow-hidden">
       <div className="absolute inset-0 bg-champagne-radial pointer-events-none" />
 
       <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center">
-        {/* Left mosaic */}
-        <div className="lg:col-span-7 grid grid-cols-6 grid-rows-6 gap-3 h-[640px]">
-          <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ duration:0.9 }} className="cinema col-span-4 row-span-4 overflow-hidden shadow-deep relative">
-            <img src={FAMILY.photos[0]} alt="" className="w-full h-full object-cover" />
-            <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
-          </motion.div>
-          <motion.div initial={{ opacity:0, x:30 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} transition={{ duration:0.9, delay:0.15 }} className="cinema col-span-2 row-span-3 overflow-hidden shadow-soft">
-            <img src={FAMILY.photos[1]} alt="" className="w-full h-full object-cover" />
-          </motion.div>
-          <motion.div initial={{ opacity:0, x:30 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} transition={{ duration:0.9, delay:0.25 }} className="cinema col-span-2 row-span-3 overflow-hidden shadow-soft">
-            <img src={FAMILY.photos[2]} alt="" className="w-full h-full object-cover" />
-          </motion.div>
-          <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ duration:0.9, delay:0.3 }} className="cinema col-span-2 row-span-2 overflow-hidden shadow-soft">
-            <img src={FAMILY.photos[3]} alt="" className="w-full h-full object-cover" />
-          </motion.div>
-          <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ duration:0.9, delay:0.35 }} className="cinema col-span-2 row-span-2 overflow-hidden shadow-soft">
-            <img src={FAMILY.photos[4]} alt="" className="w-full h-full object-cover" />
-          </motion.div>
-          <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ duration:0.9, delay:0.4 }} className="cinema col-span-2 row-span-2 overflow-hidden shadow-soft">
-            <img src={FAMILY.photos[5]} alt="" className="w-full h-full object-cover" />
-          </motion.div>
+
+        {/* ── Left: cinematic carousel ── */}
+        <div className="lg:col-span-7 relative">
+
+          {/* Main viewport */}
+          <div className="relative cinema overflow-hidden shadow-deep h-[460px] md:h-[600px] bg-bordeaux-deep">
+
+            <AnimatePresence custom={dir} mode="popLayout" initial={false}>
+              <motion.img
+                key={idx}
+                src={photos[idx]}
+                alt=""
+                custom={dir}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={TRANSITION}
+                className="absolute inset-0 w-full h-full object-cover will-change-transform"
+              />
+            </AnimatePresence>
+
+            {/* gradient veil */}
+            <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-deep/65 via-bordeaux-deep/10 to-transparent pointer-events-none" />
+            {/* inner border accent */}
+            <div className="pointer-events-none absolute inset-3 border border-champagne/35" />
+
+            {/* Eyebrow top-left */}
+            <div className="absolute top-6 left-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-champagne" />
+              <span className="font-heading uppercase tracking-[0.4em] text-[0.65rem] text-champagne/80">
+                {t(FAMILY.eyebrow)}
+              </span>
+            </div>
+
+            {/* Prev / Next arrows */}
+            <button
+              onClick={goPrev}
+              aria-label="Précédent"
+              className="group absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-ivory/10 backdrop-blur-md border border-ivory/30 text-ivory hover:bg-champagne hover:border-champagne hover:text-bordeaux-deep transition-all duration-500"
+            >
+              <span className="text-xl leading-none transition-transform duration-500 group-hover:-translate-x-0.5">‹</span>
+            </button>
+            <button
+              onClick={goNext}
+              aria-label="Suivant"
+              className="group absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-ivory/10 backdrop-blur-md border border-ivory/30 text-ivory hover:bg-champagne hover:border-champagne hover:text-bordeaux-deep transition-all duration-500"
+            >
+              <span className="text-xl leading-none transition-transform duration-500 group-hover:translate-x-0.5">›</span>
+            </button>
+
+            {/* Progress bar + counter */}
+            <div className="absolute bottom-6 left-6 right-6 flex items-center gap-4 text-ivory">
+              <span className="font-heading text-[0.7rem] tracking-[0.4em] text-champagne">
+                {String(idx + 1).padStart(2, '0')}
+              </span>
+              <div className="flex-1 h-px bg-ivory/20 relative overflow-hidden">
+                <motion.span
+                  key={'bar-' + idx}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 5.4, ease: 'linear' }}
+                  style={{ transformOrigin: 'left' }}
+                  className="absolute inset-0 bg-gradient-to-r from-champagne to-ivory/80"
+                />
+              </div>
+              <span className="font-heading text-[0.7rem] tracking-[0.4em] text-ivory/55">
+                {String(photos.length).padStart(2, '0')}
+              </span>
+            </div>
+          </div>
+
+          {/* Thumbnail strip */}
+          <div
+            className="mt-4 grid gap-3"
+            style={{ gridTemplateColumns: `repeat(${photos.length}, minmax(0,1fr))` }}
+          >
+            {photos.map((src, i) => (
+              <button
+                key={src + i}
+                onClick={() => { setDir(i > idx ? 1 : -1); setIdx(i); }}
+                aria-label={`Photo ${i + 1}`}
+                className={`relative cinema aspect-[4/3] overflow-hidden shadow-soft transition-all duration-500 ${
+                  idx === i
+                    ? 'ring-2 ring-champagne ring-offset-2 ring-offset-ivory'
+                    : 'opacity-55 hover:opacity-100'
+                }`}
+              >
+                <img src={src} alt="" className="w-full h-full object-cover" />
+                <div className={`absolute inset-0 transition-colors duration-500 ${
+                  idx === i ? 'bg-bordeaux/0' : 'bg-bordeaux/35 hover:bg-bordeaux/0'
+                }`} />
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Right text */}
+        {/* ── Right: text ── */}
         <div className="lg:col-span-5">
           <span className="ornament eyebrow">{t(FAMILY.eyebrow)}</span>
           <motion.h2

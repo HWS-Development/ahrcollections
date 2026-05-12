@@ -1,4 +1,4 @@
-// =====================================================================
+﻿// =====================================================================
 // Royal Plaza Hotel — Content (FR + EN)
 // All copy below is verbatim from the brief (do not paraphrase).
 // Photos use Unsplash placeholders — replace later with real DSC images.
@@ -100,11 +100,11 @@ export const ROOMS = [
       en: ['Premium bedding', 'Work desk', 'Modern bathroom', 'High-speed Wi-Fi', 'Air conditioning', 'Flat-screen TV']
     },
     photos: [
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06865.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06861.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06853.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06821.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC04764.jpg'
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06865.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06861.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06853.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06821.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC04764.jpg?q=60'
     ]
   },
   {
@@ -124,12 +124,12 @@ export const ROOMS = [
       en: ['King size or twin beds', 'Lounge area', 'Elegant bathroom', 'Premium amenities', 'High-speed Wi-Fi', 'Safety box']
     },
     photos: [
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC05141.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04755.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04748.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04715.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC06865.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC06942.jpg'
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC05141.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04755.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04748.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04715.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC06865.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC06942.jpg?q=60'
     ]
   },
   {
@@ -149,11 +149,11 @@ export const ROOMS = [
       en: ['Lounge area', 'King size bed', 'Spacious bathroom', 'High-end amenities', 'Coffee machine', 'Bathrobe & slippers']
     },
     photos: [
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06877.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06902.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06907.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06871.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06913.jpg'
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06877.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06902.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06907.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06871.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06913.jpg?q=60'
     ]
   },
   {
@@ -173,11 +173,11 @@ export const ROOMS = [
       en: ['Separate living room', 'Private bedroom', 'Premium bathroom', 'Exclusive amenities', 'Coffee machine & halal minibar', 'Personalized service']
     },
     photos: [
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC06958.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07000.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07001.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07029.jpg',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC06863.jpg'
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC06958.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07000.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07001.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07029.jpg?q=60',
+      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC06863.jpg?q=60'
     ]
   }
 ];
@@ -207,15 +207,15 @@ export const DINING = {
     ]
   },
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09492.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09483.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09478.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC05743.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC04976.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC04805.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC01746.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC01736.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09483-2.jpg'
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09492.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09483.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09478.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC05743.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC04976.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC04805.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC01746.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC01736.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09483-2.jpg?q=60'
   ],
   venues: [
     { name: 'L’Assiette', tag: { fr: 'Générosité & saveurs partagées', en: 'Generosity & shared flavors' } },
@@ -259,20 +259,20 @@ export const SPA = {
     { fr: 'Se retrouver', en: 'Reconnect' }
   ],
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05192.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05565.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05553.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05546.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05528.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05521.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05504.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05397.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05265.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05621.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05636.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC09595.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC02213.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC02223.jpg'
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05192.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05565.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05553.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05546.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05528.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05521.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05504.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05397.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05265.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05621.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05636.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC09595.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC02213.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC02223.jpg?q=60'
   ]
 };
 
@@ -306,7 +306,6 @@ export const FAMILY = {
     'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC02025.jpg?auto=format&fit=crop&w=1600&q=60',
     'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC02036.jpg?auto=format&fit=crop&w=1600&q=60',
     'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC02043.jpg?auto=format&fit=crop&w=1600&q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC05305.jpg?auto=format&fit=crop&w=1600&q=60',
     'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC09615.jpg?auto=format&fit=crop&w=1600&q=60',
     'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC09617.jpg?auto=format&fit=crop&w=1600&q=60'
   ]
@@ -334,15 +333,148 @@ export const BUSINESS = {
   },
   videoSrc: 'https://cdn.coverr.co/videos/coverr-an-empty-business-meeting-room-7766/1080p.mp4',
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04522.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04501.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04483.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04477.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04461.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04452.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04450.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04442.jpg',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04440.jpg'
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04522.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04501.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04483.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04477.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04461.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04452.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04450.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04442.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04440.jpg?q=60'
+  ]
+};
+
+// =====================================================================
+// Restaurant Hall — L'Assiette Royale & Le Jade
+// =====================================================================
+export const RESTAURANT_HALL = {
+  eyebrow: { fr: 'L\'Assiette Royale · Le Jade', en: 'L\'Assiette Royale · Le Jade' },
+  title: {
+    fr: 'Émotions & Saveurs\nChaque table raconte une histoire',
+    en: 'Emotions & Flavors\nEvery table tells a story'
+  },
+  sub: {
+    fr: 'Deux tables. Une seule âme.',
+    en: 'Two tables. One soul.'
+  },
+  body: {
+    fr: [
+      'Au Royal Plaza Hotel, chaque table raconte une histoire.',
+      'Un parfum, une texture, une surprise.',
+      'Une cuisine qui ne se contente pas de nourrir,',
+      'mais qui éveille, rassemble et marque les esprits.',
+      'De la générosité de L\'Assiette',
+      'à la finesse du Jade,',
+      'chaque expérience culinaire au sein de notre hotel devient un voyage.'
+    ],
+    en: [
+      'At Royal Plaza Hotel, every table tells a story.',
+      'A fragrance, a texture, a surprise.',
+      'A cuisine that does not merely nourish,',
+      'but awakens, unites, and lingers in the mind.',
+      'From the generosity of L\'Assiette',
+      'to the refinement of Le Jade,',
+      'every culinary experience within our hotel becomes a journey.'
+    ]
+  },
+  venues: [
+    {
+      name: 'L\'Assiette Royale',
+      tag:  { fr: 'Gastronomique · Lounge Soft Bar', en: 'Gastronomic · Lounge Soft Bar' },
+      desc: {
+        fr: 'Une cuisine signature aux produits d\'exception, dans une salle qui respire l\'élégance.',
+        en: 'Signature cuisine with exceptional produce, in a room that breathes elegance.'
+      }
+    },
+    {
+      name: 'Le Jade',
+      tag:  { fr: 'Restaurant Fusion · Asie & Méditerranée', en: 'Fusion Restaurant · Asia & Mediterranean' },
+      desc: {
+        fr: 'Un voyage gustatif entre deux rives, sublimé par une mise en scène soignée.',
+        en: 'A gastronomic journey between two shores, elevated by meticulous staging.'
+      }
+    }
+  ],
+  photos: [
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01753.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01282.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01228.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01253.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01218.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01337.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01354.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01487.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01525.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01534.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01544.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01757.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01770.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01773.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01775.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC04866.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC05749.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC09501-3.jpg?q=60'
+  ]
+};
+
+// =====================================================================
+// Spa Piscine — Serenita Pool & Treatments
+// =====================================================================
+export const SPA_POOL = {
+  eyebrow: { fr: 'Serenita · Piscine & Soins', en: 'Serenita · Pool & Treatments' },
+  title: {
+    fr: 'L\'eau comme\nrituel de luxe.',
+    en: 'Water as a\nluxury ritual.'
+  },
+  sub: {
+    fr: 'Piscine intérieure chauffée · Hammam · Massages & Soins Exclusifs',
+    en: 'Indoor Heated Pool · Hammam · Massages & Exclusive Treatments'
+  },
+  quote: {
+    fr: '« L\'eau n\'efface pas — elle transforme. »',
+    en: '« Water does not erase — it transforms. »'
+  },
+  body: {
+    fr: [
+      'Au cœur du Royal Plaza, la Serenita est un monde à part.',
+      'L\'eau chaude enveloppe,',
+      'le silence apaise,',
+      'le corps retrouve son équilibre.',
+      'Piscine intérieure chauffée, hammam traditionnel,',
+      'massages et soins signatures —',
+      'chaque visite est une cérémonie,',
+      'chaque instant, une renaissance.'
+    ],
+    en: [
+      'At the heart of Royal Plaza, Serenita is a world apart.',
+      'Warm water envelops,',
+      'silence soothes,',
+      'the body finds its balance.',
+      'Indoor heated pool, traditional hammam,',
+      'signature massages and treatments —',
+      'every visit is a ceremony,',
+      'every moment, a rebirth.'
+    ]
+  },
+  features: [
+    { icon: '∿', label: { fr: 'Piscine Intérieure Chauffée', en: 'Indoor Heated Pool' } },
+    { icon: '◎', label: { fr: 'Hammam Traditionnel',         en: 'Traditional Hammam'  } },
+    { icon: '◇', label: { fr: 'Massages & Soins',            en: 'Massages & Treatments' } },
+    { icon: '◈', label: { fr: 'Jardins Aromatiques',         en: 'Aromatic Gardens'    } }
+  ],
+  photos: [
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02293.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02319.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02248.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02347.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02269.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02376.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02431.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC05190.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC05229.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC05305.jpg?q=60',
+    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC05493.jpg?q=60'
   ]
 };
 
