@@ -1,7 +1,585 @@
-import HotelPageTemplate from '../components/HotelPageTemplate.jsx';
-import { AQUA, HOTELS } from '../data/site.js';
+import { useRef } from 'react';
+import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import PageHero            from '../components/PageHero.jsx';
+import HotelRoomsSection   from '../components/HotelRoomsSection.jsx';
+import { useT }            from '../contexts/LanguageContext.jsx';
+import { AQUA, HOTELS }    from '../data/site.js';
+import {
+  AQUA_ROOMS, AQUA_STATS, AQUA_FEATURES, AQUA_INFO,
+  AQUA_HIGHLIGHTS, AQUA_CONVENTION,
+} from '../data/hotels.js';
+import { UI } from '../data/site.js';
+
+/* ─── Count-up ─── */
+function CountUp({ target, inView }) {
+  const ref = useRef(null);
+  const mv  = useMotionValue(0);
+  const rnd = useTransform(mv, v => Math.round(v));
+  useEffect(() => {
+    if (!inView) return;
+    const ctrl = animate(mv, target, { duration: 2.2, ease: [0.22, 1, 0.36, 1] });
+    return ctrl.stop;
+  }, [inView, target, mv]);
+  useEffect(() => rnd.on('change', v => { if (ref.current) ref.current.textContent = v; }), [rnd]);
+  return <span ref={ref}>0</span>;
+}
+
+/* ─── Feature card ─── */
+function FeatureCard({ icon, title, desc, delay }) {
+  const t = useT();
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative bg-ivory border border-champagne/40 p-8 hover:border-bordeaux transition-colors duration-700 overflow-hidden"
+    >
+      <span className="absolute inset-0 bg-gradient-to-br from-champagne/0 via-champagne/12 to-bordeaux/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      <span className="absolute top-3 right-3 w-3 h-3 border-t border-r border-bordeaux/60 pointer-events-none" />
+      <span className="font-heading text-shimmer text-3xl leading-none">{icon}</span>
+      <h3 className="mt-5 font-heading uppercase text-bordeaux tracking-wider text-[0.95rem] leading-tight">{t(title)}</h3>
+      <span className="block mt-4 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+      <p className="mt-4 font-display text-ink-soft text-[0.92rem] leading-[1.75]">{t(desc)}</p>
+    </motion.div>
+  );
+}
+
+/* ─── Meeting room card ─── */
+function MeetingRoomCard({ room, delay }) {
+  const t = useT();
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative bg-ivory border border-champagne/40 hover:border-bordeaux transition-colors duration-700 overflow-hidden"
+    >
+      {/* Image */}
+      <div className="relative h-52 cinema overflow-hidden">
+        <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent" />
+        {/* Capacity badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: delay + 0.3 }}
+          className="absolute top-4 right-4 bg-bordeaux px-4 py-2 text-center shadow-deep"
+        >
+          <p className="font-heading uppercase text-ivory/70 text-[0.52rem] tracking-[0.35em]">{t({ fr: 'Capacité', en: 'Capacity' })}</p>
+          <p className="font-heading text-champagne text-2xl leading-none mt-0.5">
+            {room.capacity}<span className="text-[0.65rem] ml-0.5 text-champagne/70">{t({ fr: 'p.', en: 'px' })}</span>
+          </p>
+        </motion.div>
+        {/* Tagline overlay */}
+        <div className="absolute bottom-4 left-5">
+          <p className="font-heading uppercase text-ivory/50 text-[0.58rem] tracking-[0.4em]">{t(room.tagline)}</p>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-7">
+        <h3 className="font-heading uppercase text-bordeaux tracking-wider text-[1.1rem] leading-tight">{room.name}</h3>
+        <span className="block mt-3 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+        <p className="mt-4 font-display text-ink-soft text-[0.9rem] leading-[1.75]">{t(room.description)}</p>
+
+        {/* Equipment */}
+        <ul className="mt-5 space-y-2">
+          {t(room.equipment).map((eq, i) => (
+            <li key={i} className="flex items-center gap-2.5 font-display text-[0.83rem] text-ink-soft">
+              <span className="w-1.5 h-1.5 bg-champagne flex-shrink-0" />
+              {eq}
+            </li>
+          ))}
+        </ul>
+
+        {/* Layouts */}
+        <div className="mt-5 pt-4 border-t border-champagne/30">
+          <p className="font-heading uppercase text-[0.55rem] tracking-[0.4em] text-champagne mb-1.5">{t({ fr: 'Dispositions disponibles', en: 'Available layouts' })}</p>
+          <p className="font-display text-[0.82rem] text-ink-soft italic">{t(room.layouts)}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function AquaPage() {
-  const others = HOTELS.filter((h) => h.id !== 'aqua');
-  return <HotelPageTemplate data={AQUA} accentTone="aqua" name="Waves Aqua Resort" otherHotels={others} />;
+  const t = useT();
+  const others = HOTELS.filter(h => h.id !== 'aqua');
+  const statsRef = useRef(null);
+  const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
+
+  const introImg = `https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=60`;
+
+  return (
+    <>
+      {/* ══════════════════════════════════════════
+          HERO
+      ══════════════════════════════════════════ */}
+      <PageHero
+        eyebrow={AQUA.hero.eyebrow}
+        title={AQUA.hero.title}
+        sub={AQUA.hero.sub}
+        videoPoster={AQUA.hero.videoPoster}
+        secondaryHref="#intro"
+      />
+
+      {/* ══════════════════════════════════════════
+          INTRO / SIGNATURE
+      ══════════════════════════════════════════ */}
+      <section id="intro" className="relative section-pad bg-ivory overflow-hidden">
+        <div className="absolute inset-0 bg-champagne-radial pointer-events-none" />
+        <div className="absolute -top-32 left-0 w-[480px] h-[480px] bg-bordeaux/5 blur-3xl -translate-x-1/3" />
+
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+
+          {/* Left text */}
+          <div className="lg:col-span-5 flex flex-col">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="ornament eyebrow"
+            >
+              {t(AQUA.intro.eyebrow)}
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.6rem)] leading-[1.05]"
+            >
+              {t(AQUA.intro.title)}
+            </motion.h2>
+            <span className="hairline mt-8" />
+
+            <div className="mt-8 space-y-1.5 font-display text-ink-soft leading-[1.95] text-[0.98rem] max-w-lg">
+              {t(AQUA.intro.body).map((line, i) => (
+                <motion.p key={i}
+                  initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.7, delay: 0.05 * i }}
+                >
+                  {line}
+                </motion.p>
+              ))}
+            </div>
+
+            {/* Info pills */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.5 }}
+              className="mt-10 flex flex-wrap gap-3"
+            >
+              {[
+                { icon: '📍', text: t(AQUA_INFO.address) },
+                { icon: '✆',  text: AQUA_INFO.phone },
+                { icon: '★',  text: t({ fr: '5 Étoiles', en: '5 Stars' }) },
+              ].map((p) => (
+                <span key={p.text} className="inline-flex items-center gap-2 px-4 py-2 border border-champagne/50 bg-ivory font-display text-[0.82rem] text-ink-soft">
+                  <span className="text-champagne text-xs">{p.icon}</span>
+                  {p.text}
+                </span>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.7 }}
+              className="mt-8"
+            >
+              <a href={AQUA_INFO.bookingUrl} target="_blank" rel="noreferrer" className="btn-royal">
+                {t(UI.bookNow)} <span aria-hidden>→</span>
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Right image */}
+          <motion.div
+            initial={{ opacity: 0, y: 60, scale: 1.04 }} whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 relative"
+          >
+            <div className="cinema relative overflow-hidden shadow-deep">
+              <img src={introImg} alt="Waves Aqua Resort" className="w-full h-[580px] object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(163,218,230,0.12)] to-transparent mix-blend-multiply" />
+              <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
+            </div>
+            {/* Floating badge */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="hidden md:block absolute -bottom-8 -left-8 glass-panel px-7 py-5 shadow-soft"
+            >
+              <p className="font-heading uppercase tracking-[0.4em] text-[0.6rem] text-champagne mb-1">Waves Aqua Resort</p>
+              <p className="serif-flourish text-bordeaux text-xl leading-snug">
+                {t({ fr: 'Resort 5★ · Piscine extérieure', en: '5★ Resort · Outdoor pool' })}
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          AMENITIES STRIP
+      ══════════════════════════════════════════ */}
+      <div className="relative bg-bordeaux py-6 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.15),_transparent_70%)]" />
+        <div className="relative marquee text-ivory/90 font-heading uppercase tracking-[0.5em] text-[0.72rem]">
+          {Array.from({ length: 3 }).flatMap((_, k) =>
+            ['Piscine Extérieure', 'Room Service', 'Aqua Spa', 'Restaurant & Bar', 'Parking Gratuit', 'Navette Aéroport', 'Wi-Fi Gratuit', 'Jardin Tropical'].map(a => (
+              <span key={a + k} className="flex items-center gap-6">
+                <span>{a}</span>
+                <span className="text-champagne">◇</span>
+              </span>
+            ))
+          )}
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════
+          ROOMS
+      ══════════════════════════════════════════ */}
+      <HotelRoomsSection
+        rooms={AQUA_ROOMS}
+        eyebrow={{ fr: 'Nos Chambres & Suites', en: 'Rooms & Suites' }}
+        title={{ fr: 'Onze univers, une même sérénité.', en: 'Eleven universes, one serenity.' }}
+        sub={{ fr: 'De la Supérieure Terrasse à la Suite Royale — chaque espace Waves Aqua est une invitation à la douceur de vivre 5 étoiles.', en: 'From the Superior Terrace to the Royal Suite — every Waves Aqua space is an invitation to 5-star soft living.' }}
+        bg="bg-mist"
+        bookingUrl={AQUA_INFO.bookingUrl}
+      />
+
+      {/* ══════════════════════════════════════════
+          NOS POINTS FORTS — BENTO GRID
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-ink overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,167,102,0.07),_transparent_65%)] pointer-events-none" />
+
+        {/* Animated top hairline */}
+        <motion.span
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
+          transition={{ duration: 1.6 }}
+          className="block h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent origin-center mb-16"
+        />
+
+        <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12">
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto">
+            <motion.span
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="font-heading uppercase tracking-[0.55em] text-[0.65rem] text-champagne/70"
+            >
+              {t({ fr: 'Expériences Exclusives', en: 'Exclusive Experiences' })}
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-ivory text-[clamp(2rem,4vw,3.6rem)] leading-[1.05]"
+            >
+              {t({ fr: 'Nos Points Forts.', en: 'Our Highlights.' })}
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="mt-5 font-display text-ivory/50 text-[0.95rem] leading-[1.85]"
+            >
+              {t({ fr: 'Du parc aquatique à la salle de fêtes — le Waves Aqua Resort est un monde en soi.', en: 'From the aqua park to the ballroom — Waves Aqua Resort is a world of its own.' })}
+            </motion.p>
+          </div>
+
+          {/* Bento grid — 4 cols desktop, 2 cols mobile */}
+          <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {AQUA_HIGHLIGHTS.map((tile, i) => (
+              <motion.div
+                key={tile.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.9, delay: 0.06 * i, ease: [0.22, 1, 0.36, 1] }}
+                className={`group relative cinema overflow-hidden ${tile.wide ? 'col-span-2' : 'col-span-1'} h-64 lg:h-72`}
+              >
+                <img
+                  src={tile.image}
+                  alt={t(tile.label)}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Multi-stop overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/10 group-hover:from-ink/80 transition-all duration-700" />
+                <div className="pointer-events-none absolute inset-0 border border-champagne/0 group-hover:border-champagne/30 transition-colors duration-700" />
+
+                {/* Icon */}
+                <div className="absolute top-5 left-5">
+                  <span className="font-heading text-champagne/60 group-hover:text-champagne text-xl transition-colors duration-500">{tile.icon}</span>
+                </div>
+
+                {/* Text */}
+                <div className="absolute bottom-0 inset-x-0 p-5">
+                  <h3 className="font-heading uppercase text-ivory tracking-wider text-[0.92rem] leading-tight group-hover:text-champagne transition-colors duration-500">
+                    {t(tile.label)}
+                  </h3>
+                  <p className="mt-1.5 font-display text-ivory/55 text-[0.78rem] leading-[1.6] group-hover:text-ivory/75 transition-colors duration-500">
+                    {t(tile.sub)}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom hairline */}
+        <motion.span
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
+          transition={{ duration: 1.6 }}
+          className="block h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent origin-center mt-16"
+        />
+      </section>
+
+      {/* ══════════════════════════════════════════
+          CONVENTION CENTER & LE BALLROOM
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-ivory-50 overflow-hidden">
+        <div className="absolute -top-32 right-0 w-[500px] h-[500px] bg-champagne/8 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-bordeaux/3 blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12">
+          {/* Header */}
+          <div className="grid lg:grid-cols-12 gap-12 items-end">
+            <div className="lg:col-span-5">
+              <span className="ornament eyebrow">{t(AQUA_CONVENTION.eyebrow)}</span>
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]"
+              >
+                {t(AQUA_CONVENTION.title)}
+              </motion.h2>
+              <span className="hairline mt-8" />
+            </div>
+            <div className="lg:col-span-7">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: 0.15 }}
+                className="font-display text-ink-soft leading-[1.95] text-[0.98rem]"
+              >
+                {t(AQUA_CONVENTION.sub)}
+              </motion.p>
+            </div>
+          </div>
+
+          {/* Meeting room cards */}
+          <div className="mt-12 grid md:grid-cols-3 gap-5">
+            {AQUA_CONVENTION.rooms.map((room, i) => (
+              <MeetingRoomCard key={room.name} room={room} delay={0.1 * i} />
+            ))}
+          </div>
+
+          {/* CTA strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.4 }}
+            className="mt-10 flex flex-wrap items-center justify-between gap-5 p-6 bg-bordeaux"
+          >
+            <div>
+              <p className="font-heading uppercase tracking-[0.4em] text-[0.6rem] text-champagne/70">{t({ fr: 'Sur demande', en: 'On request' })}</p>
+              <p className="mt-1 font-heading uppercase text-ivory text-[1.05rem]">{t({ fr: 'Demandez un devis pour vos événements.', en: 'Request a quote for your events.' })}</p>
+            </div>
+            <Link to="/contact" className="btn-ghost !border-champagne/60 !text-ivory hover:!bg-ivory hover:!text-bordeaux">
+              {t({ fr: 'Nous contacter', en: 'Contact us' })} <span aria-hidden>→</span>
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Le Ballroom — full-width feature banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mt-14 mx-6 lg:mx-12 xl:mx-20 cinema overflow-hidden shadow-deep min-h-[380px] lg:min-h-[460px] flex items-end"
+        >
+          <img
+            src={AQUA_CONVENTION.ballroomImage}
+            alt="Le Ballroom Waves Aqua"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/15" />
+          <div className="pointer-events-none absolute inset-5 border border-champagne/25" />
+
+          {/* Ballroom badge */}
+          <div className="absolute top-6 left-8">
+            <span className="inline-block font-heading uppercase tracking-[0.5em] text-[0.6rem] text-ivory bg-bordeaux px-4 py-2">
+              {t({ fr: 'Salle des Merveilles', en: 'Room of Wonders' })}
+            </span>
+          </div>
+
+          <div className="relative z-10 w-full p-10 lg:p-14 grid lg:grid-cols-2 gap-8 items-end">
+            <div>
+              <p className="font-heading uppercase tracking-[0.5em] text-[0.65rem] text-champagne/70 mb-4">
+                {t({ fr: 'Waves Aqua Resort · Le Ballroom', en: 'Waves Aqua Resort · The Ballroom' })}
+              </p>
+              <h3 className="font-heading uppercase text-ivory text-[clamp(1.8rem,3.5vw,3.2rem)] leading-[1.05]">
+                {t({ fr: 'La Salle des Merveilles.', en: 'The Room of Wonders.' })}
+              </h3>
+              <span className="block mt-6 h-px w-14 bg-gradient-to-r from-champagne/60 to-transparent" />
+            </div>
+            <div>
+              <p className="font-display text-ivory/65 leading-[1.9] text-[0.97rem]">
+                {t(AQUA_CONVENTION.ballroomSub)}
+              </p>
+              <Link
+                to="/contact"
+                className="mt-7 inline-flex items-center gap-2 font-heading uppercase tracking-[0.4em] text-[0.65rem] text-champagne hover:text-ivory transition-colors duration-400"
+              >
+                {t({ fr: 'Privatiser le Ballroom', en: 'Book the Ballroom' })} <span className="transition-transform duration-400 group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          FEATURES (4 cards)
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-ivory-50 overflow-hidden">
+        <div className="absolute -top-32 right-0 w-[500px] h-[500px] bg-champagne/10 blur-3xl pointer-events-none" />
+        <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="ornament eyebrow">{t({ fr: 'Expériences', en: 'Experiences' })}</span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.6rem)] leading-[1.05]"
+            >
+              {t({ fr: 'Pensé pour le bien-être.', en: 'Built for wellbeing.' })}
+            </motion.h2>
+          </div>
+          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {AQUA_FEATURES.map((f, i) => (
+              <FeatureCard key={i} {...f} delay={0.08 * i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          STATS
+      ══════════════════════════════════════════ */}
+      <section ref={statsRef} className="relative bg-bordeaux py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.14),_transparent_68%)]" />
+        <motion.span
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
+          transition={{ duration: 1.6 }}
+          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/60 to-transparent origin-center"
+        />
+        <motion.span
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
+          transition={{ duration: 1.6, delay: 0.1 }}
+          className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/60 to-transparent origin-center"
+        />
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+          className="text-center font-heading uppercase tracking-[0.52em] text-champagne/70 text-[0.6rem] mb-14 px-4"
+        >
+          Waves Aqua Resort · Kénitra
+        </motion.p>
+
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {AQUA_STATS.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1, delay: 0.12 * i, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative border border-champagne/30 hover:border-champagne/70 p-8 md:p-10 text-center overflow-hidden transition-colors duration-700"
+              style={{ background: 'linear-gradient(120deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)' }}
+            >
+              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
+              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
+
+              <p className="font-heading text-champagne/55 text-xl tracking-widest mb-5 group-hover:text-champagne transition-colors duration-500">{s.symbol}</p>
+              <p className="font-heading leading-none text-ivory" style={{ fontSize: 'clamp(3rem,5.5vw,5rem)', textShadow: '0 0 40px rgba(201,167,102,0.3)' }}>
+                <CountUp target={s.value} inView={statsInView} />
+              </p>
+              <span className="block mx-auto mt-5 mb-5 h-px w-8 bg-champagne/40 group-hover:w-16 transition-all duration-700" />
+              <p className="font-heading uppercase tracking-[0.32em] text-[0.6rem] text-ivory/55 group-hover:text-ivory/80 transition-colors duration-500 leading-relaxed">{t(s.label)}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          CTA
+      ══════════════════════════════════════════ */}
+      <section className="relative py-28 bg-ivory overflow-hidden">
+        <div className="absolute inset-0 bg-champagne-radial pointer-events-none" />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="relative max-w-3xl mx-auto px-6 text-center"
+        >
+          <p className="font-heading uppercase tracking-[0.5em] text-[0.7rem] text-shimmer">Waves Aqua Resort</p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]"
+          >
+            {t({ fr: 'Votre escapade à Kénitra.', en: 'Your escape in Kénitra.' })}
+          </motion.h2>
+          <p className="mt-6 font-display text-ink-soft text-[1rem] leading-[1.85]">
+            {t({ fr: 'Piscine, détente, gastronomie et service 5 étoiles — le Waves Aqua Resort est votre refuge tropical au cœur du Maroc.', en: 'Pool, relaxation, gastronomy and 5-star service — Waves Aqua Resort is your tropical refuge in the heart of Morocco.' })}
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a href={AQUA_INFO.bookingUrl} target="_blank" rel="noreferrer" className="btn-royal">
+              {t(UI.bookNow)} <span aria-hidden>→</span>
+            </a>
+            <Link to="/contact" className="btn-ghost">{t(UI.contactUs)}</Link>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          OTHER HOTELS
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-mist overflow-hidden">
+        <div className="max-w-[1500px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="ornament eyebrow">{t({ fr: 'Continuez l\'exploration', en: 'Continue exploring' })}</span>
+            <h2 className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.05]">
+              {t({ fr: 'Les autres signatures AHR.', en: 'Other AHR signatures.' })}
+            </h2>
+          </div>
+          <div className="mt-16 grid md:grid-cols-3 gap-5">
+            {others.map((h, i) => (
+              <motion.div key={h.id}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.9, delay: 0.08 * i }}
+              >
+                <Link to={h.to} className="group block cinema relative overflow-hidden shadow-soft h-72">
+                  <img src={h.image} alt={h.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-deep/85 via-bordeaux-deep/30 to-transparent" />
+                  <div className="pointer-events-none absolute inset-3 border border-champagne/30 group-hover:border-champagne/70 transition-colors duration-700" />
+                  <div className="absolute bottom-0 inset-x-0 p-6 text-ivory">
+                    <p className="font-heading uppercase tracking-[0.35em] text-[0.6rem] text-shimmer">{t(h.eyebrow)}</p>
+                    <h4 className="mt-2 font-heading uppercase text-[1.4rem] leading-tight">{h.name}</h4>
+                    <span className="mt-3 inline-flex items-center gap-2 font-heading uppercase tracking-[0.3em] text-[0.6rem]">
+                      {t(UI.view)} <span className="transition-transform duration-500 group-hover:translate-x-1.5">→</span>
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

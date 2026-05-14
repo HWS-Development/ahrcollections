@@ -274,7 +274,7 @@ export const AQUA = {
       en: 'A boutique tropical resort, designed for slowness, wellbeing and shared memories.'
     },
     videoPoster: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=60',
-    videoSrc:    'https://cdn.coverr.co/videos/coverr-a-pool-by-the-sea-2767/1080p.mp4'
+    videoSrc:    null
   },
   intro: {
     eyebrow: { fr: 'L’esprit Waves', en: 'The Waves spirit' },
@@ -331,8 +331,8 @@ export const VITALITY = {
       fr: 'À une minute de la gare LGV, pensé pour celles et ceux qui transforment les déplacements en opportunités.',
       en: 'One minute from the LGV station, designed for those who turn travel into opportunity.'
     },
-    videoPoster: 'https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=2000&q=60',
-    videoSrc:    'https://cdn.coverr.co/videos/coverr-an-empty-business-meeting-room-7766/1080p.mp4'
+    videoPoster: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/VITALITY/SUITE_JUNIOR/DSC07776.jpg?q=60',
+    videoSrc:    null
   },
   intro: {
     eyebrow: { fr: 'Pensé pour le voyageur d’affaires', en: 'Designed for the business traveler' },
@@ -359,10 +359,10 @@ export const VITALITY = {
     { icon: 'II', title: { fr: 'Express Check-in', en: 'Express check-in' },
       desc: { fr: 'Arrivée en moins de 2 minutes, départ sans contrainte.',
               en: 'Arrival in under 2 minutes, hassle-free departure.' } },
-    { icon: 'III', title: { fr: 'Salles de réunion', en: 'Meeting rooms' },
-      desc: { fr: '6 espaces modulables, équipement audio-vidéo professionnel.',
-              en: '6 modular spaces with full professional A/V.' } },
-    { icon: 'IV', title: { fr: 'Rooftop & Spa', en: 'Rooftop & Spa' },
+    { icon: 'III', title: { fr: '3 Salles de réunion', en: '3 Meeting rooms' },
+      desc: { fr: '3 espaces modulables, équipement audio-vidéo professionnel.',
+              en: '3 modular spaces with full professional A/V.' } },
+    { icon: 'IV', title: { fr: 'Rooftop & Terrasse', en: 'Rooftop & Terrace' },
       desc: { fr: 'Une vue, un calme, une parenthèse — entre deux rendez-vous.',
               en: 'A view, a calm, a pause — between two appointments.' } }
   ],
@@ -390,7 +390,7 @@ export const CITY = {
       en: 'Steps from the city’s essentials — an agile, bright, sincerely welcoming hotel.'
     },
     videoPoster: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2000&q=60',
-    videoSrc:    'https://cdn.coverr.co/videos/coverr-walking-on-a-city-street-2784/1080p.mp4'
+    videoSrc:    null
   },
   intro: {
     eyebrow: { fr: 'Esprit lifestyle', en: 'Lifestyle spirit' },
