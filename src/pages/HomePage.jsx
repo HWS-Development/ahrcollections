@@ -17,6 +17,7 @@ export default function HomePage() {
         videoSrc={HOME.hero.videoSrc}
         videoPoster={HOME.hero.videoPoster}
         secondaryHref="#intro"
+        noLift
       />
 
       {/* INTRO */}

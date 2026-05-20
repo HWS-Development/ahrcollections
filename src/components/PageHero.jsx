@@ -6,7 +6,7 @@ import { UI, BRAND } from '../data/site.js';
  * Cinematic full-screen hero used by every hotel/page.
  * Props: { eyebrow, title, sub, videoSrc, videoPoster, accent='bordeaux', children }
  */
-export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, image, logo, accent = 'bordeaux', minimal = false, ctaTo, ctaLabel, secondaryHref = '#below' }) {
+export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, image, logo, accent = 'bordeaux', minimal = false, ctaTo, ctaLabel, secondaryHref = '#below', noLift = false }) {
   const t = useT();
   const titleLines = (typeof title === 'string' ? title : t(title)).split('\n');
 
@@ -50,7 +50,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
       )}
 
       {/* Title + sub */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 pb-20 sm:pb-24 md:pb-28 lg:pb-32 text-center">
+      <div className={`relative z-10 h-full flex flex-col items-center justify-center px-6 ${noLift ? 'pb-0' : 'pb-20 sm:pb-24 md:pb-28 lg:pb-32'} text-center`}>
         {logo && (
           <motion.div
             initial={{ opacity: 0, y: 14 }}
