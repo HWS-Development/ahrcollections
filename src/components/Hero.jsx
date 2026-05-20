@@ -126,7 +126,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 4.0, duration: 1 }}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-ivory/80 hover:text-champagne transition-colors group"
+        className="hidden xl:flex absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-3 text-ivory/80 hover:text-champagne transition-colors group"
       >
         <span className="font-heading uppercase tracking-[0.4em] text-[0.62rem]">{t(UI.scroll)}</span>
         <div className="relative h-12 w-px bg-ivory/40 overflow-hidden">
