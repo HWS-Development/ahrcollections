@@ -66,7 +66,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
             />
           </motion.div>
         )}
-        <h1 className="font-heading uppercase text-ivory leading-[0.9] [text-shadow:0_4px_30px_rgba(0,0,0,0.75)]">
+        <h1 className="font-heading uppercase text-ivory leading-[1.15] [text-shadow:0_4px_30px_rgba(0,0,0,0.75)]">
           {titleLines.map((line, li) => (
             <span key={li} className="block overflow-hidden">
               <motion.span

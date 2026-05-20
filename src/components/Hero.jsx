@@ -67,7 +67,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Title — centered, reduced */}
-        <h1 className="font-heading uppercase text-ivory leading-[0.9] tracking-tight [text-shadow:0_4px_30px_rgba(0,0,0,0.7)]">
+        <h1 className="font-heading uppercase text-ivory leading-[1.15] tracking-tight [text-shadow:0_4px_30px_rgba(0,0,0,0.7)]">
           {titleLines.map((line, li) => (
             <span key={li} className="block overflow-hidden">
               <motion.span
