@@ -50,7 +50,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
       )}
 
       {/* Title + sub */}
-      <div className={`relative z-10 h-full flex flex-col items-center justify-center px-6 ${noLift ? 'pb-0' : 'pb-20 sm:pb-24 md:pb-28 lg:pb-32'} text-center`}>
+      <div className={`relative z-10 h-full flex flex-col items-center justify-center px-6 ${noLift ? 'pb-0' : 'pb-12 sm:pb-16 md:pb-24 lg:pb-28'} text-center`}>
         {logo && (
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -66,9 +66,9 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
             />
           </motion.div>
         )}
-        <h1 className="font-heading uppercase text-ivory leading-[1.15] [text-shadow:0_4px_30px_rgba(0,0,0,0.75)]">
+        <h1 className="font-heading uppercase text-ivory leading-[1.35] sm:leading-[1.4] [text-shadow:0_4px_30px_rgba(0,0,0,0.75)]">
           {titleLines.map((line, li) => (
-            <span key={li} className="block overflow-hidden">
+            <span key={li} className={`block overflow-hidden ${li > 0 ? 'mt-1 sm:mt-1.5 md:mt-2' : ''}`}>
               <motion.span
                 initial={{ y: '100%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -96,7 +96,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.2, duration: 0.9 }}
-          className="mt-6 sm:mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+          className="mt-10 sm:mt-14 md:mt-16 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
         >
           <a href={BRAND.bookingUrl} target="_blank" rel="noreferrer" className="btn-royal shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)]">
             {t(UI.bookNow)} <span aria-hidden>→</span>
