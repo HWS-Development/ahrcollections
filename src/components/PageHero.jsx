@@ -50,18 +50,18 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
       )}
 
       {/* Title + sub */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 pb-20 sm:pb-24 md:pb-28 lg:pb-32 text-center">
         {logo && (
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-10 inline-flex items-center justify-center"
+            className="mb-4 sm:mb-6 md:mb-8 inline-flex items-center justify-center"
           >
             <img
               src={logo}
               alt=""
-              className="h-24 sm:h-32 md:h-52 lg:h-60 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
+              className="h-16 sm:h-24 md:h-32 lg:h-40 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
               draggable={false}
             />
           </motion.div>
@@ -73,7 +73,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
                 initial={{ y: '100%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.1, delay: 1 + li * 0.22, ease: [0.22, 1, 0.36, 1] }}
-                className={`block font-heading ${minimal ? 'text-[clamp(0.9rem,2vw,1.9rem)]' : 'text-[clamp(1.1rem,2.5vw,2.4rem)]'}`}
+                className={`block font-heading ${minimal ? 'text-[clamp(0.85rem,1.7vw,1.6rem)]' : 'text-[clamp(1rem,2.1vw,2rem)]'}`}
               >
                 {line}
               </motion.span>
@@ -86,7 +86,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 1 }}
-            className="mt-10 max-w-2xl text-ivory font-display text-[1rem] md:text-[1.1rem] leading-[1.9] tracking-wide [text-shadow:0_2px_18px_rgba(0,0,0,0.6)]"
+            className="mt-5 sm:mt-7 md:mt-8 max-w-2xl text-ivory font-display text-[0.85rem] sm:text-[0.95rem] md:text-[1.05rem] leading-[1.6] sm:leading-[1.75] md:leading-[1.85] tracking-wide [text-shadow:0_2px_18px_rgba(0,0,0,0.6)]"
           >
             {typeof sub === 'string' ? sub : t(sub)}
           </motion.p>
@@ -96,7 +96,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.2, duration: 0.9 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-4"
+          className="mt-6 sm:mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
         >
           <a href={BRAND.bookingUrl} target="_blank" rel="noreferrer" className="btn-royal shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)]">
             {t(UI.bookNow)} <span aria-hidden>→</span>
@@ -113,7 +113,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.6, duration: 1 }}
-        className="hidden xl:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-3 text-ivory/80 hover:text-champagne transition-colors"
+        className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-3 text-ivory/80 hover:text-champagne transition-colors"
       >
         <span className="font-heading uppercase tracking-[0.4em] text-[0.62rem]">{t(UI.scroll)}</span>
         <div className="relative h-12 w-px bg-ivory/40 overflow-hidden">
