@@ -1,9 +1,7 @@
 // =====================================================================
 // AHR Collections — Per-hotel content (rooms, amenities, stats, info)
+// All media served from /public/img and /public/videos
 // =====================================================================
-
-const SUPA = 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS';
-const UP   = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=60`;
 
 // ─────────────────────────────────────────────────────────────────────
 // VITALITY TERMINUS
@@ -39,11 +37,11 @@ export const VITALITY_ROOMS = [
       en: ['King Size Bed', 'Work desk', 'Private bathroom', 'Smart TV', 'High-speed Wi-Fi', 'Safety box']
     },
     photos: [
-      `${SUPA}/VITALITY/SuperieurGrandlit_Vitality/photos%20-2082.jpg?q=60`,
-      `${SUPA}/VITALITY/SuperieurGrandlit_Vitality/photos%20-2083.jpg?q=60`,
-      `${SUPA}/VITALITY/SuperieurGrandlit_Vitality/photos%20-2084.jpg?q=60`,
-      `${SUPA}/VITALITY/SuperieurGrandlit_Vitality/photos%20-2085.jpg?q=60`,
-      `${SUPA}/VITALITY/SuperieurGrandlit_Vitality/photos%20-2086.jpg?q=60`,
+      '/img/vitality/confort-gl/photos__2082.webp',
+      '/img/vitality/confort-gl/photos__2083.webp',
+      '/img/vitality/confort-gl/photos__2084.webp',
+      '/img/vitality/confort-gl/photos__2085.webp',
+      '/img/vitality/confort-gl/photos__2086.webp',
     ]
   },
   {
@@ -60,9 +58,11 @@ export const VITALITY_ROOMS = [
       en: ['Twin Beds', 'Coffee machine', 'High-speed Wi-Fi', 'Smart TV', 'Safety box', 'Minibar']
     },
     photos: [
-      `${SUPA}/VITALITY/CONFORT_TWIN/confort_twin1.jpg?q=60`,
-      `${SUPA}/VITALITY/CONFORT_TWIN/confort_twin2.jpg?q=60`,
-      `${SUPA}/VITALITY/CONFORT_TWIN/confort_twin3.jpg?q=60`,
+      '/img/vitality/confort-twin/photos__2077.webp',
+      '/img/vitality/confort-twin/photos__2078.webp',
+      '/img/vitality/confort-twin/photos__2079.webp',
+      '/img/vitality/confort-twin/photos__2080.webp',
+      '/img/vitality/confort-twin/photos__2081.webp',
     ]
   },
   {
@@ -79,11 +79,12 @@ export const VITALITY_ROOMS = [
       en: ['City-view balcony', 'King Size or Twin bed', 'High-speed Wi-Fi', 'Smart TV', 'Safety box', 'Minibar']
     },
     photos: [
-      `${SUPA}/VITALITY/SUP_TWIN_GL/sup_twin_gl6.jpg?q=60`,
-      `${SUPA}/VITALITY/SUP_TWIN_GL/sup_twin_gl2.jpg?q=60`,
-      `${SUPA}/VITALITY/SUP_TWIN_GL/sup_twin_gl3.jpg?q=60`,
-      `${SUPA}/VITALITY/SUP_TWIN_GL/sup_twin_gl4.jpg?q=60`,
-      `${SUPA}/VITALITY/SUP_TWIN_GL/sup_twin_gl5.jpg?q=60`,
+      '/img/vitality/confort/photos__2087.webp',
+      '/img/vitality/confort/photos__2088.webp',
+      '/img/vitality/confort/photos__2089.webp',
+      '/img/vitality/confort/photos__2090.webp',
+      '/img/vitality/confort/photos__2091.webp',
+      '/img/vitality/confort/photos__2092.webp',
     ]
   },
   {
@@ -100,13 +101,14 @@ export const VITALITY_ROOMS = [
       en: ['Separate lounge', 'King Size bed', 'Premium bathroom', 'Hairdryer', 'Safety box', 'High-speed Wi-Fi']
     },
     photos: [
-      `${SUPA}/VITALITY/SUITE_JUNIOR/DSC07776.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/DSC07776-2.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/DSC07776-3.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2024.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2025.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2026.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2027.jpg?q=60`,
+      '/img/vitality/suite-junior/DSC07776.webp',
+      '/img/vitality/suite-junior/DSC07776_3.webp',
+      '/img/vitality/suite-junior/photos__2024.webp',
+      '/img/vitality/suite-junior/photos__2025.webp',
+      '/img/vitality/suite-junior/photos__2026.webp',
+      '/img/vitality/suite-junior/photos__2027.webp',
+      '/img/vitality/suite-junior/photos__2028.webp',
+      '/img/vitality/suite-junior/photos__2029.webp',
     ]
   },
   {
@@ -123,11 +125,14 @@ export const VITALITY_ROOMS = [
       en: ['Panoramic balcony', 'King Size bed', 'Private bathroom', 'Trouser press', 'Hairdryer', 'Safety box']
     },
     photos: [
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2028.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2030.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2032.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2034.jpg?q=60`,
-      `${SUPA}/VITALITY/SUITE_JUNIOR/photos%20-2036.jpg?q=60`,
+      '/img/vitality/suite-prestige/photos__2062.webp',
+      '/img/vitality/suite-prestige/photos__2063.webp',
+      '/img/vitality/suite-prestige/photos__2064.webp',
+      '/img/vitality/suite-prestige/photos__2065.webp',
+      '/img/vitality/suite-prestige/photos__2066.webp',
+      '/img/vitality/suite-prestige/photos__2067.webp',
+      '/img/vitality/suite-prestige/photos__2068.webp',
+      '/img/vitality/suite-prestige/photos__2069.webp',
     ]
   },
 ];
@@ -140,14 +145,14 @@ export const VITALITY_STATS = [
 ];
 
 export const VITALITY_FEATURES = [
-  { icon: '⊕', title: { fr: 'Service 24h/24', en: '24-hour service' },
-    desc: { fr: 'Réception et room service disponibles 24h/24, 7j/7 pour votre confort.', en: '24/7 front desk and room service always at your disposal.' } },
-  { icon: '∿', title: { fr: 'Fitness Center', en: 'Fitness Center' },
-    desc: { fr: 'Salle de fitness entièrement équipée pour maintenir votre rythme, où que vous soyez.', en: 'Fully equipped fitness centre to keep your pace, wherever you are.' } },
-  { icon: '◈', title: { fr: '3 Salles Modulables', en: '3 Modular Rooms' },
-    desc: { fr: 'Trois espaces événementiels avec équipements audiovisuels professionnels pour vos réunions.', en: 'Three event spaces with professional A/V for all your meetings.' } },
-  { icon: '◇', title: { fr: 'Terrasse & Vue ville', en: 'Terrace & City view' },
-    desc: { fr: 'Une terrasse panoramique pour souffler entre deux rendez-vous et profiter du panorama de Kénitra.', en: 'A panoramic terrace to unwind between meetings and enjoy Kénitra\'s skyline.' } },
+  { icon: '⊕', title: { fr: 'À 1 min de la gare LGV', en: '1 min from the LGV station' },
+    desc: { fr: 'Accessibilité optimale pour les voyageurs d\'affaires et les touristes — Rabat à 30 min, Casablanca à 1h30.', en: 'Seamless access for business travellers and tourists — Rabat in 30 min, Casablanca in 1h30.' } },
+  { icon: '∿', title: { fr: 'Espace Fitness', en: 'Fitness Space' },
+    desc: { fr: 'Salle moderne pour garder la forme pendant votre séjour — cardio, musculation, étirements.', en: 'A modern space to stay in shape throughout your stay — cardio, weights, stretching.' } },
+  { icon: '◈', title: { fr: 'Business Center & Salles', en: 'Business Center & Rooms' },
+    desc: { fr: 'Trois salles de réunion modulables, business center équipé pour visioconférences et coworking.', en: 'Three modular meeting rooms, business center equipped for video conferencing and coworking.' } },
+  { icon: '◇', title: { fr: 'Restaurant International', en: 'International Restaurant' },
+    desc: { fr: 'Carte du monde, petit-déjeuner buffet généreux et room service à toute heure.', en: 'Cuisine from around the world, generous breakfast buffet and room service round the clock.' } },
 ];
 
 // ─────────────────────────────────────────────────────────────────────
@@ -169,6 +174,22 @@ export const AQUA_INFO = {
   }
 };
 
+// Verified aqua hotel rooms — drawn from WAVES/waves catalog
+const AR_ROOM = [
+  'DSC00546','DSC00547','DSC00556','DSC00558','DSC00563','DSC00596',
+  'DSC00600','DSC00612','DSC00617','DSC00646','DSC00650','DSC00665',
+  'DSC00682','DSC00684','DSC00695','DSC00696','DSC00743','DSC00744',
+  'DSC00748','DSC00749','DSC00751','DSC00756','DSC00757','DSC00764',
+  'DSC09946','DSC09955','DSC09958','DSC09964','DSC09966'
+];
+const AR_SUITE = [
+  'DSC00483','DSC00487','DSC00490','DSC00495','DSC00497','DSC00507',
+  'DSC00513','DSC00520','DSC00524','DSC00567','DSC00568','DSC00570',
+  'DSC00578','DSC00581','DSC00620','DSC00624','DSC00630','DSC00634','DSC00685'
+];
+const AR = (i) => `/img/aqua/rooms/${AR_ROOM[i % AR_ROOM.length]}.webp`;
+const AS = (i) => `/img/aqua/suites/${AR_SUITE[i % AR_SUITE.length]}.webp`;
+
 export const AQUA_ROOMS = [
   {
     id: 'sup-terrasse-gl',
@@ -180,7 +201,7 @@ export const AQUA_ROOMS = [
       en: 'A private terrace facing the pool, thoughtful tropical décor, King Size bed and generous natural light. The Superior Terrace room is designed for those who want luxury to begin from the moment they wake.'
     },
     amenities: { fr: ['Terrasse privée', 'Vue piscine', 'Lit King Size', 'Wi-Fi', 'Climatisation', 'Mini-bar'], en: ['Private terrace', 'Pool view', 'King Size bed', 'Wi-Fi', 'Air conditioning', 'Minibar'] },
-    photos: [UP('1582719508461-905c673771fd'), UP('1571003123894-1f0594d2b5d9'), UP('1540541338287-41700207dee6'), UP('1602002418082-a4443e081dd1')]
+    photos: [AR(0), AR(1), AR(2), AR(3)]
   },
   {
     id: 'sup-gl',
@@ -192,7 +213,7 @@ export const AQUA_ROOMS = [
       en: 'Bathed in natural light overlooking tropical gardens, our Superior GL room is an intimate retreat. Begin each day in the gentle comfort of a space designed for relaxation.'
     },
     amenities: { fr: ['Vue jardin', 'Lit King Size', 'Wi-Fi', 'Climatisation', 'Salle de bain', 'TV satellite'], en: ['Garden view', 'King Size bed', 'Wi-Fi', 'Air conditioning', 'Bathroom', 'Satellite TV'] },
-    photos: [UP('1561501900-3701fa6a0864'), UP('1559599238-308793637427'), UP('1540555700478-4be289fbecef'), UP('1571896349842-33c89424de2d')]
+    photos: [AR(4), AR(5), AR(6), AR(7)]
   },
   {
     id: 'deluxe-piscine-gl',
@@ -204,7 +225,7 @@ export const AQUA_ROOMS = [
       en: 'Direct pool access straight from your Deluxe room. Large picture windows, generous space, premium bedding — for pool lovers who refuse to sacrifice comfort.'
     },
     amenities: { fr: ['Accès piscine direct', 'Baies vitrées', 'Lit King Size', 'Wi-Fi', 'Mini-bar', 'Coffre-fort'], en: ['Direct pool access', 'Picture windows', 'King Size bed', 'Wi-Fi', 'Minibar', 'Safety box'] },
-    photos: [UP('1582719478250-c89cae4dc85b'), UP('1431540015161-0bf868a2d407'), UP('1577412647305-991150c7d163'), UP('1551882547-ff40c63fe5fa')]
+    photos: [AR(8), AR(9), AR(10), AR(11)]
   },
   {
     id: 'deluxe-paysage-gl',
@@ -216,7 +237,7 @@ export const AQUA_ROOMS = [
       en: 'The Deluxe Landscape room offers a panoramic view over the natural surroundings of the resort. Designed for those who love waking to a horizon and ending their day under the stars.'
     },
     amenities: { fr: ['Vue panoramique', 'Lit King Size', 'Wi-Fi', 'Climatisation', 'Plateau courtoisie', 'Coffre-fort'], en: ['Panoramic view', 'King Size bed', 'Wi-Fi', 'Air conditioning', 'Welcome tray', 'Safety box'] },
-    photos: [UP('1564501049412-61c2a3083791'), UP('1542314831-068cd1dbfeeb'), UP('1505693416388-ac5ce068fe85'), UP('1542744173-8e7e53415bb0')]
+    photos: [AR(12), AR(13), AR(14), AR(15)]
   },
   {
     id: 'deluxe-twin-piscine',
@@ -228,7 +249,7 @@ export const AQUA_ROOMS = [
       en: 'Two twin beds, direct pool view and bright décor. The Deluxe Twin Pool room is the ideal formula for duo stays wanting to make the most of the water spaces.'
     },
     amenities: { fr: ['Lits Jumeaux', 'Vue piscine', 'Wi-Fi', 'Climatisation', 'Mini-bar', 'TV satellite'], en: ['Twin beds', 'Pool view', 'Wi-Fi', 'Air conditioning', 'Minibar', 'Satellite TV'] },
-    photos: [UP('1571003123894-1f0594d2b5d9'), UP('1582719508461-905c673771fd'), UP('1540541338287-41700207dee6'), UP('1559599238-308793637427')]
+    photos: [AR(16), AR(17), AR(18), AR(19)]
   },
   {
     id: 'deluxe-twin-paysage',
@@ -240,7 +261,7 @@ export const AQUA_ROOMS = [
       en: 'Two single beds facing a generous natural panorama. For duo travellers who love space, light and the beauty of the Moroccan landscape.'
     },
     amenities: { fr: ['Lits Jumeaux', 'Vue panoramique', 'Wi-Fi', 'Climatisation', 'Coffre-fort', 'Sèche-cheveux'], en: ['Twin beds', 'Panoramic view', 'Wi-Fi', 'Air conditioning', 'Safety box', 'Hairdryer'] },
-    photos: [UP('1602002418082-a4443e081dd1'), UP('1561501900-3701fa6a0864'), UP('1540555700478-4be289fbecef'), UP('1571896349842-33c89424de2d')]
+    photos: [AR(20), AR(21), AR(22), AR(23)]
   },
   {
     id: 'deluxe-family',
@@ -252,7 +273,7 @@ export const AQUA_ROOMS = [
       en: 'Designed for families, this spacious room offers full comfort for parents and children alike. Generous living space, complete bathroom and warm, bright décor.'
     },
     amenities: { fr: ['Configuration famille', 'Espace généreux', 'Wi-Fi', 'Climatisation', 'Mini-bar', 'Coffre-fort'], en: ['Family layout', 'Generous space', 'Wi-Fi', 'Air conditioning', 'Minibar', 'Safety box'] },
-    photos: [UP('1582719478250-c89cae4dc85b'), UP('1551882547-ff40c63fe5fa'), UP('1505693416388-ac5ce068fe85'), UP('1542314831-068cd1dbfeeb')]
+    photos: [AR(24), AR(25), AR(26), AR(27)]
   },
   {
     id: 'suite-junior',
@@ -264,7 +285,7 @@ export const AQUA_ROOMS = [
       en: 'The Waves Aqua Junior Suite is a refuge of light and elegance. Separate lounge, bright bedroom and terrace — tropical art of living at its peak.'
     },
     amenities: { fr: ['Salon séparé', 'Terrasse', 'Lit King Size', 'Wi-Fi', 'Mini-bar premium', 'Coffre-fort'], en: ['Separate lounge', 'Terrace', 'King Size bed', 'Wi-Fi', 'Premium minibar', 'Safety box'] },
-    photos: [UP('1564501049412-61c2a3083791'), UP('1542314831-068cd1dbfeeb'), UP('1577412647305-991150c7d163'), UP('1431540015161-0bf868a2d407')]
+    photos: [AS(0), AS(1), AS(2), AS(3)]
   },
   {
     id: 'suite-executive',
@@ -276,7 +297,7 @@ export const AQUA_ROOMS = [
       en: 'The Executive Suite embodies Waves Aqua refinement. Private workspace, flowing living room and breathtaking views — for travellers who demand excellence without compromise.'
     },
     amenities: { fr: ['Espace travail privé', 'Salon en enfilade', 'Vue panoramique', 'Wi-Fi ultra-rapide', 'Mini-bar premium', 'Service personnalisé'], en: ['Private workspace', 'Flowing living room', 'Panoramic view', 'Ultra-fast Wi-Fi', 'Premium minibar', 'Personalised service'] },
-    photos: [UP('1571003123894-1f0594d2b5d9'), UP('1582719508461-905c673771fd'), UP('1540555700478-4be289fbecef'), UP('1602002418082-a4443e081dd1')]
+    photos: [AS(4), AS(5), AS(6), AS(7)]
   },
   {
     id: 'suite-presidentielle',
@@ -288,7 +309,7 @@ export const AQUA_ROOMS = [
       en: 'The Presidential Suite is the crown of the Waves Aqua experience. Majestic surface, breathtaking views and a fully dedicated service — an experience without equal.'
     },
     amenities: { fr: ['Vue 360°', 'Salon & salle à manger', 'Deux salles de bain', 'Butler privé', 'Accès spa illimité', 'Transfert VIP'], en: ['360° view', 'Lounge & dining room', 'Two bathrooms', 'Private butler', 'Unlimited spa access', 'VIP transfer'] },
-    photos: [UP('1582719478250-c89cae4dc85b'), UP('1431540015161-0bf868a2d407'), UP('1505693416388-ac5ce068fe85'), UP('1542744173-8e7e53415bb0')]
+    photos: [AS(8), AS(9), AS(10), AS(11)]
   },
   {
     id: 'suite-royale',
@@ -300,7 +321,7 @@ export const AQUA_ROOMS = [
       en: 'The Royal Suite is a declaration of exception. Three distinct spaces, private pool on the terrace, butler service — Waves Aqua hospitality at its absolute summit.'
     },
     amenities: { fr: ['Piscine privée', 'Trois espaces distincts', 'Butler privé 24h', 'Vue panoramique', 'Spa privatif', 'Accès exclusif'], en: ['Private pool', 'Three distinct spaces', '24h private butler', 'Panoramic view', 'Private spa', 'Exclusive access'] },
-    photos: [UP('1561501900-3701fa6a0864'), UP('1559599238-308793637427'), UP('1571896349842-33c89424de2d'), UP('1540555700478-4be289fbecef')]
+    photos: [AS(12), AS(13), AS(14), AS(15)]
   },
 ];
 
@@ -312,14 +333,14 @@ export const AQUA_STATS = [
 ];
 
 export const AQUA_FEATURES = [
-  { icon: '∿', title: { fr: 'Piscine Extérieure', en: 'Outdoor Pool' },
-    desc: { fr: 'Grande piscine extérieure avec espaces détente, transats et service de bar en bord de piscine.', en: 'Large outdoor pool with relaxation areas, sun loungers and poolside bar service.' } },
-  { icon: '◉', title: { fr: 'Restauration & Terrasse', en: 'Dining & Terrace' },
-    desc: { fr: 'Restaurant sur place avec buffet petit-déjeuner, dîners et terrasse animée.', en: 'On-site restaurant with breakfast buffet, dinners and lively terrace.' } },
-  { icon: '◇', title: { fr: 'Navette Aéroport', en: 'Airport Shuttle' },
-    desc: { fr: 'Navette disponible vers l\'aéroport international Rabat-Salé à 36 km.', en: 'Shuttle service available to Rabat-Salé International Airport, 36 km away.' } },
-  { icon: '◈', title: { fr: 'Jardin & Parking', en: 'Garden & Parking' },
-    desc: { fr: 'Jardin tropical soigné et parking privé gratuit sur place.', en: 'Beautifully maintained tropical garden and free private parking on site.' } },
+  { icon: '∿', title: { fr: 'Aquaparc géant', en: 'Vast Aquapark' },
+    desc: { fr: 'Le plus grand de la région : 30+ toboggans, piscine à vagues, rivière lente, plages privées.', en: 'The largest in the region: 30+ slides, wave pool, lazy river, private beaches.' } },
+  { icon: '◉', title: { fr: 'Gastronomie & Loisirs', en: 'Dining & Leisure' },
+    desc: { fr: 'Bronz Sea Food, Barbecue à Table, Crepland, Play & Jump Park, bars en bord de piscine.', en: 'Bronz Sea Food, Barbecue à Table, Crepland, Play & Jump Park, poolside bars.' } },
+  { icon: '◇', title: { fr: 'Centre de bien-être', en: 'Wellness Center' },
+    desc: { fr: 'Spa, hammam traditionnel, salon de beauté et soins relaxants haut de gamme.', en: 'Spa, traditional hammam, beauty salon and premium relaxing treatments.' } },
+  { icon: '◈', title: { fr: 'Palais des Congrès', en: 'Convention Center' },
+    desc: { fr: 'Espace événementiel moderne pour séminaires, mariages, conférences et célébrations privées.', en: 'Modern event venue for seminars, weddings, conferences and private celebrations.' } },
 ];
 
 // ─────────────────────────────────────────────────────────────────────
@@ -342,7 +363,8 @@ export const CITY_INFO = {
   }
 };
 
-const UC = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=60`;
+const CR = (n) => `/img/city/rooms/DSC0${n}.webp`;
+const CB = (n) => `/img/city/bath/DSC0${n}.webp`;
 
 export const CITY_ROOMS = [
   {
@@ -355,7 +377,7 @@ export const CITY_ROOMS = [
       en: 'Air-conditioned, soundproofed and with a private shower room, our Cosy King room is the perfect base for exploring Kénitra. A comfortable bed, a warm atmosphere — a flawless stay.'
     },
     amenities: { fr: ['Lit Grand Lit', 'Salle de bain privative', 'Wi-Fi gratuit', 'Climatisation', 'Sèche-cheveux', 'Insonorisé'], en: ['King bed', 'Private bathroom', 'Free Wi-Fi', 'Air conditioning', 'Hairdryer', 'Soundproofed'] },
-    photos: [UC('1611892440504-42a792e24d32'), UC('1566665797739-1674de7a421a'), UC('1591088398332-8a7791972843'), UC('1559339352-11d035aa65de')]
+    photos: [CR(8025), CR(8026), CR(8028), CR(8031)]
   },
   {
     id: 'cosy-twin',
@@ -367,7 +389,7 @@ export const CITY_ROOMS = [
       en: 'Complimentary toiletries, minibar, safe deposit and flat-screen TV — our Cosy Twin has everything needed for a pleasant stay. Two beds, an urban and welcoming atmosphere.'
     },
     amenities: { fr: ['Lits Jumeaux', 'Mini-bar', 'TV satellite', 'Climatisation', 'Coffre-fort', 'Non-fumeur'], en: ['Twin beds', 'Minibar', 'Satellite TV', 'Air conditioning', 'Safety box', 'Non-smoking'] },
-    photos: [UC('1542314831-068cd1dbfeeb'), UC('1551776235-dde6d4829808'), UC('1485921325833-c519f76c4927'), UC('1564501049412-61c2a3083791')]
+    photos: [CR(8056), CR(8058), CR(8059), CB(8039)]
   },
   {
     id: 'deluxe-gl',
@@ -379,7 +401,7 @@ export const CITY_ROOMS = [
       en: 'More spacious, our Deluxe King room combines urban comfort with contemporary elegance. Minibar, safe deposit box and private shower room — for a stay above the ordinary.'
     },
     amenities: { fr: ['Lit Grand Lit', 'Wi-Fi gratuit', 'Mini-bar', 'Coffre-fort', 'Salle de bain', 'Non-fumeur'], en: ['King bed', 'Free Wi-Fi', 'Minibar', 'Safety box', 'Bathroom', 'Non-smoking'] },
-    photos: [UC('1566665797739-1674de7a421a'), UC('1611892440504-42a792e24d32'), UC('1591088398332-8a7791972843'), UC('1542314831-068cd1dbfeeb')]
+    photos: [CR(8127), CR(8131), CR(8132), CB(8344)]
   },
   {
     id: 'deluxe-twin',
@@ -391,7 +413,7 @@ export const CITY_ROOMS = [
       en: 'Our spacious Deluxe Twin room features soundproof walls, minibar, safe deposit box and flat-screen TV. Two beds for added flexibility in a modern, clean setting.'
     },
     amenities: { fr: ['Lits Jumeaux', 'Wi-Fi gratuit', 'TV satellite', 'Mini-bar', 'Non-fumeur', 'Insonorisé'], en: ['Twin beds', 'Free Wi-Fi', 'Satellite TV', 'Minibar', 'Non-smoking', 'Soundproofed'] },
-    photos: [UC('1559339352-11d035aa65de'), UC('1485921325833-c519f76c4927'), UC('1551776235-dde6d4829808'), UC('1564501049412-61c2a3083791')]
+    photos: [CR(8310), CR(8311), CR(8314), CR(8316)]
   },
   {
     id: 'suite',
@@ -403,7 +425,7 @@ export const CITY_ROOMS = [
       en: 'Our City Suite combines a private lounge, separate bedroom and prestige bathroom. Minibar, safe deposit box and flat-screen TV — for an absolutely memorable Kénitra stay.'
     },
     amenities: { fr: ['Salon privé', 'Chambre séparée', 'Wi-Fi gratuit', 'TV satellite', 'Mini-bar', 'Coffre-fort'], en: ['Private lounge', 'Separate bedroom', 'Free Wi-Fi', 'Satellite TV', 'Minibar', 'Safety box'] },
-    photos: [UC('1542314831-068cd1dbfeeb'), UC('1566665797739-1674de7a421a'), UC('1611892440504-42a792e24d32'), UC('1551776235-dde6d4829808')]
+    photos: [CR(8324), CR(8326), CR(8330), CR(8334)]
   },
 ];
 
@@ -415,14 +437,14 @@ export const CITY_STATS = [
 ];
 
 export const CITY_FEATURES = [
-  { icon: '◇', title: { fr: 'Restaurant & Bar', en: 'Restaurant & Bar' },
-    desc: { fr: 'Restaurant et bar sur place — brunchs, dîners en soirée et moments de convivialité.', en: 'On-site restaurant and bar — brunches, evening dinners and convivial moments.' } },
-  { icon: '◉', title: { fr: 'Service en chambre', en: 'Room Service' },
-    desc: { fr: 'Room service disponible pour vos repas et boissons, à toute heure.', en: 'Room service available for meals and drinks at any hour.' } },
-  { icon: '◌', title: { fr: 'Terrasse animée', en: 'Lively Terrace' },
-    desc: { fr: 'Une terrasse idéale pour observer le rythme de la ville de Kénitra et ses avenues.', en: 'A terrace perfect for watching the lively rhythm of Kénitra\'s streets.' } },
-  { icon: '✦', title: { fr: 'Visites guidées', en: 'Guided Tours' },
-    desc: { fr: 'Notre équipe organise des visites guidées pour découvrir Kénitra et ses environs.', en: 'Our team organises guided tours to discover Kénitra and its surroundings.' } },
+  { icon: '◇', title: { fr: 'Hôtel Corporate', en: 'Corporate Hotel' },
+    desc: { fr: 'Conçu pour les professionnels, avec des services adaptés aux séjours d\'affaires et aux longs séjours.', en: 'Built for professionals, with services tailored to business trips and extended stays.' } },
+  { icon: '◉', title: { fr: 'Salles de Conférence', en: 'Conference Rooms' },
+    desc: { fr: 'Espaces modulables équipés de vidéoprojecteurs, traiteur et pauses-café pour vos événements.', en: 'Flexible spaces with video projectors, catering and coffee breaks for your events.' } },
+  { icon: '◌', title: { fr: 'Localisation centrale', en: 'Central Location' },
+    desc: { fr: 'À deux pas des quartiers d\'affaires, des centres commerciaux et des gares de Kénitra.', en: 'Steps from business districts, shopping centers and Kénitra\'s stations.' } },
+  { icon: '✦', title: { fr: 'Restaurant & Bar', en: 'Restaurant & Bar' },
+    desc: { fr: 'Cuisine variée et équilibrée, petit-déjeuner buffet, room service et ambiance chaleureuse.', en: 'Varied, balanced cuisine, breakfast buffet, room service and a warm atmosphere.' } },
 ];
 
 // ─────────────────────────────────────────────────────────────────────
@@ -430,7 +452,7 @@ export const CITY_FEATURES = [
 // ─────────────────────────────────────────────────────────────────────
 
 export const VITALITY_RESTAURANT = {
-  heroImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=60',
+  heroImage: '/img/vitality/nuit/photos__2045.webp',
   eyebrow: { fr: 'Gastronomie', en: 'Gastronomy' },
   title: { fr: 'Restaurant International', en: 'International Restaurant' },
   sub: { fr: 'Une expérience culinaire à la hauteur de vos ambitions.', en: 'A culinary experience matching your ambitions.' },
@@ -453,7 +475,7 @@ export const VITALITY_RESTAURANT = {
 };
 
 export const VITALITY_FITNESS = {
-  image: 'https://images.unsplash.com/photo-1534438327993-c9de87398bd0?auto=format&fit=crop&w=1600&q=60',
+  image: '/img/vitality/couloir/photos__2127.webp',
   eyebrow: { fr: 'Bien-être & Vitalité', en: 'Wellbeing & Vitality' },
   title: { fr: 'Espace Fitness', en: 'Fitness Center' },
   sub: { fr: 'Maintenez votre rythme, où que vous soyez.', en: 'Keep your pace, wherever you are.' },
@@ -466,10 +488,6 @@ export const VITALITY_FITNESS = {
     en: ['Cardio training', 'Weight training', 'Treadmills', 'Elliptical bike', '24h access', 'Complimentary towels'],
   },
 };
-
-const VM_MARRAKECH = `${SUPA}/VITALITY/SALLE_CONFERENCE/MARRAKECH`;
-const VM_AGADIR    = `${SUPA}/VITALITY/SALLE_CONFERENCE/AGADIR`;
-const VM_RABAT     = `${SUPA}/VITALITY/SALLE_CONFERENCE/RABAT`;
 
 export const VITALITY_MEETINGS = [
   {
@@ -485,20 +503,20 @@ export const VITALITY_MEETINGS = [
       en: ['Wired microphones', 'Video projector', 'Wi-Fi'],
     },
     layouts: { fr: 'En U, Classe, Théâtre, Cabaret', en: 'U-shape, Classroom, Theatre, Cabaret' },
-    image: `${VM_MARRAKECH}/photos%20-2093.jpg?q=60`,
+    image: '/img/vitality/meet-marrakech/photos__2093.webp',
     photos: [
-      `${VM_MARRAKECH}/photos%20-2093.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2095.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2096.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2097.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2098.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2101.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2102.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2103.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2104.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2105.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2106.jpg?q=60`,
-      `${VM_MARRAKECH}/photos%20-2109.jpg?q=60`,
+      '/img/vitality/meet-marrakech/photos__2093.webp',
+      '/img/vitality/meet-marrakech/photos__2094.webp',
+      '/img/vitality/meet-marrakech/photos__2095.webp',
+      '/img/vitality/meet-marrakech/photos__2096.webp',
+      '/img/vitality/meet-marrakech/photos__2097.webp',
+      '/img/vitality/meet-marrakech/photos__2098.webp',
+      '/img/vitality/meet-marrakech/photos__2099.webp',
+      '/img/vitality/meet-marrakech/photos__2100.webp',
+      '/img/vitality/meet-marrakech/photos__2101.webp',
+      '/img/vitality/meet-marrakech/photos__2102.webp',
+      '/img/vitality/meet-marrakech/photos__2103.webp',
+      '/img/vitality/meet-marrakech/photos__2104.webp',
     ],
   },
   {
@@ -514,14 +532,15 @@ export const VITALITY_MEETINGS = [
       en: ['Flipchart', 'Audio system', 'Video projector'],
     },
     layouts: { fr: 'Réunion', en: 'Meeting' },
-    image: `${VM_AGADIR}/photos%20-2108.jpg?q=60`,
+    image: '/img/vitality/meet-agadir/photos__2108.webp',
     photos: [
-      `${VM_AGADIR}/photos%20-2108.jpg?q=60`,
-      `${VM_AGADIR}/photos%20-2114.jpg?q=60`,
-      `${VM_AGADIR}/photos%20-2115.jpg?q=60`,
-      `${VM_AGADIR}/photos%20-2116.jpg?q=60`,
-      `${VM_AGADIR}/photos%20-2117.jpg?q=60`,
-      `${VM_AGADIR}/photos%20-2118.jpg?q=60`,
+      '/img/vitality/meet-agadir/photos__2108.webp',
+      '/img/vitality/meet-agadir/photos__2114.webp',
+      '/img/vitality/meet-agadir/photos__2115.webp',
+      '/img/vitality/meet-agadir/photos__2116.webp',
+      '/img/vitality/meet-agadir/photos__2117.webp',
+      '/img/vitality/meet-agadir/photos__2118.webp',
+      '/img/vitality/meet-agadir/photos__2119.webp',
     ],
   },
   {
@@ -537,16 +556,16 @@ export const VITALITY_MEETINGS = [
       en: ['PA system', 'Wireless mics', 'Video projector', 'Interactive board', 'Wi-Fi'],
     },
     layouts: { fr: 'Théâtre, Classe, En U, Cabaret', en: 'Theatre, Classroom, U-shape, Cabaret' },
-    image: `${VM_RABAT}/photos%20-2107.jpg?q=60`,
+    image: '/img/vitality/meet-rabat/photos__2107.webp',
     photos: [
-      `${VM_RABAT}/photos%20-2107.jpg?q=60`,
-      `${VM_RABAT}/photos%20-2135.jpg?q=60`,
-      `${VM_RABAT}/photos%20-2136.jpg?q=60`,
-      `${VM_RABAT}/photos%20-2137.jpg?q=60`,
-      `${VM_RABAT}/photos%20-2138.jpg?q=60`,
-      `${VM_RABAT}/photos%20-2139.jpg?q=60`,
-      `${VM_RABAT}/photos%20-2140.jpg?q=60`,
-      `${VM_RABAT}/photos%20-2141.jpg?q=60`,
+      '/img/vitality/meet-rabat/photos__2107.webp',
+      '/img/vitality/meet-rabat/photos__2135.webp',
+      '/img/vitality/meet-rabat/photos__2136.webp',
+      '/img/vitality/meet-rabat/photos__2137.webp',
+      '/img/vitality/meet-rabat/photos__2138.webp',
+      '/img/vitality/meet-rabat/photos__2139.webp',
+      '/img/vitality/meet-rabat/photos__2140.webp',
+      '/img/vitality/meet-rabat/photos__2141.webp',
     ],
   },
 ];
@@ -556,7 +575,7 @@ export const VITALITY_MEETINGS = [
 // ─────────────────────────────────────────────────────────────────────
 
 export const CITY_RESTAURANT = {
-  heroImage: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=60',
+  heroImage: '/img/city/dining/DSC08270.webp',
   eyebrow: { fr: 'Nos Saveurs', en: 'Our Flavours' },
   title: { fr: 'Restaurant & Soft Bar', en: 'Restaurant & Soft Bar' },
   sub: { fr: 'Raffinement et convivialité, à toute heure.', en: 'Refinement and conviviality, at any hour.' },
@@ -594,7 +613,7 @@ export const CITY_MEETINGS = [
       en: ['Flipchart', 'Audio system', 'Video projector', 'Wired microphones'],
     },
     layouts: { fr: 'Conférence, Classe, Théâtre, Cabaret', en: 'Conference, Classroom, Theatre, Cabaret' },
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=60',
+    image: '/img/city/meeting/DSC08475.webp',
   },
   {
     name: 'Les Mérinides',
@@ -609,7 +628,7 @@ export const CITY_MEETINGS = [
       en: ['Wired microphones', 'Video projector', 'Wi-Fi'],
     },
     layouts: { fr: 'En U, Classe, Théâtre, Cabaret', en: 'U-shape, Classroom, Theatre, Cabaret' },
-    image: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=1200&q=60',
+    image: '/img/city/meeting/DSC08482.webp',
   },
 ];
 
@@ -622,7 +641,15 @@ export const AQUA_HIGHLIGHTS = [
     id: 'aquapark',
     label: { fr: 'Aqua Park', en: 'Aqua Park' },
     sub: { fr: 'Plongez dans l\'aventure, éclatez-vous à chaque vague', en: 'Dive into adventure, enjoy every wave' },
-    image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=60',
+    image: '/img/aqua/pool/DJI_0097.webp',
+    images: [
+      '/img/aqua/pool/DJI_0097.webp',
+      '/img/aqua/pool/DJI_0099.webp',
+      '/img/aqua/aquapark/DSC02525.webp',
+      '/img/aqua/aquapark/DSC02692.webp',
+      '/img/aqua/aquapark/DSC02843.webp',
+    ],
+    video: '/videos/aqua-aquapark.mp4',
     icon: '∿',
     wide: true,
   },
@@ -630,23 +657,29 @@ export const AQUA_HIGHLIGHTS = [
     id: 'relax',
     label: { fr: 'Stay & Relax', en: 'Stay & Relax' },
     sub: { fr: 'Piscine, transat et sérénité au bord de l\'eau', en: 'Pool, sun lounger and serenity waterside' },
-    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=60',
+    image: '/img/aqua/pool/DSC02482.webp',
+    images: [
+      '/img/aqua/pool/DSC02482.webp',
+      '/img/aqua/pool/DSC02481.webp',
+      '/img/aqua/pool/DSC02508.webp',
+      '/img/aqua/pool/DSC00712.webp',
+    ],
     icon: '◇',
-    wide: false,
-  },
-  {
-    id: 'convention',
-    label: { fr: 'Convention Center', en: 'Convention Center' },
-    sub: { fr: 'L\'endroit idéal pour vos événements d\'exception', en: 'The ideal venue for exceptional events' },
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=60',
-    icon: '◈',
     wide: false,
   },
   {
     id: 'spa',
     label: { fr: 'Le Spa by Waves', en: 'The Waves Spa' },
     sub: { fr: 'Là où commence votre bien-être · 100% Femmes', en: 'Where your wellbeing begins · Ladies only' },
-    image: 'https://images.unsplash.com/photo-1544161515-4be5c55f5fad?auto=format&fit=crop&w=1200&q=60',
+    image: '/img/aqua/spa/photos2210.webp',
+    images: [
+      '/img/aqua/spa/photos2200.webp',
+      '/img/aqua/spa/photos2210.webp',
+      '/img/aqua/spa/photos2219.webp',
+      '/img/aqua/spa/photos2230.webp',
+      '/img/aqua/spa/photos2238.webp',
+    ],
+    video: '/videos/aqua-spa.mp4',
     icon: '✦',
     wide: false,
   },
@@ -654,31 +687,62 @@ export const AQUA_HIGHLIGHTS = [
     id: 'saveurs',
     label: { fr: 'Nos Saveurs', en: 'Our Flavours' },
     sub: { fr: 'Le goût des vacances, à chaque repas', en: 'The taste of holidays, every meal' },
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=60',
+    image: '/img/aqua/dining/DSC00126.webp',
+    images: [
+      '/img/aqua/dining/DSC00126.webp',
+      '/img/aqua/dining/DSC00146.webp',
+      '/img/aqua/dining/DSC00207.webp',
+      '/img/aqua/dining/DSC00345.webp',
+      '/img/aqua/dining/DSC00452.webp',
+    ],
     icon: '◉',
+    wide: false,
+  },
+  {
+    id: 'bronz',
+    label: { fr: 'Le Bronze · Grill & Bar', en: 'Le Bronze · Grill & Bar' },
+    sub: { fr: 'Grillades de soirée, cocktails signature au coucher du soleil', en: 'Evening grills, signature cocktails at sunset' },
+    image: '/img/aqua/bronz/photos2273.webp',
+    images: [
+      '/img/aqua/bronz/photos2273.webp',
+      '/img/aqua/bronz/photos2279.webp',
+      '/img/aqua/bronz/photos2281.webp',
+      '/img/aqua/bronz/photos2285.webp',
+      '/img/aqua/bronz/photos2287.webp',
+      '/img/aqua/bronz/photos2290.webp',
+      '/img/aqua/bronz/photos2295.webp',
+      '/img/aqua/bronz/photos2299.webp',
+    ],
+    video: '/videos/aqua-bronze.mp4',
+    icon: '◈',
     wide: false,
   },
   {
     id: 'aquafit',
     label: { fr: 'Aquafit', en: 'Aquafit' },
     sub: { fr: 'Votre force, notre mission', en: 'Your strength, our mission' },
-    image: 'https://images.unsplash.com/photo-1534438327993-c9de87398bd0?auto=format&fit=crop&w=1200&q=60',
+    image: '/img/aqua/aquapark/DSC02525.webp',
+    images: [
+      '/img/aqua/aquapark/DSC02525.webp',
+      '/img/aqua/aquapark/DSC02610.webp',
+      '/img/aqua/aquapark/DSC02653.webp',
+      '/img/aqua/aquapark/DSC02768.webp',
+    ],
     icon: '⊕',
-    wide: true,
-  },
-  {
-    id: 'ballroom',
-    label: { fr: 'Le Ballroom', en: 'The Ballroom' },
-    sub: { fr: 'La Salle des Merveilles', en: 'The Room of Wonders' },
-    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb1b6b?auto=format&fit=crop&w=1600&q=60',
-    icon: '◌',
     wide: true,
   },
   {
     id: 'funzone',
     label: { fr: 'Fun Zone', en: 'Fun Zone' },
     sub: { fr: 'L\'énergie en plein vol !', en: 'Energy at full flight!' },
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=60',
+    image: '/img/aqua/kids/photos2244.webp',
+    images: [
+      '/img/aqua/kids/photos2244.webp',
+      '/img/aqua/kids/photos2246.webp',
+      '/img/aqua/kids/photos2252.webp',
+      '/img/aqua/kids/photos2257.webp',
+      '/img/aqua/kids/photos2266.webp',
+    ],
     icon: '◐',
     wide: true,
   },
@@ -705,7 +769,7 @@ export const AQUA_CONVENTION = {
         en: ['PA system', 'Wireless mics', 'Video projector', 'LCD screen', 'Wi-Fi'],
       },
       layouts: { fr: 'Théâtre, Classe, En U, Cabaret', en: 'Theatre, Classroom, U-shape, Cabaret' },
-      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=60',
+      image: '/img/aqua/bronz/photos2273.webp',
     },
     {
       name: 'Salle New York',
@@ -720,7 +784,7 @@ export const AQUA_CONVENTION = {
         en: ['LCD screen', 'Wired mics', 'Video projector', 'Interactive board', 'Wi-Fi'],
       },
       layouts: { fr: 'En U, Classe, Théâtre, Cabaret', en: 'U-shape, Classroom, Theatre, Cabaret' },
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=60',
+      image: '/img/aqua/bronz/photos2281.webp',
     },
     {
       name: 'Salle Paris',
@@ -735,10 +799,10 @@ export const AQUA_CONVENTION = {
         en: ['LCD screen', 'Flipchart', 'Audio system', 'Wired mic'],
       },
       layouts: { fr: 'Réunion', en: 'Meeting' },
-      image: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=1200&q=60',
+      image: '/img/aqua/bronz/photos2285.webp',
     },
   ],
-  ballroomImage: 'https://images.unsplash.com/photo-1519167758481-83f550bb1b6b?auto=format&fit=crop&w=1600&q=60',
+  ballroomImage: '/img/aqua/bronz/photos2279.webp',
   ballroomSub: {
     fr: 'Mariages, galas, soirées d\'entreprise ou célébrations privées — Le Ballroom vous accueille dans un cadre somptueux conçu pour l\'inoubliable.',
     en: 'Weddings, galas, corporate evenings or private celebrations — The Ballroom welcomes you in a sumptuous setting designed for the unforgettable.',

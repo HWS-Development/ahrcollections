@@ -49,7 +49,7 @@ export default function CollectionPage() {
                 className={`lg:col-span-7 ${reverse ? 'lg:order-2' : ''}`}
               >
                 <div className="cinema relative overflow-hidden shadow-deep">
-                  <img src={h.image} alt={h.name} className="w-full h-[560px] object-cover" />
+                  <img src={h.image} alt={h.name} loading="lazy" decoding="async" className="w-full h-[560px] object-cover" />
                   <div className="absolute inset-0 bg-bordeaux-veil" />
                   <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
                   <div className="absolute top-6 left-6 font-heading text-shimmer text-2xl">0{i+1}</div>

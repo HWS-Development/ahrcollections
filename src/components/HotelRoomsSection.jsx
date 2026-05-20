@@ -208,7 +208,7 @@ export default function HotelRoomsSection({
                       : 'opacity-70 hover:opacity-100'
                   }`}
                 >
-                  <img src={src} alt="" className="w-full h-full object-cover" />
+                  <img src={src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   <div className={`absolute inset-0 transition-colors duration-500 ${
                     photoIdx === i ? 'bg-bordeaux/0' : 'bg-bordeaux/30 hover:bg-bordeaux/0'
                   }`} />

@@ -127,7 +127,7 @@ export default function FamilySection() {
                     : 'opacity-55 hover:opacity-100'
                 }`}
               >
-                <img src={src} alt="" className="w-full h-full object-cover" />
+                <img src={src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 <div className={`absolute inset-0 transition-colors duration-500 ${
                   idx === i ? 'bg-bordeaux/0' : 'bg-bordeaux/35 hover:bg-bordeaux/0'
                 }`} />

@@ -8,3 +8,7 @@ dist-ssr
 *.log
 .env
 .env.local
+
+# Local-only source asset library (17+ GB) and scratch dirs
+AHRCOLLECTIONSIMAGES/
+tmp/

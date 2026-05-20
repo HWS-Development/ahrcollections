@@ -28,8 +28,8 @@ export default function AboutPage() {
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-6 cinema relative overflow-hidden shadow-deep"
           >
-            <img src="https://images.unsplash.com/photo-1551776235-dde6d4829808?auto=format&fit=crop&w=1800&q=60"
-              alt="" className="w-full h-[620px] object-cover" />
+            <img src="/img/about/general/DSC01282.webp"
+              alt="" loading="lazy" decoding="async" className="w-full h-[620px] object-cover" />
             <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
             <div className="absolute inset-0 bg-bordeaux-veil" />
           </motion.div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                     className={`lg:col-span-7 ${reverse ? 'lg:order-2' : ''}`}
                   >
                     <div className="cinema relative overflow-hidden shadow-deep">
-                      <img src={v.image} alt="" className="w-full h-[460px] object-cover" />
+                      <img src={v.image} alt="" loading="lazy" decoding="async" className="w-full h-[460px] object-cover" />
                       <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
                       <div className="absolute top-5 left-5 font-heading text-shimmer text-3xl">{v.num}</div>
                     </div>

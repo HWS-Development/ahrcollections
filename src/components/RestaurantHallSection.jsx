@@ -31,7 +31,7 @@ export default function RestaurantHallSection() {
   const lines = t(RESTAURANT_HALL.title).split('\n');
 
   return (
-    <section id="restaurant-hall" className="relative overflow-hidden bg-ink">
+    <section id="restaurant-hall" className="relative overflow-hidden bg-ivory">
 
       {/* ══════════════════════════════════════════
           PART 1 — Cinematic hero image
@@ -42,13 +42,14 @@ export default function RestaurantHallSection() {
         <img
           src={RESTAURANT_HALL.photos[0]}
           alt="Restaurant Royal Plaza"
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover animate-slowZoom"
           style={{ objectPosition: 'center 40%' }}
         />
 
-        {/* Gradient veil — dark bottom, subtle top */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/50 via-transparent to-transparent" />
+        {/* Gradient veil — darker bottom for legibility, lighter top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-deep/80 via-bordeaux-deep/30 to-transparent" />
 
         {/* Film grain */}
         <div className="absolute inset-0 bg-noise opacity-10 mix-blend-overlay pointer-events-none" />
@@ -57,7 +58,7 @@ export default function RestaurantHallSection() {
         <motion.span
           initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
           transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/50 to-transparent origin-center"
+          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/70 to-transparent origin-center"
         />
 
         {/* Content overlay — bottom left */}
@@ -66,7 +67,7 @@ export default function RestaurantHallSection() {
             <motion.p
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 1 }}
-              className="font-heading uppercase tracking-[0.46em] text-[0.6rem] text-champagne/70 mb-4"
+              className="font-heading uppercase tracking-[0.46em] text-[0.6rem] text-champagne mb-4"
             >
               {t(RESTAURANT_HALL.eyebrow)}
             </motion.p>
@@ -87,7 +88,7 @@ export default function RestaurantHallSection() {
             <motion.p
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.9 }}
-              className="mt-4 font-display text-ivory/55 text-[0.88rem] tracking-widest italic"
+              className="mt-4 font-display text-ivory/80 text-[0.88rem] tracking-widest italic"
             >
               {t(RESTAURANT_HALL.sub)}
             </motion.p>
@@ -109,13 +110,14 @@ export default function RestaurantHallSection() {
       {/* ══════════════════════════════════════════
           PART 2 — Editorial split: text + image stack
       ══════════════════════════════════════════ */}
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-12 gap-10 lg:gap-14">
+        <div className="absolute inset-0 bg-champagne-radial pointer-events-none opacity-60" />
 
         {/* Left — poetic text + venue cards */}
-        <div className="lg:col-span-5 flex flex-col gap-10">
+        <div className="relative lg:col-span-5 flex flex-col gap-10">
 
           {/* Body prose */}
-          <div className="space-y-1.5 font-display text-ivory/65 leading-[2] text-[0.97rem]">
+          <div className="space-y-1.5 font-display text-bordeaux/75 leading-[2] text-[0.97rem]">
             {t(RESTAURANT_HALL.body).map((line, i) => (
               <motion.p
                 key={i}
@@ -133,7 +135,7 @@ export default function RestaurantHallSection() {
           <motion.span
             initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="block h-px w-20 bg-gradient-to-r from-champagne/60 to-transparent origin-left"
+            className="block h-px w-20 bg-gradient-to-r from-champagne/70 to-transparent origin-left"
           />
 
           {/* Venue cards */}
@@ -145,18 +147,17 @@ export default function RestaurantHallSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.12 * i }}
-                className="group relative border border-champagne/20 hover:border-champagne/55 p-6 transition-all duration-700 overflow-hidden"
-                style={{ background: 'linear-gradient(135deg, rgba(201,167,102,0.04) 0%, rgba(255,255,255,0.02) 100%)' }}
+                className="group relative border border-champagne/40 hover:border-champagne p-6 transition-all duration-700 overflow-hidden bg-ivory/70 backdrop-blur-sm"
               >
                 {/* Corner accent */}
-                <span className="absolute top-0 left-0 w-6 h-px bg-champagne/60 group-hover:w-full transition-all duration-700" />
+                <span className="absolute top-0 left-0 w-6 h-px bg-champagne group-hover:w-full transition-all duration-700" />
 
-                <p className="serif-flourish text-champagne text-[1.6rem] leading-tight">{v.name}</p>
-                <p className="mt-1 font-heading uppercase tracking-[0.36em] text-[0.58rem] text-champagne/45 group-hover:text-champagne/75 transition-colors duration-500">
+                <p className="serif-flourish text-bordeaux text-[1.6rem] leading-tight">{v.name}</p>
+                <p className="mt-1 font-heading uppercase tracking-[0.36em] text-[0.58rem] text-champagne group-hover:text-bordeaux transition-colors duration-500">
                   {t(v.tag)}
                 </p>
-                <span className="block mt-4 h-px w-8 bg-champagne/30 group-hover:w-16 transition-all duration-700" />
-                <p className="mt-4 font-display text-ivory/45 text-[0.85rem] leading-[1.8] group-hover:text-ivory/65 transition-colors duration-500">
+                <span className="block mt-4 h-px w-8 bg-champagne/60 group-hover:w-16 transition-all duration-700" />
+                <p className="mt-4 font-display text-bordeaux/70 text-[0.85rem] leading-[1.8] group-hover:text-bordeaux/90 transition-colors duration-500">
                   {t(v.desc)}
                 </p>
               </motion.div>
@@ -165,7 +166,7 @@ export default function RestaurantHallSection() {
         </div>
 
         {/* Right — stacked image trio */}
-        <div className="lg:col-span-7 grid grid-rows-[1.7fr_1fr] gap-4 h-[560px] md:h-[660px]">
+        <div className="relative lg:col-span-7 grid grid-rows-[1.7fr_1fr] gap-4 h-[560px] md:h-[660px]">
           <CinemaTile src={RESTAURANT_HALL.photos[1]} delay={0} />
           <div className="grid grid-cols-2 gap-4">
             <CinemaTile src={RESTAURANT_HALL.photos[2]} delay={0.1} position="center top" />
@@ -188,9 +189,9 @@ export default function RestaurantHallSection() {
               transition={{ duration: 0.9, delay: 0.07 * i, ease: [0.22, 1, 0.36, 1] }}
               className="group cinema relative aspect-[3/4] md:aspect-[3/4] overflow-hidden shadow-soft"
             >
-              <img src={src} alt="" className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-108" loading="lazy" />
+              <img src={src} alt="" className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-108" loading="lazy" decoding="async" />
               {/* Number badge on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-start p-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-deep/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-start p-4">
                 <span className="font-heading text-shimmer text-2xl leading-none">0{i + 1}</span>
               </div>
             </motion.div>
@@ -204,13 +205,13 @@ export default function RestaurantHallSection() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pb-20 mt-3">
         {/* Row A — 3 equal columns */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <CinemaTile src={RESTAURANT_HALL.photos[9]}  className="aspect-[4/3]" delay={0}    />
-          <CinemaTile src={RESTAURANT_HALL.photos[10]} className="aspect-[4/3]" delay={0.08} />
-          <CinemaTile src={RESTAURANT_HALL.photos[11]} className="aspect-[4/3]" delay={0.14} />
+          {RESTAURANT_HALL.photos.slice(9, 12).filter(Boolean).map((src, i) => (
+            <CinemaTile key={src} src={src} className="aspect-[4/3]" delay={0.05 * i} />
+          ))}
         </div>
-        {/* Row B — 6 equal columns */}
+        {/* Row B — up to 6 equal columns */}
         <div className="grid grid-cols-2 md:grid-cols-6 gap-3 mt-3">
-          {RESTAURANT_HALL.photos.slice(12, 18).map((src, i) => (
+          {RESTAURANT_HALL.photos.slice(12, 18).filter(Boolean).map((src, i) => (
             <CinemaTile key={src} src={src} className="aspect-[4/3]" delay={0.05 * i} />
           ))}
         </div>
@@ -220,7 +221,7 @@ export default function RestaurantHallSection() {
       <motion.span
         initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
         transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        className="block h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent origin-center"
+        className="block h-px bg-gradient-to-r from-transparent via-champagne to-transparent origin-center"
       />
     </section>
   );

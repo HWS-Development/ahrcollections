@@ -61,7 +61,7 @@ export default function VitalityPage() {
   const confImgX   = useTransform(confMouseX, [-1, 1], [-9, 9]);
   const confImgY   = useTransform(confMouseY, [-1, 1], [-6, 6]);
 
-  const introImg = `https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/VITALITY/SUP_TWIN_GL/sup_twin_gl6.jpg?q=60`;
+  const introImg = `/img/vitality/reception/photos__2131.webp`;
 
   return (
     <>
@@ -72,9 +72,10 @@ export default function VitalityPage() {
         eyebrow={VITALITY.hero.eyebrow}
         title={VITALITY.hero.title}
         sub={VITALITY.hero.sub}
-        videoPoster={VITALITY.hero.videoPoster}
-        secondaryHref="#intro"
-      />
+          videoPoster={VITALITY.hero.videoPoster}
+          logo="/logos/vitality-terminus-logo.svg"
+          secondaryHref="#intro"
+        />
 
       {/* ══════════════════════════════════════════
           INTRO / SIGNATURE
@@ -154,7 +155,7 @@ export default function VitalityPage() {
             >
               <p className="font-heading uppercase tracking-[0.4em] text-[0.6rem] text-champagne mb-1">Vitality Terminus</p>
               <p className="serif-flourish text-bordeaux text-xl leading-snug">
-                {t({ fr: '50 m de la gare LGV', en: '50 m from the LGV station' })}
+                {t({ fr: '1 min à pied de la gare LGV', en: '1 min walk from the LGV station' })}
               </p>
             </motion.div>
           </motion.div>
@@ -168,7 +169,7 @@ export default function VitalityPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.15),_transparent_70%)]" />
         <div className="relative marquee text-ivory/90 font-heading uppercase tracking-[0.5em] text-[0.72rem]">
           {Array.from({ length: 3 }).flatMap((_, k) =>
-            ['Room Service', 'Fitness Center', 'Valet Parking', 'Conciergerie', '24h/24', '3 Salles de Réunions', 'Baggage Storage', 'Wi-Fi Gratuit'].map(a => (
+            ['Room Service', 'Valet Parking', 'Conciergerie', '24h/24', '3 Salles de Réunions', 'Baggage Storage', 'Wi-Fi Gratuit'].map(a => (
               <span key={a + k} className="flex items-center gap-6">
                 <span>{a}</span>
                 <span className="text-champagne">◇</span>
@@ -193,19 +194,19 @@ export default function VitalityPage() {
       {/* ══════════════════════════════════════════
           RESTAURANT INTERNATIONAL
       ══════════════════════════════════════════ */}
-      <section className="relative bg-ink overflow-hidden">
-        <div className="absolute inset-0 bg-noise opacity-[0.025] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-champagne/5 blur-3xl pointer-events-none" />
+      <section className="relative bg-ivory overflow-hidden">
+        <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-champagne/12 blur-3xl pointer-events-none" />
 
         {/* Animated top hairline */}
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="block h-px bg-gradient-to-r from-transparent via-champagne/50 to-transparent origin-center"
+          className="block h-px bg-gradient-to-r from-transparent via-bordeaux/40 to-transparent origin-center"
         />
 
         <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)]">
+          <div className="grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(94,26,36,0.18)]">
 
             {/* Image column */}
             <motion.div
@@ -220,8 +221,7 @@ export default function VitalityPage() {
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink/50 via-ink/15 to-transparent" />
-              <div className="pointer-events-none absolute inset-4 border border-champagne/20" />
+              <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
               {/* Floating label */}
               <div className="absolute top-8 left-8">
                 <span className="inline-block font-heading uppercase tracking-[0.5em] text-[0.6rem] text-ivory bg-bordeaux px-4 py-2">
@@ -235,18 +235,18 @@ export default function VitalityPage() {
               initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1.3, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-ink flex flex-col justify-center px-10 lg:px-16 py-16 border border-l-0 border-champagne/10"
+              className="bg-ivory-50 flex flex-col justify-center px-10 lg:px-16 py-16 border border-l-0 border-champagne/40"
             >
-              <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-champagne/70">
+              <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-bordeaux">
                 {t(VITALITY_RESTAURANT.eyebrow)}
               </span>
-              <h2 className="mt-5 font-heading uppercase text-ivory text-[clamp(1.9rem,3.5vw,3rem)] leading-[1.05]">
+              <h2 className="mt-5 font-heading uppercase text-bordeaux text-[clamp(1.9rem,3.5vw,3rem)] leading-[1.05]">
                 {t(VITALITY_RESTAURANT.title)}
               </h2>
-              <p className="mt-3 font-display text-champagne/55 text-[0.88rem] italic leading-relaxed">
+              <p className="mt-3 font-display text-ink-soft text-[0.88rem] italic leading-relaxed">
                 {t(VITALITY_RESTAURANT.sub)}
               </p>
-              <span className="mt-7 block h-px w-14 bg-gradient-to-r from-champagne/60 to-transparent" />
+              <span className="mt-7 block h-px w-14 bg-gradient-to-r from-bordeaux/60 to-transparent" />
 
               <div className="mt-7 space-y-4">
                 {t(VITALITY_RESTAURANT.body).map((line, i) => (
@@ -254,9 +254,9 @@ export default function VitalityPage() {
                     initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7, delay: 0.1 * i }}
-                    className="flex items-start gap-3 font-display text-ivory/65 text-[0.95rem] leading-[1.85]"
+                    className="flex items-start gap-3 font-display text-ink text-[0.95rem] leading-[1.85]"
                   >
-                    <span className="text-champagne mt-2 text-[0.5rem] flex-shrink-0">◆</span>
+                    <span className="text-bordeaux mt-2 text-[0.5rem] flex-shrink-0">◆</span>
                     {line}
                   </motion.p>
                 ))}
@@ -264,7 +264,7 @@ export default function VitalityPage() {
 
               <div className="mt-9 flex flex-wrap gap-2">
                 {t(VITALITY_RESTAURANT.amenities).map((a) => (
-                  <span key={a} className="px-3 py-1.5 border border-champagne/25 text-ivory/50 font-heading text-[0.62rem] uppercase tracking-[0.3em] hover:border-champagne/60 hover:text-ivory/80 transition-colors duration-400 cursor-default">
+                  <span key={a} className="px-3 py-1.5 border border-champagne/60 text-ink-soft font-heading text-[0.62rem] uppercase tracking-[0.3em] hover:border-bordeaux hover:text-bordeaux transition-colors duration-400 cursor-default">
                     {a}
                   </span>
                 ))}
@@ -277,29 +277,30 @@ export default function VitalityPage() {
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="block h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent origin-center"
+          className="block h-px bg-gradient-to-r from-transparent via-bordeaux/30 to-transparent origin-center"
         />
       </section>
 
       {/* ══════════════════════════════════════════
-          ESPACE FITNESS
+          ESPACE FITNESS — hidden until hotel provides dedicated photos
       ══════════════════════════════════════════ */}
+      {false && (
       <section className="relative overflow-hidden">
         <div
           className="relative min-h-[480px] flex items-center"
-          style={{ background: 'linear-gradient(135deg, #1F1A17 0%, #2a1a1e 50%, #1F1A17 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #F8F3E8 0%, #F1E6CE 50%, #F8F3E8 100%)' }}
         >
-          {/* BG image with strong dark overlay */}
+          {/* BG image with soft ivory wash */}
           <div className="absolute inset-0 cinema">
             <img
               src={VITALITY_FITNESS.image}
               alt="Fitness Center"
-              className="w-full h-full object-cover opacity-25"
+              className="w-full h-full object-cover opacity-35"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/85 to-ivory/45" />
           </div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,rgba(201,167,102,0.08),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,rgba(184,140,58,0.18),transparent_60%)]" />
 
           <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12 w-full py-20">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -309,17 +310,17 @@ export default function VitalityPage() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
               >
-                <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-champagne/70">
+                <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-bordeaux">
                   {t(VITALITY_FITNESS.eyebrow)}
                 </span>
-                <h2 className="mt-5 font-heading uppercase text-ivory text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]">
+                <h2 className="mt-5 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]">
                   {t(VITALITY_FITNESS.title)}
                 </h2>
-                <p className="mt-3 font-display text-champagne/55 text-[0.9rem] italic">
+                <p className="mt-3 font-display text-ink-soft text-[0.9rem] italic">
                   {t(VITALITY_FITNESS.sub)}
                 </p>
-                <span className="mt-7 block h-px w-14 bg-champagne/50" />
-                <p className="mt-7 font-display text-ivory/65 leading-[1.9] text-[0.97rem]">
+                <span className="mt-7 block h-px w-14 bg-bordeaux/50" />
+                <p className="mt-7 font-display text-ink leading-[1.9] text-[0.97rem]">
                   {t(VITALITY_FITNESS.body)}
                 </p>
               </motion.div>
@@ -337,13 +338,12 @@ export default function VitalityPage() {
                     initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.06 * i }}
-                    className="group border border-champagne/20 hover:border-champagne/60 px-5 py-4 flex items-center gap-3 transition-colors duration-500"
-                    style={{ background: 'rgba(255,255,255,0.03)' }}
+                    className="group border border-champagne/50 hover:border-bordeaux px-5 py-4 flex items-center gap-3 transition-colors duration-500 bg-ivory/70"
                   >
-                    <span className="w-5 h-5 flex-shrink-0 border border-champagne/40 group-hover:border-champagne flex items-center justify-center transition-colors duration-400">
-                      <span className="w-1.5 h-1.5 bg-champagne/60 group-hover:bg-champagne transition-colors duration-400" />
+                    <span className="w-5 h-5 flex-shrink-0 border border-bordeaux/40 group-hover:border-bordeaux flex items-center justify-center transition-colors duration-400">
+                      <span className="w-1.5 h-1.5 bg-bordeaux/60 group-hover:bg-bordeaux transition-colors duration-400" />
                     </span>
-                    <span className="font-heading uppercase tracking-[0.3em] text-[0.65rem] text-ivory/60 group-hover:text-ivory/90 transition-colors duration-400">{a}</span>
+                    <span className="font-heading uppercase tracking-[0.3em] text-[0.65rem] text-ink-soft group-hover:text-bordeaux transition-colors duration-400">{a}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -351,6 +351,7 @@ export default function VitalityPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ══════════════════════════════════════════
           BUSINESS CENTER & SALLES DE SÉMINAIRE
@@ -598,7 +599,7 @@ export default function VitalityPage() {
                     {VITALITY_MEETINGS[confRoom].photos.slice(1).map((photo, pi) => (
                       <motion.div
                         key={`${confRoom}-p${pi}`}
-                        className="group relative cinema overflow-hidden h-44 lg:h-52"
+                        className="group relative cinema overflow-hidden h-72 lg:h-96"
                         initial={{ opacity: 0, clipPath: 'inset(0 0 100% 0)' }}
                         animate={{ opacity: 1, clipPath: 'inset(0 0 0% 0)' }}
                         transition={{ duration: 0.65, delay: 0.08 + 0.055 * pi, ease: [0.22, 1, 0.36, 1] }}
@@ -685,22 +686,22 @@ export default function VitalityPage() {
       {/* ══════════════════════════════════════════
           STATS
       ══════════════════════════════════════════ */}
-      <section ref={statsRef} className="relative bg-bordeaux py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.14),_transparent_68%)]" />
+      <section ref={statsRef} className="relative bg-ivory-50 py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(184,140,58,0.18),_transparent_68%)]" />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/60 to-transparent origin-center"
+          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-bordeaux/50 to-transparent origin-center"
         />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6, delay: 0.1 }}
-          className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/60 to-transparent origin-center"
+          className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-bordeaux/50 to-transparent origin-center"
         />
         <motion.p
           initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="text-center font-heading uppercase tracking-[0.52em] text-champagne/70 text-[0.6rem] mb-14 px-4"
+          className="text-center font-heading uppercase tracking-[0.52em] text-bordeaux text-[0.6rem] mb-14 px-4"
         >
           Vitality Terminus · Kénitra
         </motion.p>
@@ -711,19 +712,18 @@ export default function VitalityPage() {
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1, delay: 0.12 * i, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative border border-champagne/30 hover:border-champagne/70 p-8 md:p-10 text-center overflow-hidden transition-colors duration-700"
-              style={{ background: 'linear-gradient(120deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)' }}
+              className="group relative border border-champagne/50 hover:border-bordeaux p-8 md:p-10 text-center overflow-hidden transition-colors duration-700 bg-ivory/70"
             >
-              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <p className="font-heading text-champagne/55 text-xl tracking-widest mb-5 group-hover:text-champagne transition-colors duration-500">{s.symbol}</p>
-              <p className="font-heading leading-none text-ivory" style={{ fontSize: 'clamp(3rem,5.5vw,5rem)', textShadow: '0 0 40px rgba(201,167,102,0.3)' }}>
+              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <p className="font-heading text-bordeaux/60 text-xl tracking-widest mb-5 group-hover:text-bordeaux transition-colors duration-500">{s.symbol}</p>
+              <p className="font-heading leading-none text-bordeaux" style={{ fontSize: 'clamp(3rem,5.5vw,5rem)', textShadow: '0 1px 14px rgba(184,140,58,0.18)' }}>
                 <CountUp target={s.value} inView={statsInView} />
               </p>
-              <span className="block mx-auto mt-5 mb-5 h-px w-8 bg-champagne/40 group-hover:w-16 transition-all duration-700" />
-              <p className="font-heading uppercase tracking-[0.32em] text-[0.6rem] text-ivory/55 group-hover:text-ivory/80 transition-colors duration-500 leading-relaxed">{t(s.label)}</p>
+              <span className="block mx-auto mt-5 mb-5 h-px w-8 bg-bordeaux/40 group-hover:w-16 transition-all duration-700" />
+              <p className="font-heading uppercase tracking-[0.32em] text-[0.6rem] text-ink-soft group-hover:text-bordeaux transition-colors duration-500 leading-relaxed">{t(s.label)}</p>
             </motion.div>
           ))}
         </div>
@@ -748,7 +748,7 @@ export default function VitalityPage() {
             {t({ fr: 'Votre prochain séjour à Kénitra.', en: 'Your next stay in Kénitra.' })}
           </motion.h2>
           <p className="mt-6 font-display text-ink-soft text-[1rem] leading-[1.85]">
-            {t({ fr: 'À 50 mètres de la gare LGV, le Vitality Terminus est votre base idéale pour Kénitra, Rabat et au-delà.', en: '50 metres from the LGV station, Vitality Terminus is your ideal base for Kénitra, Rabat and beyond.' })}
+            {t({ fr: 'À une minute de la gare LGV, le Vitality Terminus est votre base idéale pour vos déplacements professionnels et vos escapades à Kénitra, Rabat et au-delà.', en: 'One minute from the LGV station, Vitality Terminus is your ideal base for business trips and escapes around Kénitra, Rabat and beyond.' })}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a href={VITALITY_INFO.bookingUrl} target="_blank" rel="noreferrer" className="btn-royal">

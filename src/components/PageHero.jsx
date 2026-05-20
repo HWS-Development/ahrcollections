@@ -6,7 +6,7 @@ import { UI, BRAND } from '../data/site.js';
  * Cinematic full-screen hero used by every hotel/page.
  * Props: { eyebrow, title, sub, videoSrc, videoPoster, accent='bordeaux', children }
  */
-export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, image, accent = 'bordeaux', minimal = false, ctaTo, ctaLabel, secondaryHref = '#below' }) {
+export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, image, logo, accent = 'bordeaux', minimal = false, ctaTo, ctaLabel, secondaryHref = '#below' }) {
   const t = useT();
   const titleLines = (typeof title === 'string' ? title : t(title)).split('\n');
 
@@ -21,7 +21,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
           <source src={videoSrc} type="video/mp4" />
         </video>
       ) : (
-        <img src={image || videoPoster} alt="" className="absolute inset-0 w-full h-full object-cover scale-105 animate-slowZoom" />
+        <img src={image || videoPoster} alt="" loading="eager" decoding="async" className="absolute inset-0 w-full h-full object-cover scale-105 animate-slowZoom" />
       )}
 
       {/* Cinematic overlays — strengthened for legibility */}
@@ -51,6 +51,21 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
 
       {/* Title + sub */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+        {logo && (
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-10 inline-flex items-center justify-center"
+          >
+            <img
+              src={logo}
+              alt=""
+              className="h-36 md:h-52 lg:h-60 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
+              draggable={false}
+            />
+          </motion.div>
+        )}
         <h1 className="font-heading uppercase text-ivory leading-[0.95] [text-shadow:0_4px_30px_rgba(0,0,0,0.75)]">
           {titleLines.map((line, li) => (
             <span key={li} className="block overflow-hidden">

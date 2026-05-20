@@ -22,10 +22,11 @@ export default function SignatureSection() {
         >
           <div className="relative cinema overflow-hidden shadow-deep">
             <img
-              src="https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC06942.jpg?auto=format&fit=crop&w=1800&q=60"
+              src="/img/royal/deluxe/DSC06942.webp"
               alt="Royal Plaza signature suite"
               className="w-full h-[640px] object-cover"
               loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-bordeaux-veil" />
             {/* Gold frame */}

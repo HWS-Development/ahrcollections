@@ -4,10 +4,10 @@ import { useT } from '../contexts/LanguageContext.jsx';
 
 /* ── Hall images (carousel background) ── */
 const BG_IMAGES = [
-  'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/Halls/DSC05044.jpg?q=60',
-  'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/Halls/DSC06015.jpg?q=60',
-  'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/Halls/DSC07071.jpg?q=60',
-  'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/Halls/face_sun.jpg?q=60',
+  '/img/royal/hall/DSC01218.webp',
+  '/img/royal/hall/DSC01253.webp',
+  '/img/royal/hall/DSC01295.webp',
+  '/img/royal/hall/DSC01354.webp',
 ];
 
 const STATS = [
@@ -75,6 +75,8 @@ export default function StatsSection() {
             <img
               src={BG_IMAGES[bgIdx]}
               alt=""
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
               style={{ objectPosition: 'center 35%' }}
             />
@@ -83,16 +85,16 @@ export default function StatsSection() {
       </div>
 
       {/* ══════════════════════════════
-          LAYER 1 — Light overlays (image stays vivid)
+          LAYER 1 — Light ivory overlays (image stays vivid)
       ══════════════════════════════ */}
-      {/* Edge vignette only — top & bottom fade, centre stays clear */}
+      {/* Soft ivory wash to brighten and warm */}
       <div className="absolute inset-0 z-10 pointer-events-none"
-           style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 22%, transparent 78%, rgba(0,0,0,0.32) 100%)' }} />
-      {/* Very subtle bordeaux wash — just enough warmth */}
+           style={{ background: 'linear-gradient(160deg, rgba(248,243,232,0.78) 0%, rgba(241,230,206,0.72) 100%)' }} />
+      {/* Edge vignette */}
       <div className="absolute inset-0 z-10 pointer-events-none"
-           style={{ background: 'linear-gradient(160deg, rgba(94,26,36,0.18) 0%, rgba(63,14,24,0.22) 100%)' }} />
+           style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(248,243,232,0.55) 100%)' }} />
       {/* Film grain */}
-      <div className="absolute inset-0 z-10 bg-noise opacity-[0.05] mix-blend-overlay pointer-events-none" />
+      <div className="absolute inset-0 z-10 bg-noise opacity-[0.04] mix-blend-overlay pointer-events-none" />
 
       {/* ══════════════════════════════
           LAYER 2 — Top & bottom hairlines
@@ -120,13 +122,13 @@ export default function StatsSection() {
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="flex items-center gap-4 mb-12 px-5 py-2"
-          style={{ background: 'rgba(10,2,5,0.45)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}
+          style={{ background: 'rgba(255,250,240,0.75)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', border: '1px solid rgba(184,140,58,0.30)' }}
         >
-          <span className="h-px w-10 bg-champagne/60" />
-          <p className="font-heading uppercase tracking-[0.52em] text-champagne/80 text-[0.58rem]">
+          <span className="h-px w-10 bg-bordeaux/40" />
+          <p className="font-heading uppercase tracking-[0.52em] text-bordeaux text-[0.58rem]">
             {t({ fr: 'Royal Plaza Hotel · Kénitra', en: 'Royal Plaza Hotel · Kénitra' })}
           </p>
-          <span className="h-px w-10 bg-champagne/60" />
+          <span className="h-px w-10 bg-bordeaux/40" />
         </motion.div>
 
         {/* ── Stats grid ── */}
@@ -140,10 +142,10 @@ export default function StatsSection() {
               transition={{ duration: 1.1, delay: 0.14 * i, ease: [0.22, 1, 0.36, 1] }}
               className="group relative overflow-hidden text-center"
               style={{
-                background: 'linear-gradient(135deg, rgba(15,5,8,0.72) 0%, rgba(63,14,24,0.62) 100%)',
+                background: 'linear-gradient(135deg, rgba(255,250,240,0.88) 0%, rgba(248,238,218,0.82) 100%)',
                 backdropFilter: 'blur(22px)',
                 WebkitBackdropFilter: 'blur(22px)',
-                border: '1px solid rgba(201,167,102,0.40)',
+                border: '1px solid rgba(184,140,58,0.45)',
               }}
             >
               {/* Hover shimmer sweep */}
@@ -154,15 +156,15 @@ export default function StatsSection() {
               />
 
               {/* Corner brackets */}
-              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-champagne/45 group-hover:border-champagne/90 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-champagne/45 group-hover:border-champagne/90 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-champagne/45 group-hover:border-champagne/90 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-champagne/45 group-hover:border-champagne/90 transition-colors duration-500 pointer-events-none" />
+              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
 
               {/* Ghost large number */}
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-0 flex items-center justify-center font-heading text-[7rem] md:text-[9rem] leading-none text-white/[0.04] select-none group-hover:text-white/[0.07] transition-colors duration-700"
+                className="pointer-events-none absolute inset-0 flex items-center justify-center font-heading text-[7rem] md:text-[9rem] leading-none text-bordeaux/[0.05] select-none group-hover:text-bordeaux/[0.09] transition-colors duration-700"
               >
                 {s.value}
               </span>
@@ -174,17 +176,17 @@ export default function StatsSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.18 * i + 0.3 }}
-                  className="font-heading text-champagne/55 text-2xl tracking-widest mb-6 group-hover:text-champagne transition-colors duration-500"
+                  className="font-heading text-bordeaux/60 text-2xl tracking-widest mb-6 group-hover:text-bordeaux transition-colors duration-500"
                 >
                   {s.symbol}
                 </motion.p>
 
                 {/* Count-up number */}
                 <p
-                  className="font-heading leading-none text-ivory"
+                  className="font-heading leading-none text-bordeaux"
                   style={{
                     fontSize: 'clamp(3.2rem, 6vw, 5.4rem)',
-                    textShadow: '0 0 50px rgba(201,167,102,0.35), 0 2px 20px rgba(0,0,0,0.5)',
+                    textShadow: '0 1px 12px rgba(184,140,58,0.20)',
                   }}
                 >
                   <CountUp target={s.value} inView={inView} />
@@ -196,11 +198,11 @@ export default function StatsSection() {
                   whileInView={{ width: '40%' }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2, delay: 0.22 * i + 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="block mx-auto mt-6 mb-6 h-px bg-gradient-to-r from-transparent via-champagne/70 to-transparent"
+                  className="block mx-auto mt-6 mb-6 h-px bg-gradient-to-r from-transparent via-bordeaux/50 to-transparent"
                 />
 
                 {/* Label */}
-                <p className="font-heading uppercase tracking-[0.3em] text-[0.58rem] text-ivory/55 group-hover:text-ivory/85 transition-colors duration-500 leading-loose">
+                <p className="font-heading uppercase tracking-[0.3em] text-[0.58rem] text-ink-soft group-hover:text-bordeaux transition-colors duration-500 leading-loose">
                   {t(s.label)}
                 </p>
               </div>
@@ -216,7 +218,7 @@ export default function StatsSection() {
               onClick={() => setBgIdx(i)}
               aria-label={`Image ${i + 1}`}
               className="relative overflow-hidden transition-all duration-500"
-              style={{ width: bgIdx === i ? 28 : 8, height: 2, background: bgIdx === i ? 'rgba(201,167,102,0.9)' : 'rgba(255,255,255,0.3)' }}
+              style={{ width: bgIdx === i ? 28 : 8, height: 2, background: bgIdx === i ? 'rgba(94,26,36,0.9)' : 'rgba(94,26,36,0.25)' }}
             >
               {bgIdx === i && (
                 <motion.span
@@ -224,7 +226,7 @@ export default function StatsSection() {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 5.4, ease: 'linear' }}
-                  style={{ transformOrigin: 'left', background: 'rgba(241,220,167,0.95)' }}
+                  style={{ transformOrigin: 'left', background: 'rgba(184,140,58,0.95)' }}
                   className="absolute inset-0"
                 />
               )}

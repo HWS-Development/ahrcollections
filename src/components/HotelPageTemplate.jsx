@@ -64,7 +64,7 @@ export default function HotelPageTemplate({ data, accentTone = 'sand', name, oth
             className="lg:col-span-7 relative"
           >
             <div className="cinema relative overflow-hidden shadow-deep">
-              <img src={data.gallery[0]} alt={name} className="w-full h-[560px] object-cover" />
+              <img src={data.gallery[0]} alt={name} loading="eager" decoding="async" className="w-full h-[560px] object-cover" />
               <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
               <div className={`absolute inset-0 bg-gradient-to-tr ${tone.accent} mix-blend-multiply opacity-15`} />
             </div>

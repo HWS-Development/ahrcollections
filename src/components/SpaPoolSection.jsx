@@ -87,6 +87,8 @@ export default function SpaPoolSection() {
           <img
             src={SPA_POOL.photos[0]}
             alt="Serenita Pool — Royal Plaza"
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ objectPosition: 'center 50%' }}
           />

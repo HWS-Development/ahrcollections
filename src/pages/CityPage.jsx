@@ -59,9 +59,10 @@ function MeetingRoomCard({ room, delay }) {
       transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
       className="group relative bg-ivory border border-champagne/40 hover:border-bordeaux transition-colors duration-700 overflow-hidden"
     >
-      <div className="relative h-52 cinema overflow-hidden">
+      <div className="relative h-80 md:h-96 lg:h-[440px] cinema overflow-hidden">
         <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-ink/85 to-transparent" />
+        <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-ink/45 to-transparent" />
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
           transition={{ duration: 0.6, delay: delay + 0.3 }}
@@ -103,7 +104,7 @@ export default function CityPage() {
   const statsRef = useRef(null);
   const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
 
-  const introImg = `https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=60`;
+  const introImg = `/img/city/lobby/DSC08685.webp`;
 
   return (
     <>
@@ -114,9 +115,10 @@ export default function CityPage() {
         eyebrow={CITY.hero.eyebrow}
         title={CITY.hero.title}
         sub={CITY.hero.sub}
-        videoPoster={CITY.hero.videoPoster}
-        secondaryHref="#intro"
-      />
+          videoPoster={CITY.hero.videoPoster}
+          logo="/logos/waves-city-hotel-logo.svg"
+          secondaryHref="#intro"
+        />
 
       {/* ══════════════════════════════════════════
           INTRO / SIGNATURE
@@ -238,33 +240,33 @@ export default function CityPage() {
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="block h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent origin-center bg-ink"
+          className="block h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent origin-center bg-ivory"
         />
 
-        <div className="relative bg-ink">
-          <div className="absolute inset-0 bg-noise opacity-[0.025] pointer-events-none" />
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-champagne/5 blur-3xl pointer-events-none" />
+        <div className="relative bg-ivory">
+          <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-champagne/10 blur-3xl pointer-events-none" />
 
           <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
-            <div className="grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)]">
+            <div className="grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(94,26,36,0.18)]">
 
               {/* Text column — left on City (reversed from Vitality) */}
               <motion.div
                 initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-ink flex flex-col justify-center px-10 lg:px-16 py-16 border border-r-0 border-champagne/10 order-2 lg:order-1"
+                className="bg-ivory-50 flex flex-col justify-center px-10 lg:px-16 py-16 border border-r-0 border-champagne/40 order-2 lg:order-1"
               >
-                <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-champagne/70">
+                <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-bordeaux">
                   {t(CITY_RESTAURANT.eyebrow)}
                 </span>
-                <h2 className="mt-5 font-heading uppercase text-ivory text-[clamp(1.9rem,3.5vw,3rem)] leading-[1.05]">
+                <h2 className="mt-5 font-heading uppercase text-bordeaux text-[clamp(1.9rem,3.5vw,3rem)] leading-[1.05]">
                   {t(CITY_RESTAURANT.title)}
                 </h2>
-                <p className="mt-3 font-display text-champagne/55 text-[0.88rem] italic leading-relaxed">
+                <p className="mt-3 font-display text-ink-soft text-[0.88rem] italic leading-relaxed">
                   {t(CITY_RESTAURANT.sub)}
                 </p>
-                <span className="mt-7 block h-px w-14 bg-gradient-to-r from-champagne/60 to-transparent" />
+                <span className="mt-7 block h-px w-14 bg-gradient-to-r from-bordeaux/60 to-transparent" />
 
                 <div className="mt-7 space-y-4">
                   {t(CITY_RESTAURANT.body).map((line, i) => (
@@ -272,9 +274,9 @@ export default function CityPage() {
                       initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, amount: 0.3 }}
                       transition={{ duration: 0.7, delay: 0.1 * i }}
-                      className="flex items-start gap-3 font-display text-ivory/65 text-[0.95rem] leading-[1.85]"
+                      className="flex items-start gap-3 font-display text-ink text-[0.95rem] leading-[1.85]"
                     >
-                      <span className="text-champagne mt-2 text-[0.5rem] flex-shrink-0">◆</span>
+                      <span className="text-bordeaux mt-2 text-[0.5rem] flex-shrink-0">◆</span>
                       {line}
                     </motion.p>
                   ))}
@@ -282,7 +284,7 @@ export default function CityPage() {
 
                 <div className="mt-9 flex flex-wrap gap-2">
                   {t(CITY_RESTAURANT.amenities).map((a) => (
-                    <span key={a} className="px-3 py-1.5 border border-champagne/25 text-ivory/50 font-heading text-[0.62rem] uppercase tracking-[0.3em] hover:border-champagne/60 hover:text-ivory/80 transition-colors duration-400 cursor-default">
+                    <span key={a} className="px-3 py-1.5 border border-champagne/60 text-ink-soft font-heading text-[0.62rem] uppercase tracking-[0.3em] hover:border-bordeaux hover:text-bordeaux transition-colors duration-400 cursor-default">
                       {a}
                     </span>
                   ))}
@@ -302,8 +304,7 @@ export default function CityPage() {
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-l from-ink/40 via-ink/10 to-transparent" />
-                <div className="pointer-events-none absolute inset-4 border border-champagne/20" />
+                <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
                 <div className="absolute top-8 right-8">
                   <span className="inline-block font-heading uppercase tracking-[0.5em] text-[0.6rem] text-ivory bg-bordeaux px-4 py-2">
                     {t({ fr: 'Restaurant & Soft Bar', en: 'Restaurant & Soft Bar' })}
@@ -317,7 +318,7 @@ export default function CityPage() {
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="block h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent origin-center bg-ink"
+          className="block h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent origin-center bg-ivory"
         />
       </section>
 
@@ -406,22 +407,22 @@ export default function CityPage() {
       {/* ══════════════════════════════════════════
           STATS
       ══════════════════════════════════════════ */}
-      <section ref={statsRef} className="relative bg-bordeaux py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.14),_transparent_68%)]" />
+      <section ref={statsRef} className="relative bg-ivory-50 py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(184,140,58,0.18),_transparent_68%)]" />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/60 to-transparent origin-center"
+          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-bordeaux/50 to-transparent origin-center"
         />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6, delay: 0.1 }}
-          className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/60 to-transparent origin-center"
+          className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-bordeaux/50 to-transparent origin-center"
         />
         <motion.p
           initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="text-center font-heading uppercase tracking-[0.52em] text-champagne/70 text-[0.6rem] mb-14 px-4"
+          className="text-center font-heading uppercase tracking-[0.52em] text-bordeaux text-[0.6rem] mb-14 px-4"
         >
           City Hôtel by Waves · Kénitra
         </motion.p>
@@ -432,19 +433,18 @@ export default function CityPage() {
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1, delay: 0.12 * i, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative border border-champagne/30 hover:border-champagne/70 p-8 md:p-10 text-center overflow-hidden transition-colors duration-700"
-              style={{ background: 'linear-gradient(120deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)' }}
+              className="group relative border border-champagne/50 hover:border-bordeaux p-8 md:p-10 text-center overflow-hidden transition-colors duration-700 bg-ivory/70"
             >
-              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <p className="font-heading text-champagne/55 text-xl tracking-widest mb-5 group-hover:text-champagne transition-colors duration-500">{s.symbol}</p>
-              <p className="font-heading leading-none text-ivory" style={{ fontSize: 'clamp(3rem,5.5vw,5rem)', textShadow: '0 0 40px rgba(201,167,102,0.3)' }}>
+              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <p className="font-heading text-bordeaux/60 text-xl tracking-widest mb-5 group-hover:text-bordeaux transition-colors duration-500">{s.symbol}</p>
+              <p className="font-heading leading-none text-bordeaux" style={{ fontSize: 'clamp(3rem,5.5vw,5rem)', textShadow: '0 1px 14px rgba(184,140,58,0.18)' }}>
                 <CountUp target={s.value} inView={statsInView} />
               </p>
-              <span className="block mx-auto mt-5 mb-5 h-px w-8 bg-champagne/40 group-hover:w-16 transition-all duration-700" />
-              <p className="font-heading uppercase tracking-[0.32em] text-[0.6rem] text-ivory/55 group-hover:text-ivory/80 transition-colors duration-500 leading-relaxed">{t(s.label)}</p>
+              <span className="block mx-auto mt-5 mb-5 h-px w-8 bg-bordeaux/40 group-hover:w-16 transition-all duration-700" />
+              <p className="font-heading uppercase tracking-[0.32em] text-[0.6rem] text-ink-soft group-hover:text-bordeaux transition-colors duration-500 leading-relaxed">{t(s.label)}</p>
             </motion.div>
           ))}
         </div>

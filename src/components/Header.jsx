@@ -91,12 +91,12 @@ export default function Header() {
           {/* Brand */}
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
             <span className={`hidden md:block h-px w-8 bg-gradient-to-r from-transparent to-champagne transition-all duration-700 ${scrolled ? 'opacity-100' : 'opacity-60'}`} />
-            <span className={`font-heading uppercase tracking-[0.32em] text-[0.78rem] transition-colors ${transparent ? 'text-ivory' : 'text-bordeaux'}`}>
-              AHR
-            </span>
-            <span className="text-shimmer font-heading text-[0.6rem] tracking-[0.4em] uppercase">
-              Collections
-            </span>
+            <img
+              src="/logos/ahr-logo.svg"
+              alt="AHR Collections"
+              className={`h-14 md:h-16 lg:h-20 w-auto transition-all duration-500 ${transparent ? 'drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]' : ''}`}
+              draggable={false}
+            />
           </Link>
 
           {/* Right cluster */}
@@ -160,10 +160,7 @@ export default function Header() {
 
               {/* Drawer header */}
               <div className="relative flex items-center justify-between px-8 lg:px-10 py-7 border-b border-champagne/40">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-heading uppercase tracking-[0.4em] text-[0.78rem]" style={{ color: BORDEAUX }}>AHR</span>
-                  <span className="text-shimmer font-heading text-[0.6rem] tracking-[0.4em] uppercase">Collections</span>
-                </div>
+                <img src="/logos/ahr-logo.svg" alt="AHR Collections" className="h-14 w-auto" />
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"

@@ -1,8 +1,10 @@
 ﻿// =====================================================================
 // Royal Plaza Hotel — Content (FR + EN)
-// All copy below is verbatim from the brief (do not paraphrase).
-// Photos use Unsplash placeholders — replace later with real DSC images.
+// All copy below is verbatim from the brief.
+// Photos served from /img/royal/... (optimized WebP @ q=60, lazy-loaded).
 // =====================================================================
+
+const R = (section, name) => `/img/royal/${section}/${name}.webp`;
 
 export const NAV = [
   { id: 'home',      fr: 'Accueil',     en: 'Home' },
@@ -16,13 +18,13 @@ export const NAV = [
 // Hero / Page d'accueil
 export const HERO = {
   eyebrow: { fr: 'Royal Plaza Hotel · Une signature', en: 'Royal Plaza Hotel · A signature' },
-  title:   { fr: 'On ne séjourne pas.\nOn vit une expérience.', en: 'You don’t just stay.\nYou experience.' },
+  title:   { fr: 'On ne séjourne pas.\nOn vit une expérience.', en: 'You don\u2019t just stay.\nYou experience.' },
   body: {
     fr: [
-      'Il y a des lieux que l’on visite.',
-      'Et d’autres que l’on ressent.',
-      'Le Royal Plaza Hotel n’est pas simplement un hôtel.',
-      'C’est une atmosphère, une énergie, une signature.',
+      'Il y a des lieux que l\u2019on visite.',
+      'Et d\u2019autres que l\u2019on ressent.',
+      'Le Royal Plaza Hotel n\u2019est pas simplement un hôtel.',
+      'C\u2019est une atmosphère, une énergie, une signature.',
       'Dès les premiers instants, le temps ralentit.',
       'Les lignes sont épurées, les espaces respirent,',
       'et chaque détail semble pensé pour vous.',
@@ -37,12 +39,12 @@ export const HERO = {
       'From the very first moments, time slows down.',
       'Lines are refined, spaces breathe,',
       'and every detail feels designed for you.',
-      'At the Royal plaza hotel, you don’t just stay.',
-      'Ydou experience.'
+      'At the Royal plaza hotel, you don\u2019t just stay.',
+      'You experience.'
     ]
   },
   videoPoster: '/royal-plaza-poster.jpg',
-  videoSrc:    '/royal-plaza-hero.mp4'
+  videoSrc:    '/videos/royal-plaza-hero.mp4'
 };
 
 // Signature Résidentielle (intro to rooms)
@@ -51,19 +53,19 @@ export const SIGNATURE = {
   title:   { fr: 'Le silence devient un luxe.', en: 'Silence becomes a luxury.' },
   body: {
     fr: [
-      'Poussez la porte… et laissez le monde extérieur s’effacer.',
-      'La lumière s’installe doucement,',
+      'Poussez la porte\u2026 et laissez le monde extérieur s\u2019effacer.',
+      'La lumière s\u2019installe doucement,',
       'les matières enveloppent,',
       'le silence devient un luxe.',
       'Chaque chambre est une promesse :',
-      'celle d’un confort absolu,',
-      'd’une nuit paisible,',
-      'et d’un réveil sans contrainte.',
+      'celle d\u2019un confort absolu,',
+      'd\u2019une nuit paisible,',
+      'et d\u2019un réveil sans contrainte.',
       'Un équilibre parfait entre élégance et fonctionnalité,',
       'Un hotel pensé pour ceux qui exigent le meilleur, naturellement.'
     ],
     en: [
-      'Step inside… and let the outside world fade away.',
+      'Step inside\u2026 and let the outside world fade away.',
       'Light settles gently,',
       'textures embrace you,',
       'silence becomes a luxury.',
@@ -76,7 +78,7 @@ export const SIGNATURE = {
     ]
   },
   pledge: {
-    fr: 'Chaque chambre est une promesse : celle d’un confort maîtrisé, d’un service discret, et d’une expérience qui dépasse les attentes.',
+    fr: 'Chaque chambre est une promesse : celle d\u2019un confort maîtrisé, d\u2019un service discret, et d\u2019une expérience qui dépasse les attentes.',
     en: 'Each room is a promise: of refined comfort, discreet service, and an experience beyond expectations.'
   }
 };
@@ -86,13 +88,10 @@ export const ROOMS = [
   {
     id: 'superior',
     label: { fr: 'Chambre Supérieure', en: 'Superior Room' },
-    tag:   { fr: 'L’essentiel sublimé', en: 'Essential, elevated' },
-    headline: {
-      fr: 'L’essentiel, sublimé avec élégance.',
-      en: 'Essential comfort, elevated with elegance.'
-    },
+    tag:   { fr: 'L\u2019essentiel sublimé', en: 'Essential, elevated' },
+    headline: { fr: 'L\u2019essentiel, sublimé avec élégance.', en: 'Essential comfort, elevated with elegance.' },
     description: {
-      fr: 'Pensée pour les séjours courts ou les voyageurs d’affaires, la chambre Supérieure du Royal Plaza Hotel offre un environnement épuré, fonctionnel et apaisant. Un espace où chaque détail est optimisé : literie de qualité supérieure, éclairage doux, bureau discret et atmosphère sereine.',
+      fr: 'Pensée pour les séjours courts ou les voyageurs d\u2019affaires, la chambre Supérieure du Royal Plaza Hotel offre un environnement épuré, fonctionnel et apaisant. Un espace où chaque détail est optimisé : literie de qualité supérieure, éclairage doux, bureau discret et atmosphère sereine.',
       en: 'Designed for short stays and business travelers, the Superior Room of the Royal Plaza Hotel offers a clean, functional, and calming environment. Every detail is optimized: premium bedding, soft lighting, discreet workspace, and a serene atmosphere.'
     },
     amenities: {
@@ -100,48 +99,42 @@ export const ROOMS = [
       en: ['Premium bedding', 'Work desk', 'Modern bathroom', 'High-speed Wi-Fi', 'Air conditioning', 'Flat-screen TV']
     },
     photos: [
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06865.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06861.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06853.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC06821.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SUPERIOR_ROOM/DSC04764.jpg?q=60'
+      R('superior','DSC06865'),
+      R('superior','DSC06861'),
+      R('superior','DSC06853'),
+      R('superior','DSC06821'),
+      R('superior','DSC04764'),
     ]
   },
   {
     id: 'deluxe',
     label: { fr: 'Chambre Deluxe', en: 'Deluxe Room' },
-    tag:   { fr: 'Plus d’espace, plus de liberté', en: 'More space, more freedom' },
-    headline: {
-      fr: 'Plus d’espace, plus de confort, plus de liberté.',
-      en: 'More space, more comfort, more freedom.'
-    },
+    tag:   { fr: 'Plus d\u2019espace, plus de liberté', en: 'More space, more freedom' },
+    headline: { fr: 'Plus d\u2019espace, plus de confort, plus de liberté.', en: 'More space, more comfort, more freedom.' },
     description: {
-      fr: 'La chambre Deluxe du Royal Plaza Hotel offre une expérience plus généreuse, avec un espace optimisé pour le repos et la détente. Les volumes s’ouvrent, la lumière circule, et l’ambiance devient plus enveloppante.',
+      fr: 'La chambre Deluxe du Royal Plaza Hotel offre une expérience plus généreuse, avec un espace optimisé pour le repos et la détente. Les volumes s\u2019ouvrent, la lumière circule, et l\u2019ambiance devient plus enveloppante.',
       en: 'The Deluxe Room of the Royal Plaza Hotel offers a more generous experience, designed for both relaxation and comfort. Open spaces, natural light, and a warm atmosphere create a refined stay.'
     },
     amenities: {
-      fr: ['Lit king size ou twin', 'Espace détente', 'Salle de bain élégante', 'Produits d’accueil premium', 'Wi-Fi haut débit', 'Coffre-fort'],
+      fr: ['Lit king size ou twin', 'Espace détente', 'Salle de bain élégante', 'Produits d\u2019accueil premium', 'Wi-Fi haut débit', 'Coffre-fort'],
       en: ['King size or twin beds', 'Lounge area', 'Elegant bathroom', 'Premium amenities', 'High-speed Wi-Fi', 'Safety box']
     },
     photos: [
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC05141.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04755.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04748.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC04715.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC06865.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/DELUXE_ROOM/DSC06942.jpg?q=60'
+      R('deluxe','DSC05141'),
+      R('deluxe','DSC04755'),
+      R('deluxe','DSC04748'),
+      R('deluxe','DSC04715'),
+      R('deluxe','DSC06865'),
+      R('deluxe','DSC06942'),
     ]
   },
   {
     id: 'junior',
     label: { fr: 'Junior Suite', en: 'Junior Suite' },
     tag:   { fr: 'Un véritable espace de vie', en: 'A true living space' },
-    headline: {
-      fr: 'Un espace de vie, une expérience à part.',
-      en: 'A living space, a distinct experience.'
-    },
+    headline: { fr: 'Un espace de vie, une expérience à part.', en: 'A living space, a distinct experience.' },
     description: {
-      fr: 'La Junior Suite du Royal Plaza Hotel propose une séparation subtile entre repos et détente, offrant un cadre plus fluide et confortable. Parfaite pour ceux qui recherchent plus qu’une chambre : un véritable espace de vie.',
+      fr: 'La Junior Suite du Royal Plaza Hotel propose une séparation subtile entre repos et détente, offrant un cadre plus fluide et confortable. Parfaite pour ceux qui recherchent plus qu\u2019une chambre : un véritable espace de vie.',
       en: 'The Junior Suite of the Royal Plaza Hotel offers a subtle separation between rest and relaxation, creating a more fluid and comfortable environment. Perfect for those seeking more than a room — a true living space.'
     },
     amenities: {
@@ -149,35 +142,36 @@ export const ROOMS = [
       en: ['Lounge area', 'King size bed', 'Spacious bathroom', 'High-end amenities', 'Coffee machine', 'Bathrobe & slippers']
     },
     photos: [
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06877.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06902.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06907.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06871.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/JUNIOR_SUITE/DSC06913.jpg?q=60'
+      R('junior','DSC06877'),
+      R('junior','DSC06902'),
+      R('junior','DSC06907'),
+      R('junior','DSC06871'),
+      R('junior','DSC06913'),
+      R('junior','DSC09738'),
+      R('junior','DSC09734'),
     ]
   },
   {
     id: 'executive',
     label: { fr: 'Executive Suite', en: 'Executive Suite' },
-    tag:   { fr: 'L’expression ultime du Royal Plaza', en: 'The ultimate Royal Plaza expression' },
-    headline: {
-      fr: 'L’expression ultime du Royal Plaza.',
-      en: 'The ultimate Royal Plaza expression.'
-    },
+    tag:   { fr: 'L\u2019expression ultime du Royal Plaza', en: 'The ultimate Royal Plaza expression' },
+    headline: { fr: 'L\u2019expression ultime du Royal Plaza.', en: 'The ultimate Royal Plaza expression.' },
     description: {
-      fr: 'Spacieuse, élégante et parfaitement pensée, l’Executive Suite du Royal Plaza Hotel incarne le luxe discret. Chaque élément y est maîtrisé : volumes généreux, finitions raffinées, confort absolu. Un lieu idéal pour recevoir, se reposer ou travailler dans les meilleures conditions.',
+      fr: 'Spacieuse, élégante et parfaitement pensée, l\u2019Executive Suite du Royal Plaza Hotel incarne le luxe discret. Chaque élément y est maîtrisé : volumes généreux, finitions raffinées, confort absolu. Un lieu idéal pour recevoir, se reposer ou travailler dans les meilleures conditions.',
       en: 'Spacious, elegant, and thoughtfully designed, the Executive Suite of the Royal Plaza Hotel embodies understated luxury. Generous volumes, refined finishes, and absolute comfort define the experience. Ideal for hosting, relaxing, or working in complete privacy.'
     },
     amenities: {
-      fr: ['Salon indépendant', 'Chambre séparée', 'Salle de bain premium', 'Produits d’exception', 'Machine café & minibar halal', 'Service personnalisé'],
+      fr: ['Salon indépendant', 'Chambre séparée', 'Salle de bain premium', 'Produits d\u2019exception', 'Machine café & minibar halal', 'Service personnalisé'],
       en: ['Separate living room', 'Private bedroom', 'Premium bathroom', 'Exclusive amenities', 'Coffee machine & halal minibar', 'Personalized service']
     },
     photos: [
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC06958.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07000.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07001.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC07029.jpg?q=60',
-      'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EXECUTIVE_SUITE/DSC06863.jpg?q=60'
+      R('executive','DSC06958'),
+      R('executive','DSC07000'),
+      R('executive','DSC07001'),
+      R('executive','DSC07029'),
+      R('executive','DSC06863'),
+      R('executive','DSC09741'),
+      R('executive','DSC09726'),
     ]
   }
 ];
@@ -192,7 +186,7 @@ export const DINING = {
       'Un parfum, une texture, une surprise.',
       'Une cuisine qui ne se contente pas de nourrir,',
       'mais qui éveille, rassemble et marque les esprits.',
-      'De la générosité de L’Assiette',
+      'De la générosité de L\u2019Assiette',
       'à la finesse du Jade,',
       'chaque expérience culinaire au sein de notre hotel devient un voyage.'
     ],
@@ -201,24 +195,23 @@ export const DINING = {
       'A scent, a texture, a surprise.',
       'Cuisine that does more than nourish —',
       'it awakens, connects, and leaves a mark.',
-      'From the generosity of L’Assiette',
+      'From the generosity of L\u2019Assiette',
       'to the elegance of Jade,',
       'each dining moment at our hotel becomes a journey.'
     ]
   },
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09492.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09483.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09478.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC05743.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC04976.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC04805.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC01746.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC01736.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/EMOTIONS_SAVEURS/DSC09483-2.jpg?q=60'
+    R('dining','DSC09492'),
+    R('dining','DSC09483'),
+    R('dining','DSC09478'),
+    R('dining','DSC05743'),
+    R('dining','DSC04976'),
+    R('dining','DSC04805'),
+    R('dining','DSC01746'),
+    R('dining','DSC01736'),
   ],
   venues: [
-    { name: 'L’Assiette', tag: { fr: 'Générosité & saveurs partagées', en: 'Generosity & shared flavors' } },
+    { name: 'L\u2019Assiette', tag: { fr: 'Générosité & saveurs partagées', en: 'Generosity & shared flavors' } },
     { name: 'Jade',       tag: { fr: 'Finesse asiatique contemporaine', en: 'Contemporary Asian finesse' } }
   ]
 };
@@ -226,10 +219,10 @@ export const DINING = {
 // Havre de Détente (Spa)
 export const SPA = {
   eyebrow: { fr: 'Havre de Détente', en: 'Haven of Calm' },
-  title:   { fr: 'Et si vous faisiez une pause… vraiment ?', en: 'What if you truly paused…?' },
+  title:   { fr: 'Et si vous faisiez une pause\u2026 vraiment ?', en: 'What if you truly paused\u2026?' },
   body: {
     fr: [
-      'Et si vous faisiez une pause… vraiment ?',
+      'Et si vous faisiez une pause\u2026 vraiment ?',
       'Dans un monde qui accélère,',
       'le Serenita Royal Spa vous invite à ralentir.',
       'Respirer.',
@@ -237,11 +230,11 @@ export const SPA = {
       'Se retrouver.',
       'Entre chaleur, eau et silence,',
       'le corps se détend,',
-      'l’esprit s’apaise,',
-      'et l’équilibre revient naturellement.'
+      'l\u2019esprit s\u2019apaise,',
+      'et l\u2019équilibre revient naturellement.'
     ],
     en: [
-      'What if you truly paused…?',
+      'What if you truly paused\u2026?',
       'In a world that moves fast,',
       'Serenita Royal Spa invites you to slow down.',
       'Breathe.',
@@ -259,35 +252,35 @@ export const SPA = {
     { fr: 'Se retrouver', en: 'Reconnect' }
   ],
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05192.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05565.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05553.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05546.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05528.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05521.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05504.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05397.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05265.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05621.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC05636.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC09595.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC02213.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/HavreDeDetente/DSC02223.jpg?q=60'
+    R('spa','DSC05192'),
+    R('spa','DSC05565'),
+    R('spa','DSC05553'),
+    R('spa','DSC05546'),
+    R('spa','DSC05528'),
+    R('spa','DSC05521'),
+    R('spa','DSC05504'),
+    R('spa','DSC05397'),
+    R('spa','DSC05265'),
+    R('spa','DSC05621'),
+    R('spa','DSC05636'),
+    R('spa','DSC09595'),
+    R('spa','DSC02213'),
+    R('spa','DSC02223'),
   ]
 };
 
 // Souvenirs en Devenir (Family)
 export const FAMILY = {
   eyebrow: { fr: 'Souvenirs en Devenir', en: 'Memories in the Making' },
-  title:   { fr: 'Le luxe, c’est aussi partager.', en: 'Luxury is also about sharing.' },
+  title:   { fr: 'Le luxe, c\u2019est aussi partager.', en: 'Luxury is also about sharing.' },
   body: {
     fr: [
-      'Parce que le luxe, c’est aussi partager.',
+      'Parce que le luxe, c\u2019est aussi partager.',
       'Au Royal Plaza Hotel, chaque génération trouve sa place.',
       'Les enfants explorent, jouent et découvrent,',
       'pendant que les parents profitent pleinement.',
       'Un équilibre rare,',
-      'où chacun vit son moment…',
+      'où chacun vit son moment\u2026',
       'ensemble.'
     ],
     en: [
@@ -296,18 +289,19 @@ export const FAMILY = {
       'Children explore, play, and discover,',
       'while parents fully unwind.',
       'A rare balance',
-      'where everyone lives their moment…',
+      'where everyone lives their moment\u2026',
       'together.'
     ]
   },
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC01980.jpg?auto=format&fit=crop&w=1600&q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC02004.jpg?auto=format&fit=crop&w=1600&q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC02025.jpg?auto=format&fit=crop&w=1600&q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC02036.jpg?auto=format&fit=crop&w=1600&q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC02043.jpg?auto=format&fit=crop&w=1600&q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC09615.jpg?auto=format&fit=crop&w=1600&q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SouvenirsenDevenir/DSC09617.jpg?auto=format&fit=crop&w=1600&q=60'
+    R('family','DSC02043'),
+    R('family','DSC02036'),
+    R('family','DSC02025'),
+    R('family','DSC02004'),
+    R('family','DSC01980'),
+    R('family','DSC09615'),
+    R('family','DSC09617'),
+    R('family','DSC05305'),
   ]
 };
 
@@ -331,17 +325,25 @@ export const BUSINESS = {
       'turning every meeting into success.'
     ]
   },
-  videoSrc: 'https://cdn.coverr.co/videos/coverr-an-empty-business-meeting-room-7766/1080p.mp4',
+  videoSrc:    '/videos/royal-business-forum.mp4',
+  videoPoster: R('business','DSC04522'),
+  ballroomVideoSrc:    '/videos/royal-ballroom.mp4',
+  ballroomVideoPoster: R('business','DSC04501'),
+  ballroomEyebrow: { fr: 'Grand Ballroom · Royal Plaza', en: 'Grand Ballroom · Royal Plaza' },
+  ballroomTitle: {
+    fr: 'Un écrin pour vos plus grands moments.',
+    en: 'A setting for your grandest moments.'
+  },
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04522.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04501.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04483.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04477.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04461.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04452.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04450.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04442.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/BUSINESS_FORM/DSC04440.jpg?q=60'
+    R('business','DSC04522'),
+    R('business','DSC04501'),
+    R('business','DSC04483'),
+    R('business','DSC04477'),
+    R('business','DSC04461'),
+    R('business','DSC04452'),
+    R('business','DSC04450'),
+    R('business','DSC04442'),
+    R('business','DSC04440'),
   ]
 };
 
@@ -397,24 +399,24 @@ export const RESTAURANT_HALL = {
     }
   ],
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01753.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01282.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01228.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01253.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01218.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01337.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01354.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01487.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01525.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01534.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01544.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01757.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01770.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01773.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC01775.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC04866.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC05749.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/RESTAURANT_HALL/DSC09501-3.jpg?q=60'
+    R('dining','DSC09492'),
+    R('dining','DSC09483'),
+    R('dining','DSC09478'),
+    R('dining','DSC05743'),
+    R('dining','DSC04976'),
+    R('dining','DSC04805'),
+    R('dining','DSC01746'),
+    R('dining','DSC01736'),
+    R('hall','DSC01228'),
+    R('hall','DSC01253'),
+    R('hall','DSC01264'),
+    R('hall','DSC01277'),
+    R('hall','DSC01282'),
+    R('hall','DSC01295'),
+    R('hall','DSC01302'),
+    R('hall','DSC01314'),
+    R('hall','DSC01337'),
+    R('hall','DSC01354'),
   ]
 };
 
@@ -464,17 +466,17 @@ export const SPA_POOL = {
     { icon: '◈', label: { fr: 'Jardins Aromatiques',         en: 'Aromatic Gardens'    } }
   ],
   photos: [
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02293.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02319.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02248.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02347.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02269.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02376.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC02431.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC05190.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC05229.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC05305.jpg?q=60',
-    'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/SPA_PISCINE/DSC05493.jpg?q=60'
+    R('spa','DSC05192'),
+    R('spa','DSC05565'),
+    R('spa','DSC05553'),
+    R('spa','DSC05546'),
+    R('spa','DSC05528'),
+    R('spa','DSC05521'),
+    R('spa','DSC05504'),
+    R('spa','DSC05397'),
+    R('spa','DSC05265'),
+    R('spa','DSC05621'),
+    R('spa','DSC05636'),
   ]
 };
 

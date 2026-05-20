@@ -51,6 +51,21 @@ export default function Hero() {
       {/* ── All content — fully centered ── */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
 
+        {/* Hotel logo */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-10 inline-flex items-center justify-center"
+        >
+          <img
+            src="/logos/royal-plaza-logo.svg"
+            alt="Royal Plaza Hotel"
+            className="h-36 md:h-52 lg:h-60 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
+            draggable={false}
+          />
+        </motion.div>
+
         {/* Title — centered, reduced */}
         <h1 className="font-heading uppercase text-ivory leading-[1.05] tracking-tight [text-shadow:0_4px_30px_rgba(0,0,0,0.7)]">
           {titleLines.map((line, li) => (

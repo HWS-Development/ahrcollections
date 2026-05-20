@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +12,62 @@ import {
   AQUA_HIGHLIGHTS, AQUA_CONVENTION,
 } from '../data/hotels.js';
 import { UI } from '../data/site.js';
+
+/* ─── Auto-fading carousel for bento highlight tiles ─── */
+function TileCarousel({ images, alt, intervalMs = 3800, video, poster }) {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    if (video) return;
+    if (!images || images.length < 2) return;
+    const id = setInterval(() => setI(p => (p + 1) % images.length), intervalMs);
+    return () => clearInterval(id);
+  }, [images, intervalMs, video]);
+
+  if (video) {
+    return (
+      <video
+        src={video}
+        poster={poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label={alt}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    );
+  }
+
+  if (!images || images.length === 0) return null;
+  if (images.length === 1) {
+    return (
+      <img
+        src={images[0]}
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        loading="lazy"
+        decoding="async"
+      />
+    );
+  }
+  return (
+    <AnimatePresence mode="sync">
+      <motion.img
+        key={images[i]}
+        src={images[i]}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        initial={{ opacity: 0, scale: 1.08 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 1.02 }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    </AnimatePresence>
+  );
+}
 
 /* ─── Count-up ─── */
 function CountUp({ target, inView }) {
@@ -60,9 +116,10 @@ function MeetingRoomCard({ room, delay }) {
       className="group relative bg-ivory border border-champagne/40 hover:border-bordeaux transition-colors duration-700 overflow-hidden"
     >
       {/* Image */}
-      <div className="relative h-52 cinema overflow-hidden">
+      <div className="relative h-80 md:h-96 lg:h-[440px] cinema overflow-hidden">
         <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-ink/85 to-transparent" />
+        <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-ink/45 to-transparent" />
         {/* Capacity badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
@@ -112,7 +169,7 @@ export default function AquaPage() {
   const statsRef = useRef(null);
   const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
 
-  const introImg = `https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=60`;
+  const introImg = `/img/aqua/pool/DJI_0099.webp`;
 
   return (
     <>
@@ -123,9 +180,10 @@ export default function AquaPage() {
         eyebrow={AQUA.hero.eyebrow}
         title={AQUA.hero.title}
         sub={AQUA.hero.sub}
-        videoPoster={AQUA.hero.videoPoster}
-        secondaryHref="#intro"
-      />
+          videoPoster={AQUA.hero.videoPoster}
+          logo="/logos/wave-aqua-resort-logo.svg"
+          secondaryHref="#intro"
+        />
 
       {/* ══════════════════════════════════════════
           INTRO / SIGNATURE
@@ -254,14 +312,14 @@ export default function AquaPage() {
       {/* ══════════════════════════════════════════
           NOS POINTS FORTS — BENTO GRID
       ══════════════════════════════════════════ */}
-      <section className="relative section-pad bg-ink overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,167,102,0.07),_transparent_65%)] pointer-events-none" />
+      <section className="relative section-pad bg-ivory-50 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,167,102,0.18),_transparent_65%)] pointer-events-none" />
 
         {/* Animated top hairline */}
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="block h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent origin-center mb-16"
+          className="block h-px bg-gradient-to-r from-transparent via-bordeaux/40 to-transparent origin-center mb-16"
         />
 
         <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12">
@@ -270,21 +328,21 @@ export default function AquaPage() {
             <motion.span
               initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-heading uppercase tracking-[0.55em] text-[0.65rem] text-champagne/70"
+              className="font-heading uppercase tracking-[0.55em] text-[0.65rem] text-bordeaux"
             >
               {t({ fr: 'Expériences Exclusives', en: 'Exclusive Experiences' })}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 font-heading uppercase text-ivory text-[clamp(2rem,4vw,3.6rem)] leading-[1.05]"
+              className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.6rem)] leading-[1.05]"
             >
               {t({ fr: 'Nos Points Forts.', en: 'Our Highlights.' })}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="mt-5 font-display text-ivory/50 text-[0.95rem] leading-[1.85]"
+              className="mt-5 font-display text-ink-soft text-[0.95rem] leading-[1.85]"
             >
               {t({ fr: 'Du parc aquatique à la salle de fêtes — le Waves Aqua Resort est un monde en soi.', en: 'From the aqua park to the ballroom — Waves Aqua Resort is a world of its own.' })}
             </motion.p>
@@ -299,21 +357,16 @@ export default function AquaPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.9, delay: 0.06 * i, ease: [0.22, 1, 0.36, 1] }}
-                className={`group relative cinema overflow-hidden ${tile.wide ? 'col-span-2' : 'col-span-1'} h-64 lg:h-72`}
+                className={`group relative cinema overflow-hidden ${tile.wide ? 'col-span-2' : 'col-span-1'} h-64 lg:h-80 border border-champagne/40`}
               >
-                <img
-                  src={tile.image}
-                  alt={t(tile.label)}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                {/* Multi-stop overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/10 group-hover:from-ink/80 transition-all duration-700" />
-                <div className="pointer-events-none absolute inset-0 border border-champagne/0 group-hover:border-champagne/30 transition-colors duration-700" />
+                <TileCarousel images={tile.images || [tile.image]} video={tile.video} poster={tile.image} alt={t(tile.label)} intervalMs={3500 + (i * 350)} />
+                {/* Light gradient overlay for text readability — gentle */}
+                <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-deep/85 via-bordeaux-deep/25 to-transparent group-hover:from-bordeaux-deep/75 transition-all duration-700" />
+                <div className="pointer-events-none absolute inset-0 border border-champagne/0 group-hover:border-champagne/60 transition-colors duration-700" />
 
                 {/* Icon */}
                 <div className="absolute top-5 left-5">
-                  <span className="font-heading text-champagne/60 group-hover:text-champagne text-xl transition-colors duration-500">{tile.icon}</span>
+                  <span className="font-heading text-champagne text-xl">{tile.icon}</span>
                 </div>
 
                 {/* Text */}
@@ -321,7 +374,7 @@ export default function AquaPage() {
                   <h3 className="font-heading uppercase text-ivory tracking-wider text-[0.92rem] leading-tight group-hover:text-champagne transition-colors duration-500">
                     {t(tile.label)}
                   </h3>
-                  <p className="mt-1.5 font-display text-ivory/55 text-[0.78rem] leading-[1.6] group-hover:text-ivory/75 transition-colors duration-500">
+                  <p className="mt-1.5 font-display text-ivory/85 text-[0.78rem] leading-[1.6] transition-colors duration-500">
                     {t(tile.sub)}
                   </p>
                 </div>
@@ -334,13 +387,14 @@ export default function AquaPage() {
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="block h-px bg-gradient-to-r from-transparent via-champagne/30 to-transparent origin-center mt-16"
+          className="block h-px bg-gradient-to-r from-transparent via-bordeaux/30 to-transparent origin-center mt-16"
         />
       </section>
 
       {/* ══════════════════════════════════════════
-          CONVENTION CENTER & LE BALLROOM
+          CONVENTION CENTER & LE BALLROOM — hidden until hotel provides dedicated photos
       ══════════════════════════════════════════ */}
+      {false && (
       <section className="relative section-pad bg-ivory-50 overflow-hidden">
         <div className="absolute -top-32 right-0 w-[500px] h-[500px] bg-champagne/8 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-bordeaux/3 blur-3xl pointer-events-none" />
@@ -440,6 +494,7 @@ export default function AquaPage() {
           </div>
         </motion.div>
       </section>
+      )}
 
       {/* ══════════════════════════════════════════
           FEATURES (4 cards)
@@ -468,23 +523,23 @@ export default function AquaPage() {
       {/* ══════════════════════════════════════════
           STATS
       ══════════════════════════════════════════ */}
-      <section ref={statsRef} className="relative bg-bordeaux py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.14),_transparent_68%)]" />
+      <section ref={statsRef} className="relative bg-ivory-50 py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(184,140,58,0.18),_transparent_68%)]" />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/60 to-transparent origin-center"
+          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-bordeaux/50 to-transparent origin-center"
         />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.6, delay: 0.1 }}
-          className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-champagne/60 to-transparent origin-center"
+          className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-bordeaux/50 to-transparent origin-center"
         />
 
         <motion.p
           initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="text-center font-heading uppercase tracking-[0.52em] text-champagne/70 text-[0.6rem] mb-14 px-4"
+          className="text-center font-heading uppercase tracking-[0.52em] text-bordeaux text-[0.6rem] mb-14 px-4"
         >
           Waves Aqua Resort · Kénitra
         </motion.p>
@@ -496,20 +551,19 @@ export default function AquaPage() {
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1, delay: 0.12 * i, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative border border-champagne/30 hover:border-champagne/70 p-8 md:p-10 text-center overflow-hidden transition-colors duration-700"
-              style={{ background: 'linear-gradient(120deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)' }}
+              className="group relative border border-champagne/50 hover:border-bordeaux p-8 md:p-10 text-center overflow-hidden transition-colors duration-700 bg-ivory/70"
             >
-              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
-              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-champagne/40 group-hover:border-champagne/80 transition-colors duration-500 pointer-events-none" />
+              <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
+              <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-bordeaux/40 group-hover:border-bordeaux transition-colors duration-500 pointer-events-none" />
 
-              <p className="font-heading text-champagne/55 text-xl tracking-widest mb-5 group-hover:text-champagne transition-colors duration-500">{s.symbol}</p>
-              <p className="font-heading leading-none text-ivory" style={{ fontSize: 'clamp(3rem,5.5vw,5rem)', textShadow: '0 0 40px rgba(201,167,102,0.3)' }}>
+              <p className="font-heading text-bordeaux/60 text-xl tracking-widest mb-5 group-hover:text-bordeaux transition-colors duration-500">{s.symbol}</p>
+              <p className="font-heading leading-none text-bordeaux" style={{ fontSize: 'clamp(3rem,5.5vw,5rem)', textShadow: '0 1px 14px rgba(184,140,58,0.18)' }}>
                 <CountUp target={s.value} inView={statsInView} />
               </p>
-              <span className="block mx-auto mt-5 mb-5 h-px w-8 bg-champagne/40 group-hover:w-16 transition-all duration-700" />
-              <p className="font-heading uppercase tracking-[0.32em] text-[0.6rem] text-ivory/55 group-hover:text-ivory/80 transition-colors duration-500 leading-relaxed">{t(s.label)}</p>
+              <span className="block mx-auto mt-5 mb-5 h-px w-8 bg-bordeaux/40 group-hover:w-16 transition-all duration-700" />
+              <p className="font-heading uppercase tracking-[0.32em] text-[0.6rem] text-ink-soft group-hover:text-bordeaux transition-colors duration-500 leading-relaxed">{t(s.label)}</p>
             </motion.div>
           ))}
         </div>

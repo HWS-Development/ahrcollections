@@ -43,15 +43,35 @@ export default function HomePage() {
             transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7 relative"
           >
-            <div className="cinema relative overflow-hidden shadow-deep">
-              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1800&q=60"
-                alt="" className="w-full h-[560px] object-cover" />
-              <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
-              <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-deep/40 to-transparent" />
+            {/* 4-rooms collage — one signature room per hotel */}
+            <div className="grid grid-cols-2 gap-3 lg:gap-4">
+              {[
+                { to: '/plaza',     img: '/img/royal/executive/DSC07000.webp',           label: 'Royal Plaza' },
+                { to: '/aqua', img: '/img/aqua/suites/DSC00483.webp',             label: 'Waves Aqua' },
+                { to: '/vitality', img: '/img/vitality/suite-prestige/photos__2062.webp', label: 'Vitality' },
+                { to: '/city', img: '/img/city/rooms/DSC08025.webp',               label: 'Waves City' },
+              ].map((tile, i) => (
+                <motion.div
+                  key={tile.to}
+                  initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  transition={{ duration: 0.9, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Link to={tile.to} className="group cinema relative overflow-hidden shadow-soft block h-[260px] md:h-[300px]">
+                    <img src={tile.img} alt={tile.label} loading="lazy" decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-deep/85 via-bordeaux-deep/15 to-transparent" />
+                    <div className="pointer-events-none absolute inset-2 border border-champagne/30 group-hover:border-champagne/70 transition-colors duration-700" />
+                    <div className="absolute bottom-0 inset-x-0 p-4 md:p-5 text-ivory">
+                      <p className="font-heading uppercase tracking-[0.32em] text-[0.62rem] text-shimmer">0{i+1}</p>
+                      <h4 className="mt-1 font-heading uppercase text-[0.95rem] md:text-[1.05rem] leading-tight">{tile.label}</h4>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
 
             {/* Floating stat */}
-            <div className="hidden md:flex absolute -top-8 -left-8 glass-panel px-7 py-5 shadow-soft items-center gap-4">
+            <div className="hidden md:flex absolute -top-8 -left-8 glass-panel px-7 py-5 shadow-soft items-center gap-4 z-10">
               <span className="font-heading text-shimmer text-3xl">04</span>
               <div>
                 <p className="eyebrow !tracking-[0.32em]">{t({ fr: 'Adresses', en: 'Addresses' })}</p>

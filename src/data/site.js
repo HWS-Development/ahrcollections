@@ -60,7 +60,7 @@ export const HOTELS = [
       fr: 'Un cadre tropical exceptionnel au cœur de Kénitra.',
       en: 'An exceptional tropical setting in the heart of Kénitra.'
     },
-    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1800&q=60',
+    image: '/img/aqua/pool/DJI_0097.webp',
     accent: 'aqua'
   },
   {
@@ -72,7 +72,7 @@ export const HOTELS = [
       fr: 'Un cadre raffiné pour une clientèle exigeante.',
       en: 'A refined setting for a demanding clientele.'
     },
-    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1800&q=60',
+    image: '/img/royal/executive/DSC07000.webp',
     accent: 'bordeaux'
   },
   {
@@ -84,7 +84,7 @@ export const HOTELS = [
       fr: 'Un emplacement stratégique à 1 minute de la gare LGV.',
       en: 'A strategic location 1 minute from the LGV station.'
     },
-    image: 'https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=1800&q=60',
+    image: '/img/vitality/reception/photos__2130.webp',
     accent: 'olive'
   },
   {
@@ -96,7 +96,7 @@ export const HOTELS = [
       fr: 'Un emplacement idéal pour vos séjours professionnels et touristiques.',
       en: 'An ideal location for both business and leisure stays.'
     },
-    image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1800&q=60',
+    image: '/img/city/rooms/DSC08025.webp',
     accent: 'sand'
   }
 ];
@@ -112,8 +112,8 @@ export const HOME = {
       fr: 'De la quiétude tropicale du Waves Aqua à l’élégance résidentielle du Royal Plaza, chaque adresse AHR est une promesse — celle d’un séjour pensé dans ses plus fins détails.',
       en: 'From the tropical calm of Waves Aqua to the residential elegance of Royal Plaza, each AHR address is a promise — that of a stay crafted to its finest details.'
     },
-    videoPoster: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=60',
-    videoSrc:    'https://cdn.coverr.co/videos/coverr-a-luxurious-hotel-room-7741/1080p.mp4'
+    videoPoster: '/royal-plaza-poster.jpg',
+    videoSrc:    '/videos/royal-plaza-hero.mp4'
   },
   intro: {
     eyebrow: { fr: 'L’art de recevoir', en: 'The art of hospitality' },
@@ -150,45 +150,50 @@ export const HOME = {
 // =====================================================================
 export const ABOUT = {
   hero: {
-    eyebrow: { fr: 'À propos d’AHR Collections', en: 'About AHR Collections' },
-    title:   { fr: 'Une maison, plusieurs façons d’habiter le voyage.',
-               en: 'One house, many ways to inhabit travel.' },
-    image:   'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2000&q=60'
+    eyebrow: { fr: 'Qui sommes-nous · AHR Collection', en: 'Who we are · AHR Collection' },
+    title:   { fr: 'L’Excellence Hôtelière\nau service de vos envies.',
+               en: 'Hotel Excellence\nat the service of your desires.' },
+    image:   '/img/about/general/DSC01277.webp'
   },
   story: {
-    eyebrow: { fr: 'Notre histoire', en: 'Our story' },
-    title:   { fr: 'Née à Kénitra, pensée pour le monde.', en: 'Born in Kénitra, designed for the world.' },
+    eyebrow: { fr: 'AHR Collection · Amwaj Hotels & Resorts', en: 'AHR Collection · Amwaj Hotels & Resorts' },
+    title:   { fr: 'Une marque marocaine d’excellence, ancrée à Kénitra.', en: 'A Moroccan brand of excellence, rooted in Kénitra.' },
     body: {
       fr: [
-        'AHR Collections est née d’une conviction simple : l’hospitalité de prestige ne se résume pas à une catégorie ou à une étoile.',
-        'C’est une attention. Un rythme. Une lecture des silences.',
-        'Depuis Kénitra, nous avons réuni quatre adresses singulières, autour d’une même exigence : faire de chaque séjour une expérience marquante, durable, personnelle.'
+        'AHR Collection (Amwaj Hotels & Resorts) est une marque hôtelière marocaine qui incarne l’élégance, la modernité et le service sur-mesure.',
+        'Fondée avec la mission d’offrir à ses clients une expérience d’exception, elle s’adresse aussi bien aux voyageurs d’affaires qu’aux familles et aux amateurs de loisirs haut de gamme.',
+        'Idéalement implantée à Kénitra, AHR Collection bénéficie d’un emplacement stratégique : la gare LGV relie Rabat en 30 minutes et Casablanca en 1h30, à deux pas des zones économiques et industrielles, et au cœur d’un environnement naturel exceptionnel — plages et forêts de la région d’Al Gharb.',
+        'Cette combinaison unique de connectivité et de cadre naturel permet à nos hôtels de proposer un équilibre idéal entre affaires et détente. Chaque séjour avec AHR Collection promet confort, innovation et hospitalité d’excellence.'
       ],
       en: [
-        'AHR Collections was born of a simple conviction: prestigious hospitality is not summed up by a category or a star.',
-        'It is an attention. A rhythm. A reading of silences.',
-        'From Kénitra, we have brought together four singular addresses around a single standard: turning every stay into a meaningful, lasting, personal experience.'
+        'AHR Collection (Amwaj Hotels & Resorts) is a Moroccan hotel brand that embodies elegance, modernity and tailor-made service.',
+        'Founded with the mission to offer an exceptional experience, it serves business travelers, families and lovers of refined leisure alike.',
+        'Strategically located in Kénitra, AHR Collection benefits from the LGV high-speed line — 30 minutes from Rabat, 1h30 from Casablanca — at the doorstep of major economic and industrial zones, and surrounded by the beaches and forests of the Gharb region.',
+        'This unique blend of connectivity and natural setting lets our hotels deliver the perfect balance between business and relaxation. Every AHR Collection stay promises comfort, innovation and excellence in hospitality.'
       ]
     }
   },
   values: [
-    { num: '01', title: { fr: 'Élégance discrète', en: 'Discreet elegance' },
-      desc: { fr: 'Le luxe n’a pas besoin de bruit. Il s’éprouve.', en: 'Luxury needs no noise. It is felt.' },
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=60' },
-    { num: '02', title: { fr: 'Précision du geste', en: 'Precision of gesture' },
-      desc: { fr: 'Un service formé à anticiper, pas à attendre.', en: 'Service trained to anticipate, not to wait.' },
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=60' },
-    { num: '03', title: { fr: 'Hospitalité marocaine', en: 'Moroccan hospitality' },
-      desc: { fr: 'L’accueil comme art de vivre, transmis et tenu.', en: 'Welcome as a way of life, handed down and held.' },
-      image: 'https://images.unsplash.com/photo-1539020140153-e479b8c46a96?auto=format&fit=crop&w=1400&q=60' },
-    { num: '04', title: { fr: 'Engagement durable', en: 'Lasting commitment' },
-      desc: { fr: 'Bien-être des équipes, respect des lieux, fidélité aux producteurs locaux.',
-              en: 'Wellbeing for our teams, respect for our places, loyalty to local producers.' },
-      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=60' }
+    { num: '01', title: { fr: 'Excellence & Personnalisation', en: 'Excellence & Personalization' },
+      desc: { fr: 'Une attention unique pour chaque client. De l’accueil aux services personnalisés, chaque détail est pensé pour rendre l’expérience inoubliable.',
+              en: 'A unique attention to every guest. From welcome to bespoke service, every detail is crafted to make the experience unforgettable.' },
+      image: '/img/royal/hall/DSC01265.webp' },
+    { num: '02', title: { fr: 'Innovation & Modernité', en: 'Innovation & Modernity' },
+      desc: { fr: 'Salles connectées, espaces de coworking, services digitaux : nos établissements répondent aux exigences des voyageurs modernes.',
+              en: 'Connected meeting rooms, coworking spaces, seamless digital services: our properties answer to the demands of today’s travelers.' },
+      image: '/img/vitality/meet-marrakech/photos__2097.webp' },
+    { num: '03', title: { fr: 'Bien-être & Durabilité', en: 'Wellbeing & Sustainability' },
+      desc: { fr: 'Jardins aromatiques, stages de yoga, spa et fitness : un engagement écoresponsable, ancré dans l’économie locale.',
+              en: 'Aromatic gardens, yoga sessions, spa and fitness: an eco-responsible commitment rooted in the local economy.' },
+      image: '/img/aqua/spa/photos2200.webp' },
+    { num: '04', title: { fr: 'Proximité & Engagement Local', en: 'Proximity & Local Commitment' },
+      desc: { fr: 'Ancrés dans la région d’Al Gharb, nous mettons à l’honneur les produits, artisans et acteurs culturels de Kénitra.',
+              en: 'Anchored in the Gharb region, we celebrate the produce, artisans and cultural voices of Kénitra.' },
+      image: '/img/city/tea-garden/DSC08188.webp' }
   ],
   quote: {
-    fr: 'Nous ne vendons pas des nuits. Nous offrons des temps qui restent.',
-    en: 'We do not sell nights. We offer moments that stay.'
+    fr: 'Proposer bien plus qu’un séjour : offrir des expériences mémorables, tout en contribuant au rayonnement de la région.',
+    en: 'To offer far more than a stay: memorable experiences that also enrich the region we call home.'
   }
 };
 
@@ -229,7 +234,7 @@ export const OFFERS = {
       perk: '−20%',
       desc: { fr: 'Réservez 30 jours à l’avance et bénéficiez de 20% sur le tarif flexible, petit-déjeuner inclus.',
               en: 'Book 30 days ahead and enjoy 20% off the flexible rate, breakfast included.' },
-      image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=60',
+      image: '/img/royal/junior/DSC06877.webp',
       conditions: { fr: 'Non remboursable · Soumis à disponibilité', en: 'Non-refundable · Subject to availability' }
     },
     {
@@ -238,7 +243,7 @@ export const OFFERS = {
       perk: '7=6',
       desc: { fr: 'À partir de 6 nuits, votre 7ème nuit vous est offerte. Idéal pour les séjours résidentiels.',
               en: 'From 6 nights, the 7th night is on us. Ideal for residential stays.' },
-      image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1600&q=60',
+      image: '/img/vitality/suite-prestige/photos__2062.webp',
       conditions: { fr: 'Tarif petit-déjeuner inclus', en: 'Rate includes breakfast' }
     },
     {
@@ -247,7 +252,7 @@ export const OFFERS = {
       perk: 'B2B',
       desc: { fr: 'Tarifs négociés, late check-out, espace de travail dédié et conciergerie 24/7.',
               en: 'Negotiated rates, late check-out, dedicated workspace and 24/7 concierge.' },
-      image: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=1600&q=60',
+      image: '/img/royal/business/DSC04522.webp',
       conditions: { fr: 'Réservé aux comptes professionnels', en: 'Reserved for corporate accounts' }
     },
     {
@@ -256,7 +261,7 @@ export const OFFERS = {
       perk: '★★',
       desc: { fr: 'Suite, dîner signature et accès Spa : trois ingrédients pour un week-end qui ne s’oublie pas.',
               en: 'Suite, signature dinner and spa access: three ingredients for an unforgettable weekend.' },
-      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=60',
+      image: '/img/royal/spa/DSC05192.webp',
       conditions: { fr: 'Vendredi & samedi · Selon disponibilité', en: 'Friday & Saturday · Subject to availability' }
     }
   ]
@@ -268,55 +273,56 @@ export const OFFERS = {
 export const AQUA = {
   hero: {
     eyebrow: { fr: 'Waves Aqua Resort · Kénitra', en: 'Waves Aqua Resort · Kénitra' },
-    title:   { fr: 'Le voyage commence\nau bord de l’eau.', en: 'The journey begins\nat the water’s edge.' },
+    title:   { fr: 'Un cadre tropical exceptionnel\nau cœur de Kénitra.',
+               en: 'An exceptional tropical setting\nat the heart of Kénitra.' },
     sub: {
-      fr: 'Un resort tropical à taille humaine, pensé pour la lenteur, le bien-être et les souvenirs partagés.',
-      en: 'A boutique tropical resort, designed for slowness, wellbeing and shared memories.'
+      fr: 'Hôtel 5★, aquaparc géant, palais des congrès et bien-être premium — réunis dans un seul complexe.',
+      en: '5-star hotel, vast aquapark, convention center and premium wellness — all in one resort.'
     },
-    videoPoster: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=60',
-    videoSrc:    null
+    videoPoster: '/img/aqua/pool/DJI_0097.webp',
+    videoSrc:    '/videos/aqua-hero.mp4'
   },
   intro: {
-    eyebrow: { fr: 'L’esprit Waves', en: 'The Waves spirit' },
-    title:   { fr: 'Là où la lumière se pose, le temps respire.', en: 'Where light settles, time breathes.' },
+    eyebrow: { fr: 'Bienvenue au Waves Aqua Resort', en: 'Welcome to Waves Aqua Resort' },
+    title:   { fr: 'Le complexe qui réunit tout ce que vous aimez.', en: 'The resort that brings together everything you love.' },
     body: {
       fr: [
-        'Au Waves Aqua Resort, le décor parle avant nous : palmes, eau claire, brise et lumière dorée.',
-        'Ici, on enlève sa montre. On marche pieds nus.',
-        'Les enfants explorent, les couples se retrouvent, les amis prolongent la soirée.',
-        'Et chaque journée se termine par le même rituel : un coucher de soleil partagé.'
+        'Le Waves Aqua Resort est un complexe hôtelier unique combinant luxe et divertissement, dans un cadre tropical enchanteur.',
+        'Avec son hôtel 5 étoiles, son parc aquatique spectaculaire, son palais des congrès moderne et son centre de bien-être haut de gamme,',
+        'le resort est la destination idéale pour les familles, les professionnels et les amateurs de sensations fortes.',
+        'Restaurants à thème, bars en bord de piscine, plages privées : ici, chaque journée invente sa propre lumière.'
       ],
       en: [
-        'At Waves Aqua Resort, the setting speaks first: palm leaves, clear water, breeze and golden light.',
-        'Here, you take off your watch. You walk barefoot.',
-        'Children explore, couples reconnect, friends linger into the night.',
-        'And every day ends with the same ritual: a sunset shared.'
+        'Waves Aqua Resort is a one-of-a-kind property blending luxury and entertainment in an enchanting tropical setting.',
+        'With its five-star hotel, spectacular aquapark, modern convention center and premium wellness sanctuary,',
+        'the resort is the ideal destination for families, professionals and thrill-seekers alike.',
+        'Themed restaurants, poolside bars, private beaches: here, every day writes its own light.'
       ]
     }
   },
   features: [
-    { icon: '∿', title: { fr: 'Piscines lagons', en: 'Lagoon pools' },
-      desc: { fr: 'Piscines à débordement, transats privés, service au bord de l’eau.',
-              en: 'Infinity pools, private sun loungers, poolside service.' } },
-    { icon: '✦', title: { fr: 'Aqua Spa', en: 'Aqua Spa' },
-      desc: { fr: 'Soins inspirés de l’eau, hammam, sauna, parcours sensoriel.',
-              en: 'Water-inspired treatments, hammam, sauna, sensory circuit.' } },
-    { icon: '◉', title: { fr: 'Kids Resort', en: 'Kids Resort' },
-      desc: { fr: 'Mini-club encadré, ateliers créatifs, activités aquatiques sécurisées.',
-              en: 'Supervised mini-club, creative workshops, safe water activities.' } },
-    { icon: '☼', title: { fr: 'Tropical Bar', en: 'Tropical Bar' },
-      desc: { fr: 'Cocktails signatures, jus pressés et plateaux à partager au coucher du soleil.',
-              en: 'Signature cocktails, fresh-pressed juices and shared platters at sunset.' } }
+    { icon: '∿', title: { fr: 'Aquaparc géant', en: 'Vast aquapark' },
+      desc: { fr: 'Le plus grand de la région : plus de 30 toboggans, piscine à vagues, rivière lente.',
+              en: 'The largest in the region: 30+ slides, wave pool, lazy river.' } },
+    { icon: '✦', title: { fr: 'Centre de bien-être', en: 'Wellness center' },
+      desc: { fr: 'Spa, hammam traditionnel, salon de beauté et soins relaxants.',
+              en: 'Spa, traditional hammam, beauty salon and relaxing treatments.' } },
+    { icon: '◉', title: { fr: 'Palais des Congrès', en: 'Convention Center' },
+      desc: { fr: 'Espace événementiel moderne pour séminaires, mariages et conférences.',
+              en: 'Modern event venue for seminars, weddings and conferences.' } },
+    { icon: '☼', title: { fr: 'Gastronomie unique', en: 'Singular gastronomy' },
+      desc: { fr: 'Bronz Sea Food, Barbecue à Table, Crepland, bars et lounges en bord de piscine.',
+              en: 'Bronz Sea Food, Barbecue à Table, Crepland, bars and poolside lounges.' } }
   ],
   gallery: [
-    'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1561501900-3701fa6a0864?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1559599238-308793637427?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=60'
+    '/img/aqua/pool/DJI_0097.webp',
+    '/img/aqua/pool/DJI_0099.webp',
+    '/img/aqua/aquapark/DSC02525.webp',
+    '/img/aqua/aquapark/DSC02692.webp',
+    '/img/aqua/aquapark/DSC02843.webp',
+    '/img/aqua/spa/photos2210.webp',
+    '/img/aqua/rooms/DSC00646.webp',
+    '/img/aqua/bronz/photos2279.webp'
   ]
 };
 
@@ -325,56 +331,57 @@ export const AQUA = {
 // =====================================================================
 export const VITALITY = {
   hero: {
-    eyebrow: { fr: 'Vitality Terminus · Gare LGV Kénitra', en: 'Vitality Terminus · LGV Station Kénitra' },
-    title:   { fr: 'L’hôtel des esprits\nen mouvement.', en: 'The hotel for minds\nin motion.' },
+    eyebrow: { fr: 'Vitality Terminus · Centre-ville Kénitra', en: 'Vitality Terminus · Downtown Kénitra' },
+    title:   { fr: 'À une minute\nde la gare LGV.',
+               en: 'One minute\nfrom the LGV station.' },
     sub: {
-      fr: 'À une minute de la gare LGV, pensé pour celles et ceux qui transforment les déplacements en opportunités.',
-      en: 'One minute from the LGV station, designed for those who turn travel into opportunity.'
+      fr: 'Un emplacement stratégique en plein centre-ville — pensé pour les voyageurs d’affaires comme pour les touristes.',
+      en: 'A strategic location in the heart of the city — designed for business travelers and tourists alike.'
     },
-    videoPoster: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/AHR_COLLECTIONS/VITALITY/SUITE_JUNIOR/DSC07776.jpg?q=60',
+    videoPoster: '/img/vitality/suite-junior/DSC07776.webp',
     videoSrc:    null
   },
   intro: {
-    eyebrow: { fr: 'Pensé pour le voyageur d’affaires', en: 'Designed for the business traveler' },
-    title:   { fr: 'Efficacité, élégance, énergie.', en: 'Efficiency, elegance, energy.' },
+    eyebrow: { fr: 'Bienvenue au Vitality Terminus', en: 'Welcome to Vitality Terminus' },
+    title:   { fr: 'Confort, efficacité, bien-être.', en: 'Comfort, efficiency, wellbeing.' },
     body: {
       fr: [
-        'Le Vitality Terminus a été conçu pour un seul rythme : le vôtre.',
-        'Check-in en 90 secondes, espaces de travail à toute heure, conciergerie qui anticipe.',
-        'Et lorsqu’il faut souffler, un rooftop, un spa et une cuisine généreuse vous attendent.',
-        'Tout est là, à portée de main, pensé pour ne jamais vous ralentir.'
+        'Le Vitality Terminus est idéalement situé en plein centre-ville de Kénitra, à seulement une minute à pied de la gare LGV.',
+        'Une accessibilité optimale pour les voyageurs d’affaires et les touristes en quête d’une adresse fluide et bien connectée.',
+        'Avec son design moderne, ses chambres soignées et ses services premium, l’hôtel offre une expérience urbaine sur mesure.',
+        'Salles de réunion, business center, restaurant international, espace fitness : tout est réuni pour conjuguer travail, repos et bien-être.'
       ],
       en: [
-        'Vitality Terminus was built for one rhythm: yours.',
-        '90-second check-in, workspaces open round the clock, a concierge that anticipates.',
-        'When you need to pause, a rooftop, a spa and a generous kitchen await.',
-        'Everything within reach — designed never to slow you down.'
+        'Vitality Terminus sits in the heart of downtown Kénitra, just one minute’s walk from the LGV high-speed station.',
+        'A seamless gateway for business travelers and tourists looking for a well-connected, frictionless address.',
+        'Modern design, carefully appointed rooms and premium services create a tailor-made urban experience.',
+        'Meeting rooms, business center, international restaurant, fitness space: everything is here to balance work, rest and wellbeing.'
       ]
     }
   },
   features: [
-    { icon: 'I', title: { fr: 'Connectivité totale', en: 'Total connectivity' },
-      desc: { fr: 'Wi-Fi très haut débit, prises USB-C, écrans 4K dans toutes les chambres.',
-              en: 'Ultra-high-speed Wi-Fi, USB-C outlets, 4K displays in every room.' } },
-    { icon: 'II', title: { fr: 'Express Check-in', en: 'Express check-in' },
-      desc: { fr: 'Arrivée en moins de 2 minutes, départ sans contrainte.',
-              en: 'Arrival in under 2 minutes, hassle-free departure.' } },
-    { icon: 'III', title: { fr: '3 Salles de réunion', en: '3 Meeting rooms' },
-      desc: { fr: '3 espaces modulables, équipement audio-vidéo professionnel.',
-              en: '3 modular spaces with full professional A/V.' } },
-    { icon: 'IV', title: { fr: 'Rooftop & Terrasse', en: 'Rooftop & Terrace' },
-      desc: { fr: 'Une vue, un calme, une parenthèse — entre deux rendez-vous.',
-              en: 'A view, a calm, a pause — between two appointments.' } }
+    { icon: 'I', title: { fr: 'Proximité Gare LGV', en: 'Steps from the LGV station' },
+      desc: { fr: 'À une minute à pied : parfait pour les déplacements professionnels.',
+              en: 'A one-minute walk: perfect for professional travel.' } },
+    { icon: 'II', title: { fr: 'Business Center', en: 'Business Center' },
+      desc: { fr: 'Salles de réunion et visioconférences, coworking, traiteur & pauses-café.',
+              en: 'Meeting rooms and video conferencing, coworking, catering & coffee breaks.' } },
+    { icon: 'III', title: { fr: 'Restaurant International', en: 'International Restaurant' },
+      desc: { fr: 'Carte du monde, petit-déjeuner buffet et room service à toute heure.',
+              en: 'Cuisine from around the world, breakfast buffet and round-the-clock room service.' } },
+    { icon: 'IV', title: { fr: 'Espace Fitness', en: 'Fitness Space' },
+      desc: { fr: 'Un espace moderne pour garder la forme pendant votre séjour.',
+              en: 'A modern space to stay in shape throughout your stay.' } }
   ],
   gallery: [
-    'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&w=1600&q=60'
+    '/img/vitality/reception/photos__2130.webp',
+    '/img/vitality/suite-prestige/photos__2062.webp',
+    '/img/vitality/suite-junior/DSC07776.webp',
+    '/img/vitality/confort-gl/photos__2082.webp',
+    '/img/vitality/meet-marrakech/photos__2095.webp',
+    '/img/vitality/meet-rabat/photos__2135.webp',
+    '/img/vitality/couloir/photos__2123.webp',
+    '/img/vitality/nuit/photos__2045.webp'
   ]
 };
 
@@ -384,55 +391,56 @@ export const VITALITY = {
 export const CITY = {
   hero: {
     eyebrow: { fr: 'City Hôtel · Centre-ville Kénitra', en: 'City Hotel · Downtown Kénitra' },
-    title:   { fr: 'L’adresse urbaine,\nau cœur de la ville.', en: 'The urban address,\nat the heart of the city.' },
+    title:   { fr: 'L’emplacement idéal pour vos séjours\npro & touristiques.',
+               en: 'The ideal address for business\n& leisure stays.' },
     sub: {
-      fr: 'À deux pas des incontournables, un hôtel agile, lumineux et sincèrement accueillant.',
-      en: 'Steps from the city’s essentials — an agile, bright, sincerely welcoming hotel.'
+      fr: 'Au cœur de Kénitra, à proximité des quartiers d’affaires, des centres commerciaux et des gares.',
+      en: 'In the heart of Kénitra — close to business districts, shopping centers and stations.'
     },
-    videoPoster: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2000&q=60',
-    videoSrc:    null
+    videoPoster: '/img/city/reception/DSC08733.webp',
+    videoSrc:    '/videos/city-hero.mp4'
   },
   intro: {
-    eyebrow: { fr: 'Esprit lifestyle', en: 'Lifestyle spirit' },
-    title:   { fr: 'La ville comme terrain de jeu.', en: 'The city as a playground.' },
+    eyebrow: { fr: 'Bienvenue au City Hôtel', en: 'Welcome to City Hotel' },
+    title:   { fr: 'L’hôtel corporate au cœur de la ville.', en: 'The corporate hotel at the heart of the city.' },
     body: {
       fr: [
-        'Au City Hôtel, l’hospitalité s’écrit avec le rythme de la ville.',
-        'Des chambres à la fois compactes et chaleureuses,',
-        'un café-restaurant ouvert à tous les moments de la journée,',
-        'et une équipe qui connaît Kénitra mieux que personne.'
+        'Situé en plein centre-ville de Kénitra, le City Hôtel bénéficie d’un emplacement stratégique.',
+        'À proximité des principaux quartiers d’affaires, des centres commerciaux et des gares, il offre un accès rapide aux infrastructures essentielles et aux attractions de la ville.',
+        'Conçu pour les professionnels comme pour les voyageurs en quête de confort, l’hôtel propose des chambres modernes, des salles de conférence modulables et un restaurant chaleureux.',
+        'L’adresse idéale pour conjuguer travail, découverte et art de recevoir.'
       ],
       en: [
-        'At City Hotel, hospitality is written to the rhythm of the city.',
-        'Rooms that are both compact and warm,',
-        'a café-restaurant open at every hour,',
-        'and a team that knows Kénitra better than anyone.'
+        'In the heart of downtown Kénitra, City Hotel enjoys a strategic location.',
+        'Close to the main business districts, shopping centers and stations, it offers quick access to the city’s essentials and attractions.',
+        'Designed for professionals as well as travelers seeking comfort, the hotel offers modern rooms, flexible conference spaces and a warm restaurant.',
+        'The ideal address to combine work, discovery and the art of welcoming.'
       ]
     }
   },
   features: [
-    { icon: '◇', title: { fr: 'Emplacement central', en: 'Central location' },
-      desc: { fr: 'Au cœur des avenues commerçantes et culturelles.',
-              en: 'In the heart of the city’s commercial and cultural avenues.' } },
-    { icon: '◈', title: { fr: 'Café-restaurant', en: 'Café & restaurant' },
-      desc: { fr: 'Brunchs lumineux, dîners conviviaux, terrasse animée.',
-              en: 'Bright brunches, friendly dinners, lively terrace.' } },
-    { icon: '◐', title: { fr: 'Lobby vivant', en: 'Living lobby' },
-      desc: { fr: 'Travail, café, rendez-vous : un lobby pensé comme un salon.',
-              en: 'Work, coffee, meetings: a lobby designed as a living room.' } },
-    { icon: '◎', title: { fr: 'Bons plans', en: 'Local tips' },
-      desc: { fr: 'Conciergerie locale, sélection d’adresses confidentielles.',
-              en: 'Local concierge, curated insider addresses.' } }
+    { icon: '◇', title: { fr: 'Hôtel Corporate', en: 'Corporate Hotel' },
+      desc: { fr: 'Conçu pour les professionnels, avec des services adaptés aux séjours d’affaires.',
+              en: 'Built for professionals, with services tailored to business stays.' } },
+    { icon: '◈', title: { fr: 'Salles de Conférence', en: 'Conference Rooms' },
+      desc: { fr: 'Espaces modulables, équipement audio-vidéo, traiteur & pauses-café.',
+              en: 'Flexible spaces, A/V equipment, catering & coffee breaks.' } },
+    { icon: '◐', title: { fr: 'Localisation centrale', en: 'Central location' },
+      desc: { fr: 'À deux pas des axes de transport et des principaux centres d’intérêt.',
+              en: 'Steps from major transport links and key points of interest.' } },
+    { icon: '◎', title: { fr: 'Restaurant & Bar', en: 'Restaurant & Bar' },
+      desc: { fr: 'Cuisine variée, petit-déjeuner buffet, room service et ambiance chaleureuse.',
+              en: 'Varied cuisine, breakfast buffet, room service and a warm atmosphere.' } }
   ],
   gallery: [
-    'https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1551776235-dde6d4829808?auto=format&fit=crop&w=1600&q=60',
-    'https://images.unsplash.com/photo-1485921325833-c519f76c4927?auto=format&fit=crop&w=1600&q=60'
+    '/img/city/rooms/DSC08025.webp',
+    '/img/city/tea-garden/DSC08147.webp',
+    '/img/city/tea-garden/DSC08156.webp',
+    '/img/city/dining/DSC08270.webp',
+    '/img/city/lobby/DSC08685.webp',
+    '/img/city/meeting/DSC08475.webp',
+    '/img/city/reception/DSC08733.webp',
+    '/img/city/rooms/DSC08326.webp'
   ]
 };
 
