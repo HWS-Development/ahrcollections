@@ -17,8 +17,8 @@ export const VITALITY_INFO = {
   },
   mapsUrl: 'https://www.google.com/maps/place/34.2541304670068,-6.581325531006',
   tagline: {
-    fr: 'À 50 m de la gare LGV · 4 étoiles · Kénitra',
-    en: '50 m from LGV station · 4 stars · Kénitra'
+    fr: 'À 1 minute à pied de la gare LGV · 4 étoiles · Kénitra',
+    en: '1-minute walk from the LGV station · 4 stars · Kénitra'
   }
 };
 
@@ -885,3 +885,119 @@ export const AQUA_PACK_OFFER = {
     { fr: 'Pack Hôtel & Aquaparc avec accès exclusif aux attractions.', en: 'Hotel & Aquapark pack with exclusive access to attractions.' }
   ]
 };
+
+// =====================================================================
+// VITALITY — Spec-aligned additions (Pro services, room amenities, booking)
+// =====================================================================
+export const VITALITY_PRO_SERVICES = {
+  eyebrow: { fr: 'Services aux Professionnels', en: 'Professional Services' },
+  title:   { fr: 'Des infrastructures pensées pour vos séjours d’affaires.', en: 'Infrastructure built for your business stays.' },
+  items: [
+    { icon: '◇',
+      title: { fr: 'Business Center',           en: 'Business Center' },
+      desc:  { fr: 'Équipé pour le travail et les visioconférences.', en: 'Equipped for work and video conferencing.' } },
+    { icon: '◈',
+      title: { fr: 'Salles de réunion & conférence', en: 'Meeting & conference rooms' },
+      desc:  { fr: 'Dotées d’équipements audiovisuels modernes.', en: 'Featuring modern audio-visual equipment.' } },
+    { icon: '◉',
+      title: { fr: 'Espaces de coworking',      en: 'Coworking spaces' },
+      desc:  { fr: 'Pour travailler en toute tranquillité.', en: 'To work in absolute calm.' } },
+    { icon: '☕',
+      title: { fr: 'Traiteur & pauses-café',    en: 'Catering & coffee breaks' },
+      desc:  { fr: 'Pour vos événements professionnels et séminaires.', en: 'For your corporate events and seminars.' } }
+  ]
+};
+
+export const VITALITY_ROOM_AMENITIES = {
+  eyebrow: { fr: 'Chambres & Équipements', en: 'Rooms & Amenities' },
+  title:   { fr: 'Le confort dans chaque détail.', en: 'Comfort in every detail.' },
+  intro: {
+    fr: 'Nos chambres sont pensées pour offrir un maximum de confort et de fonctionnalité — du voyageur d’affaires de passage au séjour long.',
+    en: 'Our rooms are designed for maximum comfort and functionality — from the passing business traveler to extended stays.'
+  },
+  tiers: [
+    { title: { fr: 'Chambres Standard & Supérieures', en: 'Standard & Superior Rooms' },
+      desc:  { fr: 'Literie de qualité, bureau de travail, Wi-Fi haut débit.',
+               en: 'Quality bedding, work desk, high-speed Wi-Fi.' } },
+    { title: { fr: 'Chambres Premium', en: 'Premium Rooms' },
+      desc:  { fr: 'Plus spacieuses, avec des équipements haut de gamme.',
+               en: 'More spacious, with premium-grade amenities.' } }
+  ],
+  included: {
+    label: { fr: 'Prestations incluses', en: 'Included' },
+    items: [
+      { fr: 'Climatisation',          en: 'Air conditioning' },
+      { fr: 'TV écran plat',           en: 'Flat-screen TV' },
+      { fr: 'Coffre-fort',             en: 'Safe' },
+      { fr: 'Minibar',                 en: 'Minibar' },
+      { fr: 'Service de blanchisserie',en: 'Laundry service' }
+    ]
+  }
+};
+
+export const VITALITY_BOOKING_SECTION = {
+  eyebrow: { fr: 'Réservation en Ligne', en: 'Online Booking' },
+  title:   { fr: 'Séjournez dans un hôtel moderne et parfaitement situé.', en: 'Stay in a modern, perfectly located hotel.' },
+  perks: [
+    { fr: 'Réservation rapide et sécurisée.', en: 'Fast and secure booking.' },
+    { fr: 'Meilleurs tarifs garantis en direct.', en: 'Best rates guaranteed when booking direct.' },
+    { fr: 'Packages affaires & bien-être personnalisés.', en: 'Tailored business & wellness packages.' },
+    { fr: 'Offres long séjour pour les clients en déplacement prolongé.', en: 'Long-stay offers for extended business travelers.' }
+  ]
+};
+
+// =====================================================================
+// CITY — Spec-aligned additions (Pro services, room amenities, business pack)
+// =====================================================================
+export const CITY_PRO_SERVICES = {
+  eyebrow: { fr: 'Services aux Professionnels', en: 'Professional Services' },
+  title:   { fr: 'Tout pour vos réunions et séminaires.', en: 'Everything for your meetings and seminars.' },
+  items: [
+    { icon: '◇',
+      title: { fr: 'Salles de conférence & réunion', en: 'Conference & meeting rooms' },
+      desc:  { fr: 'Équipées de vidéoprojecteurs et connexion internet rapide.',
+               en: 'Equipped with video projectors and fast internet connection.' } },
+    { icon: '◈',
+      title: { fr: 'Espaces de coworking', en: 'Coworking spaces' },
+      desc:  { fr: 'Parfaits pour travailler dans un environnement calme et professionnel.',
+               en: 'Perfect for working in a calm, professional environment.' } },
+    { icon: '◉',
+      title: { fr: 'Traiteur & pauses-café', en: 'Catering & coffee breaks' },
+      desc:  { fr: 'Pour accompagner vos événements professionnels.',
+               en: 'To complement your corporate events.' } }
+  ]
+};
+
+export const CITY_ROOM_AMENITIES = {
+  eyebrow: { fr: 'Présentation des Chambres', en: 'Our Rooms' },
+  title:   { fr: 'Modernes, fonctionnelles, accueillantes.', en: 'Modern, functional and welcoming.' },
+  tiers: [
+    { title: { fr: 'Chambres Standard & Supérieures', en: 'Standard & Superior Rooms' },
+      desc:  { fr: 'Espace optimisé avec bureau, TV écran plat, climatisation et Wi-Fi haut débit.',
+               en: 'Optimized space with desk, flat-screen TV, air conditioning and high-speed Wi-Fi.' } },
+    { title: { fr: 'Chambres Familiales', en: 'Family Rooms' },
+      desc:  { fr: 'Adaptées aux séjours en groupe ou en famille, avec options de lits supplémentaires.',
+               en: 'Suited to group or family stays, with extra-bed options.' } }
+  ],
+  included: {
+    label: { fr: 'Équipements', en: 'Amenities' },
+    items: [
+      { fr: 'Coffre-fort',              en: 'Safe' },
+      { fr: 'Minibar',                  en: 'Minibar' },
+      { fr: 'Service de blanchisserie', en: 'Laundry service' },
+      { fr: 'Salle de bain privative',  en: 'Private bathroom' },
+      { fr: 'Articles de toilette offerts', en: 'Complimentary toiletries' }
+    ]
+  }
+};
+
+export const CITY_BUSINESS_PACK = {
+  eyebrow: { fr: 'Offres Spéciales & Promotions', en: 'Special Offers & Promotions' },
+  title:   { fr: 'Tarifs exclusifs adaptés à vos besoins.', en: 'Exclusive rates tailored to your needs.' },
+  perks: [
+    { fr: 'Réductions pour les réservations anticipées.', en: 'Discounts for early bookings.' },
+    { fr: 'Formules Séminaire & Business Pack.', en: 'Seminar & Business Pack formulas.' },
+    { fr: 'Offres spéciales pour les longs séjours.', en: 'Special long-stay offers.' }
+  ]
+};
+

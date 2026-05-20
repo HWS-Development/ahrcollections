@@ -28,7 +28,7 @@ export const NAV = [
   { id: 'aqua',       to: '/aqua',      fr: 'Waves Aqua Resort',en: 'Waves Aqua Resort' },
   { id: 'plaza',      to: '/plaza',     fr: 'Royal Plaza',      en: 'Royal Plaza' },
   { id: 'vitality',   to: '/vitality',  fr: 'Vitality Terminus',en: 'Vitality Terminus' },
-  { id: 'city',       to: '/city',      fr: 'City Hôtel',       en: 'City Hotel' },
+  { id: 'city',       to: '/city',      fr: 'City Hôtel by Waves', en: 'City Hôtel by Waves' },
   { id: 'contact',    to: '/contact',   fr: 'Contact',          en: 'Contact' }
 ];
 
@@ -90,7 +90,7 @@ export const HOTELS = [
   {
     id: 'city',
     to: '/city',
-    name: 'City Hôtel',
+    name: 'City Hôtel by Waves',
     eyebrow: { fr: 'Urbain & lifestyle', en: 'Urban & lifestyle' },
     short: {
       fr: 'Un emplacement idéal pour vos séjours professionnels et touristiques.',

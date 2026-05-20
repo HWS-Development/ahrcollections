@@ -10,6 +10,7 @@ import { CITY, HOTELS }    from '../data/site.js';
 import {
   CITY_ROOMS, CITY_STATS, CITY_FEATURES, CITY_INFO,
   CITY_RESTAURANT, CITY_MEETINGS,
+  CITY_PRO_SERVICES, CITY_ROOM_AMENITIES, CITY_BUSINESS_PACK,
 } from '../data/hotels.js';
 import { UI } from '../data/site.js';
 
@@ -485,6 +486,120 @@ export default function CityPage() {
               {t(UI.bookNow)} <span aria-hidden>→</span>
             </a>
             <Link to="/contact" className="btn-ghost">{t(UI.contactUs)}</Link>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          ROOM AMENITIES — Standard/Superior + Family
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-ivory overflow-hidden">
+        <div className="absolute inset-0 bg-champagne-radial pointer-events-none" />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="ornament eyebrow">{t(CITY_ROOM_AMENITIES.eyebrow)}</span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.7rem,2.8vw,2.6rem)] leading-tight"
+            >
+              {t(CITY_ROOM_AMENITIES.title)}
+            </motion.h2>
+            <span className="block hairline mx-auto mt-6" />
+          </div>
+          <div className="mt-14 grid md:grid-cols-2 gap-5 lg:gap-7">
+            {CITY_ROOM_AMENITIES.tiers.map((tier, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.9, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative bg-ivory-50 border border-champagne/40 p-8 overflow-hidden hover:border-bordeaux transition-colors duration-700"
+              >
+                <span className="absolute top-3 left-3 w-3 h-3 border-t border-l border-bordeaux/60" />
+                <span className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-bordeaux/60" />
+                <h3 className="font-heading uppercase text-bordeaux tracking-wider text-[1.05rem] leading-tight">{t(tier.title)}</h3>
+                <span className="block mt-4 h-px w-12 bg-champagne group-hover:w-24 transition-all duration-500" />
+                <p className="mt-5 font-display text-ink-soft text-[0.95rem] leading-[1.8]">{t(tier.desc)}</p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <span className="eyebrow !tracking-[0.32em]">{t(CITY_ROOM_AMENITIES.included.label)}</span>
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
+              {CITY_ROOM_AMENITIES.included.items.map((it, i) => (
+                <span key={i} className="px-4 py-2 border border-champagne/50 text-bordeaux/85 font-heading uppercase tracking-[0.2em] text-[0.65rem] bg-ivory">
+                  {t(it)}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          PRO SERVICES — Conference / Coworking / Catering
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-mist overflow-hidden">
+        <div className="absolute -top-32 right-0 w-[480px] h-[480px] bg-champagne/10 blur-3xl pointer-events-none" />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="ornament eyebrow">{t(CITY_PRO_SERVICES.eyebrow)}</span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.7rem,2.8vw,2.6rem)] leading-tight"
+            >
+              {t(CITY_PRO_SERVICES.title)}
+            </motion.h2>
+            <span className="block hairline mx-auto mt-6" />
+          </div>
+          <div className="mt-14 grid md:grid-cols-3 gap-5 lg:gap-6">
+            {CITY_PRO_SERVICES.items.map((it, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.9, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative bg-ivory border border-champagne/40 p-8 overflow-hidden hover:border-bordeaux transition-colors duration-700"
+              >
+                <span className="absolute top-3 left-3 w-3 h-3 border-t border-l border-bordeaux/60" />
+                <span className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-bordeaux/60" />
+                <p className="font-heading text-shimmer text-3xl">{it.icon}</p>
+                <h3 className="mt-5 font-heading uppercase text-bordeaux tracking-wider text-[0.95rem] leading-tight">{t(it.title)}</h3>
+                <span className="block mt-4 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+                <p className="mt-4 font-display text-ink-soft text-[0.92rem] leading-[1.75]">{t(it.desc)}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          BUSINESS PACK — Special offers
+      ══════════════════════════════════════════ */}
+      <section className="relative py-24 sm:py-28 bg-bordeaux text-ivory overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.18),_transparent_70%)]" />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl mx-auto px-6 text-center"
+        >
+          <span className="font-heading uppercase tracking-[0.4em] text-[0.7rem] text-shimmer">{t(CITY_BUSINESS_PACK.eyebrow)}</span>
+          <h2 className="mt-6 font-heading uppercase text-ivory text-[clamp(1.7rem,2.8vw,2.6rem)] leading-tight">
+            {t(CITY_BUSINESS_PACK.title)}
+          </h2>
+          <span className="block h-px w-20 bg-champagne mx-auto mt-6" />
+          <ul className="mt-10 space-y-3 text-left max-w-xl mx-auto">
+            {CITY_BUSINESS_PACK.perks.map((p, i) => (
+              <li key={i} className="flex items-start gap-3 font-display text-ivory/85 text-[0.95rem] leading-[1.7]">
+                <span className="text-champagne mt-1">◆</span>
+                <span>{t(p)}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a href={CITY_INFO.bookingUrl} target="_blank" rel="noreferrer" className="btn-royal">
+              {t(UI.bookNow)} <span aria-hidden>→</span>
+            </a>
           </div>
         </motion.div>
       </section>
