@@ -29,7 +29,7 @@ export default function AboutPage() {
             className="lg:col-span-6 cinema relative overflow-hidden shadow-deep"
           >
             <img src="/img/about/general/DSC01282.webp"
-              alt="" loading="lazy" decoding="async" className="w-full h-[620px] object-cover" />
+              alt="" loading="lazy" decoding="async" className="w-full h-[360px] sm:h-[480px] lg:h-[620px] object-cover" />
             <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
             <div className="absolute inset-0 bg-bordeaux-veil" />
           </motion.div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             title={t({ fr: 'Quatre convictions, tenues chaque jour.', en: 'Four convictions, kept every day.' })}
           />
 
-          <div className="mt-20 space-y-24">
+          <div className="mt-12 sm:mt-20 space-y-14 lg:space-y-24">
             {ABOUT.values.map((v, i) => {
               const reverse = i % 2 === 1;
               return (
@@ -92,7 +92,7 @@ export default function AboutPage() {
                     className={`lg:col-span-7 ${reverse ? 'lg:order-2' : ''}`}
                   >
                     <div className="cinema relative overflow-hidden shadow-deep">
-                      <img src={v.image} alt="" loading="lazy" decoding="async" className="w-full h-[460px] object-cover" />
+                      <img src={v.image} alt="" loading="lazy" decoding="async" className="w-full h-[300px] sm:h-[400px] lg:h-[460px] object-cover" />
                       <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
                       <div className="absolute top-5 left-5 font-heading text-shimmer text-3xl">{v.num}</div>
                     </div>

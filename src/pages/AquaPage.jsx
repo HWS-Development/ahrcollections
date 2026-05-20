@@ -261,7 +261,7 @@ export default function AquaPage() {
             className="lg:col-span-7 relative"
           >
             <div className="cinema relative overflow-hidden shadow-deep">
-              <img src={introImg} alt="Waves Aqua Resort" className="w-full h-[580px] object-cover" loading="lazy" />
+              <img src={introImg} alt="Waves Aqua Resort" className="w-full h-[340px] sm:h-[460px] lg:h-[580px] object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(163,218,230,0.12)] to-transparent mix-blend-multiply" />
               <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
             </div>
@@ -328,7 +328,7 @@ export default function AquaPage() {
             <motion.span
               initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-heading uppercase tracking-[0.55em] text-[0.65rem] text-bordeaux"
+              className="font-heading uppercase tracking-[0.3em] sm:tracking-[0.55em] text-[0.6rem] sm:text-[0.65rem] text-bordeaux"
             >
               {t({ fr: 'Expériences Exclusives', en: 'Exclusive Experiences' })}
             </motion.span>
@@ -523,7 +523,7 @@ export default function AquaPage() {
       {/* ══════════════════════════════════════════
           STATS
       ══════════════════════════════════════════ */}
-      <section ref={statsRef} className="relative bg-ivory-50 py-20 md:py-28 overflow-hidden">
+      <section ref={statsRef} className="relative bg-ivory-50 py-14 sm:py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(184,140,58,0.18),_transparent_68%)]" />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}

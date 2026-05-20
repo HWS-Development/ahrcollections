@@ -78,7 +78,7 @@ export default function RestaurantHallSection() {
                     initial={{ y: '100%', opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1.1, delay: 0.6 + i * 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    className={`block ${i === 0 ? 'text-[clamp(2.4rem,5.5vw,5.2rem)]' : 'text-[clamp(1.3rem,2.8vw,2.6rem)] mt-2'}`}
+                    className={`block ${i === 0 ? 'text-[clamp(1.8rem,5.5vw,5.2rem)]' : 'text-[clamp(1.3rem,2.8vw,2.6rem)] mt-2'}`}
                   >
                     {line}
                   </motion.span>
@@ -166,7 +166,7 @@ export default function RestaurantHallSection() {
         </div>
 
         {/* Right — stacked image trio */}
-        <div className="relative lg:col-span-7 grid grid-rows-[1.7fr_1fr] gap-4 h-[560px] md:h-[660px]">
+        <div className="relative lg:col-span-7 grid grid-rows-[1.7fr_1fr] gap-4 h-auto sm:h-[560px] md:h-[660px]">
           <CinemaTile src={RESTAURANT_HALL.photos[1]} delay={0} />
           <div className="grid grid-cols-2 gap-4">
             <CinemaTile src={RESTAURANT_HALL.photos[2]} delay={0.1} position="center top" />

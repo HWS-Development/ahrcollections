@@ -44,7 +44,7 @@ export default function FamilySection() {
         <div className="lg:col-span-7 relative">
 
           {/* Main viewport */}
-          <div className="relative cinema overflow-hidden shadow-deep h-[460px] md:h-[600px] bg-bordeaux-deep">
+          <div className="relative cinema overflow-hidden shadow-deep h-[320px] sm:h-[420px] md:h-[600px] bg-bordeaux-deep">
 
             <AnimatePresence custom={dir} mode="popLayout" initial={false}>
               <motion.img

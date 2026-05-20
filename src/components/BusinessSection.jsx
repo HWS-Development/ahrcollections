@@ -50,7 +50,7 @@ export default function BusinessSection() {
         >
           {BUSINESS.videoSrc ? (
             <video
-              className="w-full h-[480px] md:h-[620px] object-cover"
+              className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
               src={BUSINESS.videoSrc}
               poster={BUSINESS.videoPoster}
               autoPlay
@@ -63,7 +63,7 @@ export default function BusinessSection() {
             <img
               src={BUSINESS.videoPoster || BUSINESS.photos?.[0]}
               alt="Business Forum"
-              className="w-full h-[480px] md:h-[620px] object-cover"
+              className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
               loading="lazy"
               decoding="async"
             />
@@ -74,7 +74,7 @@ export default function BusinessSection() {
           <div className="absolute bottom-0 inset-x-0 p-8 md:p-12 flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
               <p
-                className="font-heading uppercase tracking-[0.4em] text-[0.65rem]"
+                className="font-heading uppercase tracking-[0.25em] sm:tracking-[0.4em] text-[0.6rem] sm:text-[0.65rem]"
                 style={{ color: '#5E1A24' }}
               >
                 {t({ fr: 'Espaces de réunion · 10–250 invités', en: 'Meeting Spaces · 10–250 guests' })}
@@ -105,7 +105,7 @@ export default function BusinessSection() {
             className="relative mt-10 cinema overflow-hidden shadow-deep"
           >
             <video
-              className="w-full h-[420px] md:h-[560px] object-cover"
+              className="w-full h-[260px] sm:h-[380px] md:h-[560px] object-cover"
               src={BUSINESS.ballroomVideoSrc}
               poster={BUSINESS.ballroomVideoPoster}
               autoPlay
@@ -118,7 +118,7 @@ export default function BusinessSection() {
             <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
             <div className="absolute bottom-0 inset-x-0 p-8 md:p-12">
               <p
-                className="font-heading uppercase tracking-[0.4em] text-[0.65rem]"
+                className="font-heading uppercase tracking-[0.25em] sm:tracking-[0.4em] text-[0.6rem] sm:text-[0.65rem]"
                 style={{ color: '#5E1A24' }}
               >
                 {t(BUSINESS.ballroomEyebrow)}

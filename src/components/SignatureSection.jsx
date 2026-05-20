@@ -24,7 +24,7 @@ export default function SignatureSection() {
             <img
               src="/img/royal/deluxe/DSC06942.webp"
               alt="Royal Plaza signature suite"
-              className="w-full h-[640px] object-cover"
+              className="w-full h-[380px] sm:h-[480px] lg:h-[640px] object-cover"
               loading="lazy"
               decoding="async"
             />

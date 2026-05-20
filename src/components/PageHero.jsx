@@ -11,7 +11,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
   const titleLines = (typeof title === 'string' ? title : t(title)).split('\n');
 
   return (
-    <section className="relative h-screen min-h-[680px] w-full overflow-hidden bg-ink">
+    <section className="relative h-screen min-h-[560px] md:min-h-[680px] w-full overflow-hidden bg-ink">
       {videoSrc ? (
         <video
           className="absolute inset-0 w-full h-full object-cover scale-105"
@@ -43,7 +43,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.9 }}
-          className="absolute top-40 left-1/2 -translate-x-1/2 px-6 font-heading uppercase tracking-[0.5em] text-[0.7rem] text-shimmer text-center"
+          className="absolute top-40 left-1/2 -translate-x-1/2 w-[92%] px-4 font-heading uppercase tracking-[0.28em] sm:tracking-[0.5em] text-[0.58rem] sm:text-[0.7rem] text-shimmer text-center"
         >
           {typeof eyebrow === 'string' ? eyebrow : t(eyebrow)}
         </motion.p>
@@ -61,7 +61,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
             <img
               src={logo}
               alt=""
-              className="h-36 md:h-52 lg:h-60 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
+              className="h-24 sm:h-32 md:h-52 lg:h-60 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
               draggable={false}
             />
           </motion.div>

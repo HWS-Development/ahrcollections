@@ -16,7 +16,7 @@ export default function OffersPage() {
           className="relative max-w-4xl mx-auto px-6 text-center"
         >
           <span className="ornament eyebrow">{t(OFFERS.hero.eyebrow)}</span>
-          <h1 className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2.4rem,5vw,4.6rem)] leading-[1.04]">
+          <h1 className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.8rem,5vw,4.6rem)] leading-[1.04]">
             {t(OFFERS.hero.title)}
           </h1>
           <span className="block hairline mt-7 mx-auto" />

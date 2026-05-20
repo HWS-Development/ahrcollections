@@ -56,7 +56,7 @@ export default function SpaSection() {
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7 cinema relative overflow-hidden shadow-deep"
           >
-            <img src={SPA.photos[0]} alt="" loading="lazy" decoding="async" className="w-full h-[560px] object-cover" />
+            <img src={SPA.photos[0]} alt="" loading="lazy" decoding="async" className="w-full h-[320px] sm:h-[440px] lg:h-[560px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-bordeaux-deep/40 via-transparent to-transparent" />
             <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
             <div className="absolute bottom-6 left-6 text-ivory">

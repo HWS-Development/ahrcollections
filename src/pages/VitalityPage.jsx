@@ -144,7 +144,7 @@ export default function VitalityPage() {
             className="lg:col-span-7 relative"
           >
             <div className="cinema relative overflow-hidden shadow-deep">
-              <img src={introImg} alt="Vitality Terminus" className="w-full h-[580px] object-cover" loading="lazy" />
+              <img src={introImg} alt="Vitality Terminus" className="w-full h-[340px] sm:h-[460px] lg:h-[580px] object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(163,165,114,0.15)] to-transparent mix-blend-multiply" />
               <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
             </div>
@@ -213,7 +213,7 @@ export default function VitalityPage() {
               initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
-              className="relative min-h-[520px] cinema overflow-hidden"
+              className="relative min-h-[320px] lg:min-h-[520px] cinema overflow-hidden"
             >
               <img
                 src={VITALITY_RESTAURANT.heroImage}
@@ -235,7 +235,7 @@ export default function VitalityPage() {
               initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1.3, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-ivory-50 flex flex-col justify-center px-10 lg:px-16 py-16 border border-l-0 border-champagne/40"
+              className="bg-ivory-50 flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-12 lg:py-16 border border-l-0 border-champagne/40"
             >
               <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-bordeaux">
                 {t(VITALITY_RESTAURANT.eyebrow)}
@@ -462,7 +462,7 @@ export default function VitalityPage() {
 
                   {/* ── Left: hero image ── */}
                   <div
-                    className="lg:col-span-3 relative min-h-[460px] overflow-hidden"
+                          className="lg:col-span-3 relative min-h-[320px] lg:min-h-[460px] overflow-hidden"
                     onMouseMove={e => {
                       const r = e.currentTarget.getBoundingClientRect();
                       confMouseX.set((e.clientX - r.left) / r.width * 2 - 1);
@@ -504,7 +504,7 @@ export default function VitalityPage() {
                       initial={{ opacity: 0, scale: 0.4, rotate: -8 }}
                       animate={{ opacity: 1, scale: 1, rotate: 0 }}
                       transition={{ type: 'spring', stiffness: 260, damping: 18, delay: 0.65 }}
-                      className="absolute top-9 right-9 bg-bordeaux px-6 py-5 text-center shadow-deep"
+                      className="absolute top-4 right-4 sm:top-9 sm:right-9 bg-bordeaux px-4 py-3 sm:px-6 sm:py-5 text-center shadow-deep"
                     >
                       <p className="font-heading uppercase text-champagne/55 text-[0.46rem] tracking-[0.55em] mb-1">{t({ fr: 'Capacité', en: 'Capacity' })}</p>
                       <p className="font-heading text-champagne leading-none" style={{ fontSize: 'clamp(2.8rem,5vw,4rem)' }}>
@@ -521,7 +521,7 @@ export default function VitalityPage() {
                       transition={{ duration: 0.6, delay: 0.5 }}
                       className="absolute bottom-9 left-9"
                     >
-                      <p className="font-heading uppercase text-ivory/50 text-[0.54rem] tracking-[0.65em]">
+                      <p className="font-heading uppercase text-ivory/50 text-[0.54rem] tracking-[0.3em] sm:tracking-[0.65em]">
                         {t(VITALITY_MEETINGS[confRoom].tagline)}
                       </p>
                     </motion.div>
@@ -656,7 +656,7 @@ export default function VitalityPage() {
         </div>
 
         {/* Spacer so next section doesn't fuse */}
-        <div className="h-20 lg:h-28 bg-ivory" />
+        <div className="h-8 lg:h-28 bg-ivory" />
       </section>
 
       {/* ══════════════════════════════════════════
@@ -686,7 +686,7 @@ export default function VitalityPage() {
       {/* ══════════════════════════════════════════
           STATS
       ══════════════════════════════════════════ */}
-      <section ref={statsRef} className="relative bg-ivory-50 py-20 md:py-28 overflow-hidden">
+      <section ref={statsRef} className="relative bg-ivory-50 py-14 sm:py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(184,140,58,0.18),_transparent_68%)]" />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}

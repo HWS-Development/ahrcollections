@@ -14,7 +14,7 @@ export default function Footer() {
       {/* soft radial */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,167,102,0.22),_transparent_60%)] pointer-events-none" />
 
-      <div className="relative max-w-[1600px] mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-12 gap-12">
+      <div className="relative max-w-[1600px] mx-auto px-6 lg:px-12 py-14 lg:py-20 grid md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
 
         {/* Brand + tagline */}
         <div className="lg:col-span-4">

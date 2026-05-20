@@ -174,7 +174,7 @@ export default function SpaPoolSection() {
         </div>
 
         {/* Right — asymmetric image grid (flex, no col-span) */}
-        <div className="lg:col-span-8 flex flex-col sm:flex-row gap-4" style={{ height: '520px' }}>
+        <div className="lg:col-span-8 flex flex-col sm:flex-row gap-4 sm:h-[520px]">
           {/* Large left image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}

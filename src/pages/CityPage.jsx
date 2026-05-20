@@ -186,7 +186,7 @@ export default function CityPage() {
             className="lg:col-span-7 relative"
           >
             <div className="cinema relative overflow-hidden shadow-deep">
-              <img src={introImg} alt="City Hôtel by Waves" className="w-full h-[580px] object-cover" loading="lazy" />
+              <img src={introImg} alt="City Hôtel by Waves" className="w-full h-[340px] sm:h-[460px] lg:h-[580px] object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(163,165,114,0.12)] to-transparent mix-blend-multiply" />
               <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
             </div>
@@ -255,7 +255,7 @@ export default function CityPage() {
                 initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-ivory-50 flex flex-col justify-center px-10 lg:px-16 py-16 border border-r-0 border-champagne/40 order-2 lg:order-1"
+                className="bg-ivory-50 flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-12 lg:py-16 border border-r-0 border-champagne/40 order-2 lg:order-1"
               >
                 <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-bordeaux">
                   {t(CITY_RESTAURANT.eyebrow)}
@@ -296,7 +296,7 @@ export default function CityPage() {
                 initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 1.3, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="relative min-h-[520px] cinema overflow-hidden order-1 lg:order-2"
+                className="relative min-h-[320px] lg:min-h-[520px] cinema overflow-hidden order-1 lg:order-2"
               >
                 <img
                   src={CITY_RESTAURANT.heroImage}
@@ -407,7 +407,7 @@ export default function CityPage() {
       {/* ══════════════════════════════════════════
           STATS
       ══════════════════════════════════════════ */}
-      <section ref={statsRef} className="relative bg-ivory-50 py-20 md:py-28 overflow-hidden">
+      <section ref={statsRef} className="relative bg-ivory-50 py-14 sm:py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(184,140,58,0.18),_transparent_68%)]" />
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}

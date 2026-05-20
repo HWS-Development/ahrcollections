@@ -64,7 +64,7 @@ export default function HotelPageTemplate({ data, accentTone = 'sand', name, oth
             className="lg:col-span-7 relative"
           >
             <div className="cinema relative overflow-hidden shadow-deep">
-              <img src={data.gallery[0]} alt={name} loading="eager" decoding="async" className="w-full h-[560px] object-cover" />
+              <img src={data.gallery[0]} alt={name} loading="eager" decoding="async" className="w-full h-[320px] sm:h-[440px] lg:h-[560px] object-cover" />
               <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
               <div className={`absolute inset-0 bg-gradient-to-tr ${tone.accent} mix-blend-multiply opacity-15`} />
             </div>
@@ -113,11 +113,11 @@ export default function HotelPageTemplate({ data, accentTone = 'sand', name, oth
             eyebrow={t({ fr: 'Galerie', en: 'Gallery' })}
             title={t({ fr: 'Un avant-goût de l’expérience.', en: 'A taste of the experience.' })}
           />
-          <div className="mt-14 grid grid-cols-12 grid-rows-2 gap-3 md:gap-4 h-[760px]">
-            <Tile src={data.gallery[1] || data.gallery[0]} className="col-span-7 row-span-2" delay={0} />
-            <Tile src={data.gallery[2] || data.gallery[0]} className="col-span-5 row-span-1" delay={0.1} />
-            <Tile src={data.gallery[3] || data.gallery[0]} className="col-span-3 row-span-1" delay={0.15} />
-            <Tile src={data.gallery[4] || data.gallery[0]} className="col-span-2 row-span-1" delay={0.2} />
+          <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-12 md:grid-rows-2 gap-3 md:gap-4 h-auto md:h-[760px]">
+            <Tile src={data.gallery[1] || data.gallery[0]} className="col-span-2 md:col-span-7 md:row-span-2 h-64 md:h-auto" delay={0} />
+            <Tile src={data.gallery[2] || data.gallery[0]} className="col-span-2 md:col-span-5 md:row-span-1 h-44 md:h-auto" delay={0.1} />
+            <Tile src={data.gallery[3] || data.gallery[0]} className="col-span-1 md:col-span-3 md:row-span-1 h-32 md:h-auto" delay={0.15} />
+            <Tile src={data.gallery[4] || data.gallery[0]} className="col-span-1 md:col-span-2 md:row-span-1 h-32 md:h-auto" delay={0.2} />
           </div>
           <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {data.gallery.slice(5, 9).map((src, i) => (

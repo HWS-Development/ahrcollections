@@ -18,7 +18,7 @@ export default function CollectionPage() {
             className="lg:col-span-7"
           >
             <span className="ornament eyebrow">{t(COLLECTION.hero.eyebrow)}</span>
-            <h1 className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2.4rem,6vw,5.6rem)] leading-[1.02]">
+            <h1 className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.8rem,6vw,5.6rem)] leading-[1.02]">
               {t(COLLECTION.hero.title)}
             </h1>
             <span className="block hairline mt-7" />
@@ -49,7 +49,7 @@ export default function CollectionPage() {
                 className={`lg:col-span-7 ${reverse ? 'lg:order-2' : ''}`}
               >
                 <div className="cinema relative overflow-hidden shadow-deep">
-                  <img src={h.image} alt={h.name} loading="lazy" decoding="async" className="w-full h-[560px] object-cover" />
+                  <img src={h.image} alt={h.name} loading="lazy" decoding="async" className="w-full h-[340px] sm:h-[460px] lg:h-[560px] object-cover" />
                   <div className="absolute inset-0 bg-bordeaux-veil" />
                   <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
                   <div className="absolute top-6 left-6 font-heading text-shimmer text-2xl">0{i+1}</div>

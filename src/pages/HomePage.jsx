@@ -135,7 +135,7 @@ export default function HomePage() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 1.1, delay: 0.1 * (i % 2), ease: [0.22, 1, 0.36, 1] }}
               >
-                <Link to={h.to} className="group block cinema relative overflow-hidden shadow-soft h-[460px]">
+                <Link to={h.to} className="group block cinema relative overflow-hidden shadow-soft h-[340px] md:h-[460px]">
                   <img src={h.image} alt={h.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-deep/85 via-bordeaux-deep/30 to-transparent" />
                   <div className="pointer-events-none absolute inset-4 border border-champagne/30 group-hover:border-champagne/70 transition-colors duration-700" />

@@ -7,7 +7,7 @@ export default function Hero() {
   const titleLines = t(HERO.title).split('\n');
 
   return (
-    <section id="home" className="relative h-screen min-h-[760px] w-full overflow-hidden bg-ink">
+    <section id="home" className="relative h-screen min-h-[600px] md:min-h-[760px] w-full overflow-hidden bg-ink">
 
       {/* ── Video ── */}
       <video
@@ -61,7 +61,7 @@ export default function Hero() {
           <img
             src="/logos/royal-plaza-logo.svg"
             alt="Royal Plaza Hotel"
-            className="h-36 md:h-52 lg:h-60 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
+            className="h-24 sm:h-32 md:h-52 lg:h-60 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
             draggable={false}
           />
         </motion.div>

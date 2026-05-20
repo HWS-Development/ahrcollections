@@ -99,7 +99,7 @@ export default function HotelRoomsSection({
             <button
               key={r.id}
               onClick={() => setActive(i)}
-              className={`relative px-5 md:px-7 py-3 font-heading uppercase tracking-[0.28em] text-[0.66rem] md:text-[0.72rem] border transition-all duration-500
+              className={`relative px-5 md:px-7 py-4 min-h-[44px] font-heading uppercase tracking-[0.28em] text-[0.66rem] md:text-[0.72rem] border transition-all duration-500
                 ${active === i
                   ? 'bg-bordeaux text-ivory border-bordeaux shadow-soft'
                   : 'bg-transparent text-ink border-ink/20 hover:border-bordeaux hover:text-bordeaux'}`}
@@ -121,7 +121,7 @@ export default function HotelRoomsSection({
 
           {/* ── Cinematic image gallery ── */}
           <div className="lg:col-span-7 relative">
-            <div className="relative cinema overflow-hidden shadow-deep h-[460px] md:h-[600px] bg-bordeaux-deep">
+            <div className="relative cinema overflow-hidden shadow-deep h-[320px] sm:h-[420px] md:h-[600px] bg-bordeaux-deep">
 
               <AnimatePresence custom={direction} mode="popLayout" initial={false}>
                 <motion.img

@@ -60,14 +60,14 @@ export default function DiningSection() {
       </div>
 
       {/* Mosaic gallery */}
-      <div className="mt-20 max-w-[1600px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-12 grid-rows-2 gap-4 h-[720px]">
-          <Tile src={DINING.photos[0]} className="col-span-6 row-span-2" delay={0.0} />
-          <Tile src={DINING.photos[1]} className="col-span-3 row-span-1" delay={0.1} />
-          <Tile src={DINING.photos[2]} className="col-span-3 row-span-1" delay={0.15} />
-          <Tile src={DINING.photos[3]} className="col-span-2 row-span-1" delay={0.2} />
-          <Tile src={DINING.photos[4]} className="col-span-2 row-span-1" delay={0.25} />
-          <Tile src={DINING.photos[5]} className="col-span-2 row-span-1" delay={0.3} />
+      <div className="mt-12 md:mt-20 max-w-[1600px] mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-2 md:grid-cols-12 md:grid-rows-2 gap-3 md:gap-4 h-auto md:h-[720px]">
+          <Tile src={DINING.photos[0]} className="col-span-2 md:col-span-6 md:row-span-2 h-64 md:h-auto" delay={0.0} />
+          <Tile src={DINING.photos[1]} className="col-span-1 md:col-span-3 md:row-span-1 h-40 md:h-auto" delay={0.1} />
+          <Tile src={DINING.photos[2]} className="col-span-1 md:col-span-3 md:row-span-1 h-40 md:h-auto" delay={0.15} />
+          <Tile src={DINING.photos[3]} className="col-span-1 md:col-span-2 md:row-span-1 h-32 md:h-auto" delay={0.2} />
+          <Tile src={DINING.photos[4]} className="col-span-1 md:col-span-2 md:row-span-1 h-32 md:h-auto" delay={0.25} />
+          <Tile src={DINING.photos[5]} className="col-span-2 md:col-span-2 md:row-span-1 h-32 md:h-auto" delay={0.3} />
         </div>
       </div>
     </section>

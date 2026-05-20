@@ -26,7 +26,7 @@ export default function ContactPage() {
           className="relative max-w-4xl mx-auto px-6 text-center"
         >
           <span className="ornament eyebrow">{t(CONTACT.hero.eyebrow)}</span>
-          <h1 className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2.4rem,5vw,4.6rem)] leading-[1.04]">
+          <h1 className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.8rem,5vw,4.6rem)] leading-[1.04]">
             {t(CONTACT.hero.title)}
           </h1>
           <span className="block hairline mt-7 mx-auto" />
@@ -89,7 +89,7 @@ export default function ContactPage() {
                 <label className="eyebrow">{t(CONTACT.form.hotel)}</label>
                 <select
                   name="hotel" defaultValue=""
-                  className="mt-2 w-full bg-transparent border-b border-ink/20 focus:border-bordeaux py-3 font-display text-ink outline-none transition-colors"
+                  className="mt-2 w-full bg-transparent border-b border-ink/20 focus:border-bordeaux py-3.5 font-display text-ink outline-none transition-colors"
                 >
                   <option value="" disabled>{t(CONTACT.form.chooseHotel)}</option>
                   {HOTELS.map((h) => <option key={h.id} value={h.name}>{h.name}</option>)}
@@ -99,7 +99,7 @@ export default function ContactPage() {
                 <label className="eyebrow">{t(CONTACT.form.message)}</label>
                 <textarea
                   name="message" rows={5} required
-                  className="mt-2 w-full bg-transparent border-b border-ink/20 focus:border-bordeaux py-3 font-display text-ink outline-none transition-colors resize-none"
+                  className="mt-2 w-full bg-transparent border-b border-ink/20 focus:border-bordeaux py-3.5 font-display text-ink outline-none transition-colors resize-none"
                 />
               </div>
             </div>
@@ -169,7 +169,7 @@ function Field({ label, name, type = 'text', required = false }) {
       <label className="eyebrow">{label}{required ? ' *' : ''}</label>
       <input
         type={type} name={name} required={required}
-        className="mt-2 w-full bg-transparent border-b border-ink/20 focus:border-bordeaux py-3 font-display text-ink outline-none transition-colors"
+        className="mt-2 w-full bg-transparent border-b border-ink/20 focus:border-bordeaux py-3.5 font-display text-ink outline-none transition-colors"
       />
     </div>
   );
