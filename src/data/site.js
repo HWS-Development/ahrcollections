@@ -194,6 +194,59 @@ export const ABOUT = {
   quote: {
     fr: 'Proposer bien plus qu’un séjour : offrir des expériences mémorables, tout en contribuant au rayonnement de la région.',
     en: 'To offer far more than a stay: memorable experiences that also enrich the region we call home.'
+  },
+  location: {
+    eyebrow: { fr: 'Situé au cœur de Kénitra', en: 'At the heart of Kénitra' },
+    title:   { fr: 'Une ville connectée, un cadre d’exception.',
+               en: 'A connected city, an exceptional setting.' },
+    intro: {
+      fr: 'Idéalement implantée à Kénitra, AHR Collection bénéficie d’un emplacement stratégique — un trait d’union entre les grandes capitales économiques du Royaume et la nature préservée d’Al Gharb.',
+      en: 'Strategically located in Kénitra, AHR Collection offers a privileged gateway — bridging Morocco’s economic capitals and the preserved nature of the Gharb region.'
+    },
+    points: [
+      { icon: '◇',
+        title: { fr: 'Gare LGV à proximité', en: 'High-speed rail nearby' },
+        desc:  { fr: 'Rabat à 30 minutes, Casablanca à 1h30. La mobilité comme évidence.',
+                 en: 'Rabat in 30 minutes, Casablanca in 1h30. Effortless mobility.' } },
+      { icon: '◈',
+        title: { fr: 'Zones économiques & industrielles', en: 'Economic & industrial zones' },
+        desc:  { fr: 'Au plus près des pôles d’affaires, parfait pour les séjours professionnels.',
+                 en: 'Steps from major business hubs — ideal for professional stays.' } },
+      { icon: '◉',
+        title: { fr: 'Plages & forêts d’Al Gharb', en: 'Gharb beaches & forests' },
+        desc:  { fr: 'Un environnement naturel exceptionnel, à quelques minutes de l’hôtel.',
+                 en: 'An outstanding natural setting, only minutes from the property.' } }
+    ]
+  },
+  mission: {
+    eyebrow: { fr: 'Notre Mission', en: 'Our Mission' },
+    title:   { fr: 'Proposer bien plus qu’un séjour.', en: 'To offer far more than a stay.' },
+    body: {
+      fr: 'AHR Collection incarne l’équilibre parfait entre l’hospitalité marocaine traditionnelle et les normes internationales modernes. Notre mission : offrir des expériences mémorables à nos clients tout en contribuant au rayonnement économique, social et culturel de la région de Kénitra et d’Al Gharb.',
+      en: 'AHR Collection embodies the perfect balance between traditional Moroccan hospitality and modern international standards. Our mission: deliver memorable experiences to our guests while contributing to the economic, social and cultural rise of Kénitra and the Gharb region.'
+    }
+  },
+  whyChoose: {
+    eyebrow: { fr: 'Pourquoi nous choisir', en: 'Why choose us' },
+    title:   { fr: 'Pourquoi choisir AHR Collection ?', en: 'Why choose AHR Collection?' },
+    points: [
+      { num: '01',
+        title: { fr: 'Localisation stratégique', en: 'Strategic location' },
+        desc:  { fr: 'À Kénitra, au cœur d’un réseau d’affaires et de transport moderne.',
+                 en: 'In Kénitra, at the heart of a modern business and transport network.' } },
+      { num: '02',
+        title: { fr: 'Expériences sur-mesure', en: 'Tailored experiences' },
+        desc:  { fr: 'Une variété d’adresses adaptée à tous les profils — luxe, confort, accessibilité.',
+                 en: 'A variety of addresses for every profile — luxury, comfort, accessibility.' } },
+      { num: '03',
+        title: { fr: 'Services premium personnalisés', en: 'Personalized premium services' },
+        desc:  { fr: 'Pensés pour répondre aux besoins les plus exigeants, avec une attention sincère.',
+                 en: 'Crafted to meet the most demanding needs, with sincere attention.' } },
+      { num: '04',
+        title: { fr: 'Engagement durable & local', en: 'Sustainable & local commitment' },
+        desc:  { fr: 'Des expériences authentiques, ancrées dans le bien-être et le développement durable.',
+                 en: 'Authentic experiences rooted in wellbeing and sustainable development.' } }
+    ]
   }
 };
 
@@ -311,8 +364,8 @@ export const AQUA = {
       desc: { fr: 'Espace événementiel moderne pour séminaires, mariages et conférences.',
               en: 'Modern event venue for seminars, weddings and conferences.' } },
     { icon: '☼', title: { fr: 'Gastronomie unique', en: 'Singular gastronomy' },
-      desc: { fr: 'Bronz Sea Food, Barbecue à Table, Crepland, bars et lounges en bord de piscine.',
-              en: 'Bronz Sea Food, Barbecue à Table, Crepland, bars and poolside lounges.' } }
+      desc: { fr: 'Le Bronze · Sea Food & Grill, Barbecue à Table, Crepland, bars et lounges en bord de piscine.',
+              en: 'Le Bronze · Sea Food & Grill, Barbecue à Table, Crepland, bars and poolside lounges.' } }
   ],
   gallery: [
     '/img/aqua/pool/DJI_0097.webp',

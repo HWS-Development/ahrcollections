@@ -336,7 +336,7 @@ export const AQUA_FEATURES = [
   { icon: '∿', title: { fr: 'Aquaparc géant', en: 'Vast Aquapark' },
     desc: { fr: 'Le plus grand de la région : 30+ toboggans, piscine à vagues, rivière lente, plages privées.', en: 'The largest in the region: 30+ slides, wave pool, lazy river, private beaches.' } },
   { icon: '◉', title: { fr: 'Gastronomie & Loisirs', en: 'Dining & Leisure' },
-    desc: { fr: 'Bronz Sea Food, Barbecue à Table, Crepland, Play & Jump Park, bars en bord de piscine.', en: 'Bronz Sea Food, Barbecue à Table, Crepland, Play & Jump Park, poolside bars.' } },
+    desc: { fr: 'Le Bronze · Sea Food & Grill, Barbecue à Table, Crepland, Play & Jump Park, bars en bord de piscine.', en: 'Le Bronze · Sea Food & Grill, Barbecue à Table, Crepland, Play & Jump Park, poolside bars.' } },
   { icon: '◇', title: { fr: 'Centre de bien-être', en: 'Wellness Center' },
     desc: { fr: 'Spa, hammam traditionnel, salon de beauté et soins relaxants haut de gamme.', en: 'Spa, traditional hammam, beauty salon and premium relaxing treatments.' } },
   { icon: '◈', title: { fr: 'Palais des Congrès', en: 'Convention Center' },
@@ -700,7 +700,7 @@ export const AQUA_HIGHLIGHTS = [
   },
   {
     id: 'bronz',
-    label: { fr: 'Le Bronze · Grill & Bar', en: 'Le Bronze · Grill & Bar' },
+    label: { fr: 'Le Bronze · Sea Food & Grill', en: 'Le Bronze · Sea Food & Grill' },
     sub: { fr: 'Grillades de soirée, cocktails signature au coucher du soleil', en: 'Evening grills, signature cocktails at sunset' },
     image: '/img/aqua/bronz/photos2273.webp',
     images: [
@@ -807,4 +807,81 @@ export const AQUA_CONVENTION = {
     fr: 'Mariages, galas, soirées d\'entreprise ou célébrations privées — Le Ballroom vous accueille dans un cadre somptueux conçu pour l\'inoubliable.',
     en: 'Weddings, galas, corporate evenings or private celebrations — The Ballroom welcomes you in a sumptuous setting designed for the unforgettable.',
   },
+};
+
+// =====================================================================
+// AQUA — Spec-aligned additions (Aquaparc details, Wellness, Dining venues, Pack offer)
+// =====================================================================
+export const AQUA_AQUAPARK_DETAILS = {
+  eyebrow: { fr: 'L’Aquaparc & les Loisirs', en: 'Aquapark & Leisure' },
+  title:   { fr: 'Un parc aquatique conçu pour le plaisir de tous.', en: 'A water park designed for everyone’s delight.' },
+  sub: {
+    fr: 'Plus de 30 toboggans géants, piscine à vagues, rivière lente, espaces enfants et plages privées — l’accès est inclus avec votre réservation à l’hôtel ou disponible en ticket à la journée.',
+    en: '30+ giant slides, wave pool, lazy river, kids zones and private beaches — access is included with your hotel stay or available as a day-pass.'
+  },
+  items: [
+    { icon: '∿',
+      title: { fr: 'Toboggans géants',         en: 'Giant slides' },
+      desc:  { fr: 'Sensations fortes garanties sur plus de 30 toboggans.', en: '30+ slides for guaranteed thrills.' } },
+    { icon: '~',
+      title: { fr: 'Piscine à vagues & rivière lente', en: 'Wave pool & lazy river' },
+      desc:  { fr: 'Pour un moment de détente aquatique en famille.', en: 'For a relaxing aquatic moment with family.' } },
+    { icon: '◌',
+      title: { fr: 'Espaces enfants',         en: 'Kids zones' },
+      desc:  { fr: 'Jeux interactifs et bassins adaptés aux plus petits.', en: 'Interactive games and pools tailored for little ones.' } },
+    { icon: '★',
+      title: { fr: 'Plages privées & VIP',    en: 'Private beaches & VIP' },
+      desc:  { fr: 'Cabanas, services premium et tranquillité pour une expérience exclusive.', en: 'Cabanas, premium service and quiet for an exclusive experience.' } }
+  ],
+  access: {
+    fr: 'Accès au parc inclus avec la réservation de l’hôtel · Ticket à la journée disponible.',
+    en: 'Park access included with hotel reservation · Day-pass available.'
+  }
+};
+
+export const AQUA_WELLNESS = {
+  eyebrow: { fr: 'Bien-être & Détente', en: 'Wellbeing & Relaxation' },
+  title:   { fr: 'Un centre dédié au soin du corps et de l’esprit.', en: 'A center devoted to body and mind.' },
+  items: [
+    { icon: '◇',
+      title: { fr: 'Spa & Massages',          en: 'Spa & Massages' },
+      desc:  { fr: 'Une sélection de soins relaxants et thérapeutiques par nos experts.', en: 'A curated selection of relaxing and therapeutic treatments by our experts.' } },
+    { icon: '◈',
+      title: { fr: 'Hammam traditionnel',     en: 'Traditional hammam' },
+      desc:  { fr: 'Rituel marocain ancestral pour une purification complète.', en: 'Ancestral Moroccan ritual for a complete purification.' } },
+    { icon: '◉',
+      title: { fr: 'Salon de beauté',         en: 'Beauty salon' },
+      desc:  { fr: 'Soins visage, coiffure et manucure dans un cadre raffiné.', en: 'Facial care, hair and manicure services in a refined setting.' } }
+  ]
+};
+
+export const AQUA_DINING_VENUES = {
+  eyebrow: { fr: 'Gastronomie & Loisirs', en: 'Gastronomy & Leisure' },
+  title:   { fr: 'Une offre culinaire variée et innovante.', en: 'A varied and innovative culinary offer.' },
+  venues: [
+    { name: 'Le Bronze · Sea Food & Grill',
+      desc: { fr: 'Spécialités de fruits de mer et cuisine méditerranéenne.', en: 'Seafood specialties and Mediterranean cuisine.' } },
+    { name: 'Barbecue à Table',
+      desc: { fr: 'Grillades en live cooking pour une expérience conviviale.', en: 'Live-cooking grills for a convivial experience.' } },
+    { name: 'Play & Jump Park',
+      desc: { fr: 'Espace de loisirs interactif pour petits et grands.', en: 'Interactive leisure space for young and old alike.' } },
+    { name: 'Crepland & Food Snacks',
+      desc: { fr: 'Crêpes gourmandes et en-cas savoureux à toute heure.', en: 'Gourmet crêpes and savory snacks all day long.' } },
+    { name: 'Bars & Lounges',
+      desc: { fr: 'Cocktails raffinés et ambiance détente en bord de piscine.', en: 'Refined cocktails and a relaxed poolside ambience.' } }
+  ]
+};
+
+export const AQUA_PACK_OFFER = {
+  eyebrow: { fr: 'Réservez Votre Séjour', en: 'Book Your Stay' },
+  title:   { fr: 'Pack Hôtel & Aquaparc.', en: 'Hotel & Aquapark Pack.' },
+  sub: {
+    fr: 'Séjournez dans le plus beau resort aquatique de la région — accès exclusif aux attractions inclus.',
+    en: 'Stay in the region’s most beautiful water resort — exclusive access to attractions included.'
+  },
+  perks: [
+    { fr: 'Réservation simple et rapide via notre plateforme en ligne.', en: 'Simple, fast booking via our online platform.' },
+    { fr: 'Offres spéciales pour les réservations anticipées et les séjours prolongés.', en: 'Special offers for early bookings and extended stays.' },
+    { fr: 'Pack Hôtel & Aquaparc avec accès exclusif aux attractions.', en: 'Hotel & Aquapark pack with exclusive access to attractions.' }
+  ]
 };

@@ -115,6 +115,87 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* LOCATION — Ville Connectée */}
+      <section className="relative section-pad bg-ivory overflow-hidden">
+        <div className="absolute inset-0 bg-champagne-radial pointer-events-none" />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+          <SectionHeader
+            eyebrow={t(ABOUT.location.eyebrow)}
+            title={t(ABOUT.location.title)}
+            sub={t(ABOUT.location.intro)}
+          />
+          <div className="mt-12 sm:mt-16 grid md:grid-cols-3 gap-5 lg:gap-7">
+            {ABOUT.location.points.map((p, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.9, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative bg-ivory-50 border border-champagne/40 p-8 overflow-hidden hover:border-bordeaux transition-colors duration-700"
+              >
+                <span className="absolute inset-0 bg-gradient-to-br from-champagne/0 via-champagne/15 to-bordeaux/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <span className="absolute top-3 left-3 w-3 h-3 border-t border-l border-bordeaux/60" />
+                <span className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-bordeaux/60" />
+                <p className="font-heading text-shimmer text-3xl">{p.icon}</p>
+                <h3 className="mt-5 font-heading uppercase text-bordeaux tracking-wider text-[0.95rem] leading-tight">{t(p.title)}</h3>
+                <span className="block mt-4 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+                <p className="mt-4 font-display text-ink-soft text-[0.92rem] leading-[1.75]">{t(p.desc)}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MISSION — titled block */}
+      <section className="relative py-24 sm:py-28 bg-mist overflow-hidden">
+        <div className="absolute -top-32 right-0 w-[480px] h-[480px] bg-champagne/10 blur-3xl pointer-events-none" />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl mx-auto px-6 text-center"
+        >
+          <span className="ornament eyebrow">{t(ABOUT.mission.eyebrow)}</span>
+          <h2 className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.8rem,3vw,2.8rem)] leading-tight">
+            {t(ABOUT.mission.title)}
+          </h2>
+          <span className="block hairline mx-auto mt-6" />
+          <p className="mt-8 font-display text-ink-soft text-[1.02rem] leading-[1.9] max-w-2xl mx-auto">
+            {t(ABOUT.mission.body)}
+          </p>
+        </motion.div>
+      </section>
+
+      {/* WHY CHOOSE — 4 numbered cards */}
+      <section className="relative section-pad bg-ivory-50 overflow-hidden">
+        <div className="absolute -top-32 left-0 w-[480px] h-[480px] bg-bordeaux/5 blur-3xl pointer-events-none" />
+        <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12">
+          <SectionHeader
+            eyebrow={t(ABOUT.whyChoose.eyebrow)}
+            title={t(ABOUT.whyChoose.title)}
+          />
+          <div className="mt-12 sm:mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            {ABOUT.whyChoose.points.map((p, i) => (
+              <motion.div
+                key={p.num}
+                initial={{ opacity: 0, y: 50, rotateX: -12 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 1, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative bg-ivory border border-champagne/40 p-8 overflow-hidden hover:border-bordeaux transition-colors duration-700"
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                <span className="absolute inset-0 bg-gradient-to-br from-champagne/0 via-champagne/15 to-bordeaux/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <span className="absolute top-3 left-3 w-3 h-3 border-t border-l border-bordeaux/60" />
+                <span className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-bordeaux/60" />
+                <p className="font-heading text-shimmer text-3xl">{p.num}</p>
+                <h3 className="mt-5 font-heading uppercase text-bordeaux tracking-wider text-[0.95rem] leading-tight">{t(p.title)}</h3>
+                <span className="block mt-4 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+                <p className="mt-4 font-display text-ink-soft text-[0.92rem] leading-[1.75]">{t(p.desc)}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative py-28 bg-mist overflow-hidden">
         <div className="absolute inset-0 bg-champagne-radial" />

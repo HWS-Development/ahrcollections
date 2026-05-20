@@ -10,6 +10,7 @@ import { AQUA, HOTELS }    from '../data/site.js';
 import {
   AQUA_ROOMS, AQUA_STATS, AQUA_FEATURES, AQUA_INFO,
   AQUA_HIGHLIGHTS, AQUA_CONVENTION,
+  AQUA_AQUAPARK_DETAILS, AQUA_WELLNESS, AQUA_DINING_VENUES, AQUA_PACK_OFFER,
 } from '../data/hotels.js';
 import { UI } from '../data/site.js';
 
@@ -398,6 +399,157 @@ export default function AquaPage() {
           transition={{ duration: 1.6 }}
           className="block h-px bg-gradient-to-r from-transparent via-bordeaux/30 to-transparent origin-center mt-16"
         />
+      </section>
+
+      {/* ══════════════════════════════════════════
+          AQUAPARC DETAILS — slides / waves / kids / VIP
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-ivory overflow-hidden">
+        <div className="absolute -top-32 right-0 w-[480px] h-[480px] bg-champagne/10 blur-3xl pointer-events-none" />
+        <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="ornament eyebrow">{t(AQUA_AQUAPARK_DETAILS.eyebrow)}</span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.8rem,3vw,2.8rem)] leading-tight"
+            >
+              {t(AQUA_AQUAPARK_DETAILS.title)}
+            </motion.h2>
+            <span className="block hairline mx-auto mt-6" />
+            <p className="mt-6 font-display text-ink-soft text-[1rem] leading-[1.85]">
+              {t(AQUA_AQUAPARK_DETAILS.sub)}
+            </p>
+          </div>
+          <div className="mt-14 sm:mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            {AQUA_AQUAPARK_DETAILS.items.map((it, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.9, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative bg-ivory-50 border border-champagne/40 p-7 overflow-hidden hover:border-bordeaux transition-colors duration-700"
+              >
+                <span className="absolute top-3 left-3 w-3 h-3 border-t border-l border-bordeaux/60" />
+                <span className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-bordeaux/60" />
+                <p className="font-heading text-shimmer text-3xl">{it.icon}</p>
+                <h3 className="mt-5 font-heading uppercase text-bordeaux tracking-wider text-[0.92rem] leading-tight">{t(it.title)}</h3>
+                <span className="block mt-4 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+                <p className="mt-4 font-display text-ink-soft text-[0.9rem] leading-[1.7]">{t(it.desc)}</p>
+              </motion.div>
+            ))}
+          </div>
+          <p className="mt-10 text-center font-heading uppercase tracking-[0.32em] text-[0.7rem] text-bordeaux/80">
+            {t(AQUA_AQUAPARK_DETAILS.access)}
+          </p>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          WELLNESS — Spa / Hammam / Beauty
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-mist overflow-hidden">
+        <div className="absolute -top-32 left-0 w-[480px] h-[480px] bg-bordeaux/5 blur-3xl pointer-events-none" />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="ornament eyebrow">{t(AQUA_WELLNESS.eyebrow)}</span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.7rem,2.8vw,2.6rem)] leading-tight"
+            >
+              {t(AQUA_WELLNESS.title)}
+            </motion.h2>
+            <span className="block hairline mx-auto mt-6" />
+          </div>
+          <div className="mt-14 grid md:grid-cols-3 gap-5 lg:gap-7">
+            {AQUA_WELLNESS.items.map((it, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.9, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative bg-ivory border border-champagne/40 p-8 overflow-hidden hover:border-bordeaux transition-colors duration-700"
+              >
+                <span className="absolute inset-0 bg-gradient-to-br from-champagne/0 via-champagne/15 to-bordeaux/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <span className="absolute top-3 left-3 w-3 h-3 border-t border-l border-bordeaux/60" />
+                <span className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-bordeaux/60" />
+                <p className="font-heading text-shimmer text-3xl">{it.icon}</p>
+                <h3 className="mt-5 font-heading uppercase text-bordeaux tracking-wider text-[0.95rem] leading-tight">{t(it.title)}</h3>
+                <span className="block mt-4 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+                <p className="mt-4 font-display text-ink-soft text-[0.92rem] leading-[1.75]">{t(it.desc)}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          DINING VENUES — 5 named restaurants/lounges
+      ══════════════════════════════════════════ */}
+      <section className="relative section-pad bg-ivory-50 overflow-hidden">
+        <div className="absolute inset-0 bg-champagne-radial pointer-events-none" />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="ornament eyebrow">{t(AQUA_DINING_VENUES.eyebrow)}</span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-bordeaux text-[clamp(1.7rem,2.8vw,2.6rem)] leading-tight"
+            >
+              {t(AQUA_DINING_VENUES.title)}
+            </motion.h2>
+            <span className="block hairline mx-auto mt-6" />
+          </div>
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            {AQUA_DINING_VENUES.venues.map((v, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.9, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative bg-ivory border border-champagne/40 p-7 overflow-hidden hover:border-bordeaux transition-colors duration-700"
+              >
+                <span className="absolute top-3 left-3 w-3 h-3 border-t border-l border-bordeaux/60" />
+                <span className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-bordeaux/60" />
+                <p className="font-heading uppercase text-bordeaux text-[1.05rem] tracking-wider leading-tight">{v.name}</p>
+                <span className="block mt-3 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+                <p className="mt-4 font-display text-ink-soft text-[0.92rem] leading-[1.75]">{t(v.desc)}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          PACK HÔTEL & AQUAPARC — booking offer
+      ══════════════════════════════════════════ */}
+      <section className="relative py-24 sm:py-28 bg-bordeaux text-ivory overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.18),_transparent_70%)]" />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl mx-auto px-6 text-center"
+        >
+          <span className="font-heading uppercase tracking-[0.4em] text-[0.7rem] text-shimmer">{t(AQUA_PACK_OFFER.eyebrow)}</span>
+          <h2 className="mt-6 font-heading uppercase text-ivory text-[clamp(1.8rem,3vw,2.8rem)] leading-tight">
+            {t(AQUA_PACK_OFFER.title)}
+          </h2>
+          <span className="block h-px w-20 bg-champagne mx-auto mt-6" />
+          <p className="mt-8 font-display text-ivory/90 text-[1.02rem] leading-[1.9] max-w-2xl mx-auto">
+            {t(AQUA_PACK_OFFER.sub)}
+          </p>
+          <ul className="mt-10 space-y-3 text-left max-w-xl mx-auto">
+            {AQUA_PACK_OFFER.perks.map((p, i) => (
+              <li key={i} className="flex items-start gap-3 font-display text-ivory/85 text-[0.95rem] leading-[1.7]">
+                <span className="text-champagne mt-1">◆</span>
+                <span>{t(p)}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a href={AQUA_INFO.bookingUrl} target="_blank" rel="noreferrer" className="btn-royal">
+              {t(UI.bookNow)} <span aria-hidden>→</span>
+            </a>
+          </div>
+        </motion.div>
       </section>
 
       {/* ══════════════════════════════════════════
