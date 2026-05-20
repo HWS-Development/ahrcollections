@@ -43,7 +43,7 @@ export default function PageHero({ eyebrow, title, sub, videoSrc, videoPoster, i
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.9 }}
-          className="absolute top-40 left-1/2 -translate-x-1/2 w-[92%] px-4 font-heading uppercase tracking-[0.28em] sm:tracking-[0.5em] text-[0.58rem] sm:text-[0.7rem] text-shimmer text-center"
+          className="absolute top-36 sm:top-40 inset-x-0 px-6 font-heading uppercase tracking-[0.22em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[0.55rem] sm:text-[0.65rem] md:text-[0.7rem] text-shimmer text-center break-words"
         >
           {typeof eyebrow === 'string' ? eyebrow : t(eyebrow)}
         </motion.p>

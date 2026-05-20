@@ -56,12 +56,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-10 inline-flex items-center justify-center"
+          className="mb-4 sm:mb-8 md:mb-10 inline-flex items-center justify-center"
         >
           <img
             src="/logos/royal-plaza-logo.svg"
             alt="Royal Plaza Hotel"
-            className="h-24 sm:h-32 md:h-52 lg:h-60 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
+            className="h-20 sm:h-28 md:h-44 lg:h-56 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
             draggable={false}
           />
         </motion.div>
@@ -74,7 +74,7 @@ export default function Hero() {
                 initial={{ y: '100%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.2, delay: 1.1 + li * 0.25, ease: [0.22, 1, 0.36, 1] }}
-                className="block text-[clamp(1.4rem,3.2vw,3rem)] font-heading"
+                className="block text-[clamp(1.3rem,3.2vw,3rem)] font-heading"
               >
                 {line}
               </motion.span>
@@ -83,13 +83,14 @@ export default function Hero() {
         </h1>
 
         {/* Body prose — line-by-line cinematic reveal */}
-        <div className="mt-10 max-w-2xl text-ivory font-display text-[1rem] md:text-[1.05rem] leading-[1.95] tracking-wide space-y-1 [text-shadow:0_2px_18px_rgba(0,0,0,0.6)]">
+        <div className="mt-4 sm:mt-8 md:mt-10 max-w-2xl text-ivory font-display text-[0.82rem] sm:text-[0.95rem] md:text-[1.05rem] leading-[1.55] sm:leading-[1.8] md:leading-[1.95] tracking-wide space-y-0.5 sm:space-y-1 [text-shadow:0_2px_18px_rgba(0,0,0,0.6)]">
           {t(HERO.body).map((line, i) => (
             <motion.p
               key={i}
               initial={{ opacity: 0, y: 14, filter: 'blur(10px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ delay: 2.1 + i * 0.14, duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
+              className={i >= 4 ? 'hidden sm:block' : ''}
             >
               {line}
             </motion.p>
@@ -101,7 +102,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3.5, duration: 1 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+          className="mt-6 sm:mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
         >
           <a
             href="https://ahr-collections.hotelrunner.com/bv3/group-search"
