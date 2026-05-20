@@ -169,9 +169,17 @@ export default function VitalityPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.15),_transparent_70%)]" />
         <div className="relative marquee text-ivory/90 font-heading uppercase tracking-[0.5em] text-[0.72rem]">
           {Array.from({ length: 3 }).flatMap((_, k) =>
-            ['Room Service', 'Valet Parking', 'Conciergerie', '24h/24', '3 Salles de Réunions', 'Baggage Storage', 'Wi-Fi Gratuit'].map(a => (
-              <span key={a + k} className="flex items-center gap-6">
-                <span>{a}</span>
+            [
+              { fr: 'Room Service',           en: 'Room Service' },
+              { fr: 'Voiturier',              en: 'Valet Parking' },
+              { fr: 'Conciergerie',           en: 'Concierge' },
+              { fr: '24h/24',                 en: '24/7' },
+              { fr: '3 Salles de Réunions',   en: '3 Meeting Rooms' },
+              { fr: 'Bagagerie',              en: 'Baggage Storage' },
+              { fr: 'Wi-Fi Gratuit',          en: 'Free Wi-Fi' },
+            ].map((a, idx) => (
+              <span key={idx + '-' + k} className="flex items-center gap-6">
+                <span>{t(a)}</span>
                 <span className="text-champagne">◇</span>
               </span>
             ))

@@ -211,9 +211,18 @@ export default function CityPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.15),_transparent_70%)]" />
         <div className="relative marquee text-ivory/90 font-heading uppercase tracking-[0.5em] text-[0.72rem]">
           {Array.from({ length: 3 }).flatMap((_, k) =>
-            ['Café-Restaurant', 'Bar Lounge', 'Room Service', 'Wi-Fi Gratuit', 'Conciergerie Locale', 'Parking', 'Terrasse', 'TV Satellite'].map(a => (
-              <span key={a + k} className="flex items-center gap-6">
-                <span>{a}</span>
+            [
+              { fr: 'Café-Restaurant',    en: 'Café-Restaurant' },
+              { fr: 'Bar Lounge',         en: 'Lounge Bar' },
+              { fr: 'Room Service',       en: 'Room Service' },
+              { fr: 'Wi-Fi Gratuit',      en: 'Free Wi-Fi' },
+              { fr: 'Conciergerie Locale',en: 'Local Concierge' },
+              { fr: 'Parking',            en: 'Parking' },
+              { fr: 'Terrasse',           en: 'Terrace' },
+              { fr: 'TV Satellite',       en: 'Satellite TV' },
+            ].map((a, idx) => (
+              <span key={idx + '-' + k} className="flex items-center gap-6">
+                <span>{t(a)}</span>
                 <span className="text-champagne">◇</span>
               </span>
             ))

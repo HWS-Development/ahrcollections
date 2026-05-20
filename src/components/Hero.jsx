@@ -49,7 +49,7 @@ export default function Hero() {
       </motion.div>
 
       {/* ── All content — fully centered ── */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 pb-20 sm:pb-24 md:pb-28 lg:pb-32 text-center">
 
         {/* Hotel logo */}
         <motion.div
@@ -74,7 +74,7 @@ export default function Hero() {
                 initial={{ y: '100%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.2, delay: 1.1 + li * 0.25, ease: [0.22, 1, 0.36, 1] }}
-                className="block text-[clamp(1.3rem,3vw,2.6rem)] font-heading"
+                className="block text-[clamp(1.1rem,2.4vw,2.1rem)] font-heading"
               >
                 {line}
               </motion.span>
@@ -126,7 +126,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 4.0, duration: 1 }}
-        className="hidden xl:flex absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-3 text-ivory/80 hover:text-champagne transition-colors group"
+        className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-3 text-ivory/80 hover:text-champagne transition-colors group"
       >
         <span className="font-heading uppercase tracking-[0.4em] text-[0.62rem]">{t(UI.scroll)}</span>
         <div className="relative h-12 w-px bg-ivory/40 overflow-hidden">
@@ -136,7 +136,7 @@ export default function Hero() {
 
       {/* ── Side meta ── */}
       <div className="hidden md:flex absolute left-8 bottom-10 flex-col items-start gap-3 text-ivory/60 font-heading text-[0.6rem] tracking-[0.4em] uppercase">
-        <span>Kénitra · Maroc</span>
+        <span>{t({ fr: 'Kénitra · Maroc', en: 'Kénitra · Morocco' })}</span>
         <span className="h-8 w-px bg-ivory/30" />
       </div>
       <div className="hidden md:flex absolute right-8 bottom-10 flex-col items-end gap-3 text-ivory/60 font-heading text-[0.6rem] tracking-[0.4em] uppercase">

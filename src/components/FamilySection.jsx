@@ -77,14 +77,14 @@ export default function FamilySection() {
             {/* Prev / Next arrows */}
             <button
               onClick={goPrev}
-              aria-label="Précédent"
+              aria-label={t({ fr: 'Précédent', en: 'Previous' })}
               className="group absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-ivory/10 backdrop-blur-md border border-ivory/30 text-ivory hover:bg-champagne hover:border-champagne hover:text-bordeaux-deep transition-all duration-500"
             >
               <span className="text-xl leading-none transition-transform duration-500 group-hover:-translate-x-0.5">‹</span>
             </button>
             <button
               onClick={goNext}
-              aria-label="Suivant"
+              aria-label={t({ fr: 'Suivant', en: 'Next' })}
               className="group absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-ivory/10 backdrop-blur-md border border-ivory/30 text-ivory hover:bg-champagne hover:border-champagne hover:text-bordeaux-deep transition-all duration-500"
             >
               <span className="text-xl leading-none transition-transform duration-500 group-hover:translate-x-0.5">›</span>

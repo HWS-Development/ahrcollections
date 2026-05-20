@@ -287,9 +287,18 @@ export default function AquaPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.15),_transparent_70%)]" />
         <div className="relative marquee text-ivory/90 font-heading uppercase tracking-[0.5em] text-[0.72rem]">
           {Array.from({ length: 3 }).flatMap((_, k) =>
-            ['Piscine Extérieure', 'Room Service', 'Aqua Spa', 'Restaurant & Bar', 'Parking Gratuit', 'Navette Aéroport', 'Wi-Fi Gratuit', 'Jardin Tropical'].map(a => (
-              <span key={a + k} className="flex items-center gap-6">
-                <span>{a}</span>
+            [
+              { fr: 'Piscine Extérieure', en: 'Outdoor Pool' },
+              { fr: 'Room Service',       en: 'Room Service' },
+              { fr: 'Aqua Spa',           en: 'Aqua Spa' },
+              { fr: 'Restaurant & Bar',   en: 'Restaurant & Bar' },
+              { fr: 'Parking Gratuit',    en: 'Free Parking' },
+              { fr: 'Navette Aéroport',   en: 'Airport Shuttle' },
+              { fr: 'Wi-Fi Gratuit',      en: 'Free Wi-Fi' },
+              { fr: 'Jardin Tropical',    en: 'Tropical Garden' },
+            ].map((a, idx) => (
+              <span key={idx + '-' + k} className="flex items-center gap-6">
+                <span>{t(a)}</span>
                 <span className="text-champagne">◇</span>
               </span>
             ))
