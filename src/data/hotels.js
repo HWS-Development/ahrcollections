@@ -499,6 +499,8 @@ export const VITALITY_MEETINGS = [
       '/img/vitality/meet-marrakech/photos__2093.webp',
       '/img/vitality/meet-marrakech/photos__2096.webp',
       '/img/vitality/meet-marrakech/photos__2098.webp',
+      '/img/vitality/meet-marrakech/photos__2094.webp',
+      '/img/vitality/meet-marrakech/photos__2100.webp',
     ],
   },
   {
@@ -518,6 +520,8 @@ export const VITALITY_MEETINGS = [
     photos: [
       '/img/vitality/meet-agadir/photos__2108.webp',
       '/img/vitality/meet-agadir/photos__2116.webp',
+      '/img/vitality/meet-agadir/photos__2114.webp',
+      '/img/vitality/meet-agadir/photos__2119.webp',
     ],
   },
   {
@@ -538,6 +542,8 @@ export const VITALITY_MEETINGS = [
       '/img/vitality/meet-rabat/photos__2107.webp',
       '/img/vitality/meet-rabat/photos__2136.webp',
       '/img/vitality/meet-rabat/photos__2138.webp',
+      '/img/vitality/meet-rabat/photos__2139.webp',
+      '/img/vitality/meet-rabat/photos__2141.webp',
     ],
   },
 ];

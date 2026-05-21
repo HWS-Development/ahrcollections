@@ -353,9 +353,9 @@ export default function VitalityPage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          ESPACE FITNESS & GYMBOX — hidden until real local photos exist
+          ESPACE FITNESS & GYMBOX
       ══════════════════════════════════════════ */}
-      {false && (
+      {(
       <section className="relative bg-ivory overflow-hidden">
         <motion.span
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
