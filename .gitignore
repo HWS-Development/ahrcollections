@@ -16,3 +16,9 @@ tmp/
 # Large/source assets
 public/videos/aqua-congres.mp4
 salledecongreswavesaqua/
+
+# Raw photographer/video dumps (kept locally, never deployed)
+SALLEAGADIR/
+SALLEMARRAKECH/
+SALLERABAT/
+AquaparkVideos/
