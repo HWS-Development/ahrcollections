@@ -419,12 +419,12 @@ export const RESTAURANT_HALL = {
     }
   ],
   photos: [
-    R('dining','DSC09492'),
+    R('dining','DSC04805'),
     R('dining','DSC09483'),
     R('dining','DSC09478'),
     R('dining','DSC05743'),
     R('dining','DSC04976'),
-    R('dining','DSC04805'),
+    R('dining','DSC09492'),
     R('dining','DSC01746'),
     R('dining','DSC01736'),
     R('hall','DSC01228'),

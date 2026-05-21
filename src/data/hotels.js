@@ -724,6 +724,23 @@ export const AQUA_HIGHLIGHTS = [
     icon: '◐',
     wide: true,
   },
+  {
+    id: 'ballroom',
+    label: { fr: 'Palais & Ballroom', en: 'Palace & Ballroom' },
+    sub: { fr: 'Congrès le jour, salle des fêtes le soir', en: 'Conference by day, ballroom by night' },
+    image: '/img/aqua/ballroom/palais-poster.webp',
+    images: [
+      '/img/aqua/ballroom/palais-poster.webp',
+      '/img/aqua/congres/business_center_waves.webp',
+      '/img/aqua/congres/DSC01170-HDR.webp',
+      '/img/aqua/congres/DSC01176-HDR.webp',
+      '/img/aqua/congres/DSC01191.webp',
+      '/img/aqua/congres/DSC01221.webp',
+    ],
+    video: '/videos/aqua-palais.mp4',
+    icon: '◆',
+    wide: true,
+  },
 ];
 
 const CG = (name) => `/img/aqua/congres/${name}.webp`;
