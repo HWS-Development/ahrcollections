@@ -73,7 +73,7 @@ export default function OffersPage() {
       </section>
 
       {/* Bespoke note */}
-      <section className="relative py-24 bg-bordeaux text-ivory overflow-hidden">
+      <section className="relative py-24 bg-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.18),_transparent_70%)]" />
         <motion.div
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -83,13 +83,13 @@ export default function OffersPage() {
           <p className="font-heading uppercase tracking-[0.4em] text-[0.7rem] text-shimmer">
             {t({ fr: 'Sur-mesure', en: 'Bespoke' })}
           </p>
-          <p className="mt-6 serif-flourish text-[clamp(1.6rem,3vw,2.4rem)] leading-snug text-ivory/95">
+          <p className="mt-6 serif-flourish text-[clamp(1.6rem,3vw,2.4rem)] leading-snug text-bordeaux">
             {t({
               fr: 'Une demande particulière ? Notre équipe compose votre séjour, à votre image.',
               en: 'A specific request? Our team will craft your stay, in your image.'
             })}
           </p>
-          <a href={`mailto:${BRAND.email}`} className="btn-ghost mt-10 border-ivory/60 hover:bg-ivory hover:text-bordeaux">
+          <a href={`mailto:${BRAND.email}`} className="btn-ghost mt-10 bg-bordeaux text-white border-bordeaux hover:bg-bordeaux-deep hover:text-ivory">
             {t(UI.contactUs)}
           </a>
         </motion.div>
