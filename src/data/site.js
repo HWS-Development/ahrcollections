@@ -434,7 +434,7 @@ export const VITALITY = {
     '/img/vitality/meet-marrakech/photos__2095.webp',
     '/img/vitality/meet-rabat/photos__2135.webp',
     '/img/vitality/couloir/photos__2123.webp',
-    '/img/vitality/nuit/photos__2045.webp'
+    '/img/vitality/reception/photos__2132.webp'
   ]
 };
 
@@ -481,7 +481,7 @@ export const CITY = {
     { icon: '◐', title: { fr: 'Localisation centrale', en: 'Central location' },
       desc: { fr: 'À deux pas des axes de transport et des principaux centres d’intérêt.',
               en: 'Steps from major transport links and key points of interest.' } },
-    { icon: '◎', title: { fr: 'Restaurant & Bar', en: 'Restaurant & Bar' },
+    { icon: '◎', title: { fr: 'Restaurant & Soft Bar', en: 'Restaurant & Soft Bar' },
       desc: { fr: 'Cuisine variée, petit-déjeuner buffet, room service et ambiance chaleureuse.',
               en: 'Varied cuisine, breakfast buffet, room service and a warm atmosphere.' } }
   ],

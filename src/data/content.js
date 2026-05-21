@@ -152,6 +152,28 @@ export const ROOMS = [
     ]
   },
   {
+    id: 'family',
+    label: { fr: 'Suite Familiale Deluxe', en: 'Deluxe Family Suite' },
+    tag:   { fr: 'Espace généreux pour toute la famille', en: 'Generous space for the whole family' },
+    headline: { fr: 'Un espace de vie pensé pour les familles.', en: 'A living space designed for families.' },
+    description: {
+      fr: 'La Suite Familiale Deluxe du Royal Plaza Hotel a été conçue pour accueillir les familles dans un cadre chaleureux et généreux. Espace de vie séparé, literie flexible et équipements adaptés aux séjours en famille — un havre de confort pour parents et enfants.',
+      en: 'The Deluxe Family Suite of the Royal Plaza Hotel is designed to welcome families in a warm, generous setting. Separate living area, flexible bedding and amenities suited for family stays — a haven of comfort for parents and children alike.'
+    },
+    amenities: {
+      fr: ['Espace salon', 'Configuration flexible', 'Salle de bain spacieuse', 'Wi-Fi haut débit', 'Machine café', 'Lit supplémentaire disponible'],
+      en: ['Lounge area', 'Flexible bedding', 'Spacious bathroom', 'High-speed Wi-Fi', 'Coffee machine', 'Extra bed available']
+    },
+    photos: [
+      R('executive','DSC06958'),
+      R('executive','DSC07000'),
+      R('executive','DSC07001'),
+      R('executive','DSC09726'),
+      R('junior','DSC09734'),
+      R('junior','DSC09738'),
+    ]
+  },
+  {
     id: 'executive',
     label: { fr: 'Executive Suite', en: 'Executive Suite' },
     tag:   { fr: 'L\u2019expression ultime du Royal Plaza', en: 'The ultimate Royal Plaza expression' },
@@ -252,7 +274,6 @@ export const SPA = {
     { fr: 'Se retrouver', en: 'Reconnect' }
   ],
   photos: [
-    R('spa','DSC05192'),
     R('spa','DSC05565'),
     R('spa','DSC05553'),
     R('spa','DSC05546'),
@@ -261,8 +282,7 @@ export const SPA = {
     R('spa','DSC05504'),
     R('spa','DSC05397'),
     R('spa','DSC05265'),
-    R('spa','DSC05621'),
-    R('spa','DSC05636'),
+    R('spa','DSC05192'),
     R('spa','DSC09595'),
     R('spa','DSC02213'),
     R('spa','DSC02223'),
@@ -327,7 +347,7 @@ export const BUSINESS = {
   },
   videoSrc:    '/videos/royal-business-forum.mp4',
   videoPoster: R('business','DSC04522'),
-  ballroomVideoSrc:    '/videos/royal-ballroom.mp4',
+  ballroomVideoSrc:    null,
   ballroomVideoPoster: R('business','DSC04501'),
   ballroomEyebrow: { fr: 'Grand Ballroom · Royal Plaza', en: 'Grand Ballroom · Royal Plaza' },
   ballroomTitle: {
@@ -474,9 +494,8 @@ export const SPA_POOL = {
     R('spa','DSC05521'),
     R('spa','DSC05504'),
     R('spa','DSC05397'),
-    R('spa','DSC05265'),
-    R('spa','DSC05621'),
-    R('spa','DSC05636'),
+
+
   ]
 };
 

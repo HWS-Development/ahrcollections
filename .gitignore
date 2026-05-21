@@ -12,3 +12,7 @@ dist-ssr
 # Local-only source asset library (17+ GB) and scratch dirs
 AHRCOLLECTIONSIMAGES/
 tmp/
+
+# Large/source assets
+public/videos/aqua-congres.mp4
+salledecongreswavesaqua/

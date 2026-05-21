@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useT } from '../contexts/LanguageContext.jsx';
 import { BUSINESS } from '../data/content.js';
 
@@ -89,9 +90,9 @@ export default function BusinessSection() {
                 })}
               </h3>
             </div>
-            <a href="https://ahr-collections.hotelrunner.com/bv3/group-search" target="_blank" rel="noreferrer" className="btn-royal">
+            <Link to="/contact" className="btn-royal">
               {t({ fr: 'Demander un devis', en: 'Request a quote' })}
-            </a>
+            </Link>
           </div>
         </motion.div>
 
@@ -155,21 +156,55 @@ export default function BusinessSection() {
           ))}
         </div>
 
-        {/* Photo strip */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-          {BUSINESS.photos.slice(0, 8).map((p, i) => (
-            <motion.div
-              key={p + i}
-              initial={{ opacity: 0, scale: 1.05 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.9, delay: 0.06 * i }}
-              className="cinema relative aspect-[4/3] overflow-hidden shadow-soft"
-            >
-              <img src={p} alt="" className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-bordeaux/30 opacity-0 hover:opacity-100 transition-opacity duration-500" />
-            </motion.div>
-          ))}
+        {/* ── Curated photo grid — 4 best, asymmetric editorial layout ── */}
+        <div className="mt-16 grid grid-cols-12 gap-3 lg:gap-4 auto-rows-[minmax(180px,1fr)]">
+          {/* Large hero — left, 2 rows tall */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.06 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative col-span-12 sm:col-span-7 row-span-2 cinema overflow-hidden shadow-deep group"
+          >
+            <img src={BUSINESS.photos[0]} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bordeaux/55 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
+            <span className="absolute top-5 left-5 w-7 h-7 border-t-2 border-l-2 border-champagne/70 pointer-events-none" />
+            <span className="absolute bottom-5 right-5 w-7 h-7 border-b-2 border-r-2 border-champagne/70 pointer-events-none" />
+          </motion.div>
+
+          {/* Top right — tall vertical */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1, delay: 0.1 }}
+            className="relative col-span-6 sm:col-span-5 row-span-1 cinema overflow-hidden shadow-soft group"
+          >
+            <img src={BUSINESS.photos[1]} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-ink/40 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-2 border border-champagne/30" />
+          </motion.div>
+
+          {/* Bottom right — square */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative col-span-6 sm:col-span-5 row-span-1 cinema overflow-hidden shadow-soft group"
+          >
+            <img src={BUSINESS.photos[3]} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-bl from-bordeaux/35 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-2 border border-champagne/30" />
+          </motion.div>
+
+          {/* Wide bottom — full width */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.04 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.1, delay: 0.3 }}
+            className="relative col-span-12 row-span-1 cinema overflow-hidden shadow-deep group h-[220px] sm:h-[280px]"
+          >
+            <img src={BUSINESS.photos[5]} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-r from-bordeaux/50 via-transparent to-bordeaux/20" />
+            <div className="pointer-events-none absolute inset-3 border border-champagne/40" />
+          </motion.div>
         </div>
       </div>
     </section>

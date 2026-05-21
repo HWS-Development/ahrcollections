@@ -147,12 +147,12 @@ export const VITALITY_STATS = [
 export const VITALITY_FEATURES = [
   { icon: '⊕', title: { fr: 'À 1 min de la gare LGV', en: '1 min from the LGV station' },
     desc: { fr: 'Accessibilité optimale pour les voyageurs d\'affaires et les touristes — Rabat à 30 min, Casablanca à 1h30.', en: 'Seamless access for business travellers and tourists — Rabat in 30 min, Casablanca in 1h30.' } },
-  { icon: '∿', title: { fr: 'Espace Fitness', en: 'Fitness Space' },
-    desc: { fr: 'Salle moderne pour garder la forme pendant votre séjour — cardio, musculation, étirements.', en: 'A modern space to stay in shape throughout your stay — cardio, weights, stretching.' } },
   { icon: '◈', title: { fr: 'Business Center & Salles', en: 'Business Center & Rooms' },
     desc: { fr: 'Trois salles de réunion modulables, business center équipé pour visioconférences et coworking.', en: 'Three modular meeting rooms, business center equipped for video conferencing and coworking.' } },
   { icon: '◇', title: { fr: 'Restaurant International', en: 'International Restaurant' },
-    desc: { fr: 'Carte du monde, petit-déjeuner buffet généreux et room service à toute heure.', en: 'Cuisine from around the world, generous breakfast buffet and room service round the clock.' } },
+    desc: { fr: 'Carte du monde, petit-déjeuner buffet généreux et ambiance chaleureuse pour vos déjeuners d\'affaires.', en: 'Cuisine from around the world, generous breakfast buffet and a warm atmosphere for business lunches.' } },
+  { icon: '✦', title: { fr: 'Conciergerie & Voiturier', en: 'Concierge & Valet' },
+    desc: { fr: 'Conciergerie 24h/24, voiturier, bagagerie et Wi-Fi gratuit dans l\'ensemble de l\'hôtel — l\'attention dans chaque détail.', en: '24/7 concierge, valet parking, baggage storage and complimentary Wi-Fi throughout — attention in every detail.' } },
 ];
 
 // ─────────────────────────────────────────────────────────────────────
@@ -162,7 +162,7 @@ export const VITALITY_FEATURES = [
 export const AQUA_INFO = {
   stars:      5,
   phone:      '+212 537 304 141',
-  bookingUrl: 'https://wavesaquaparc.com',
+  bookingUrl: 'https://ahr-collections.hotelrunner.com/bv3/group-search',
   address: {
     fr: 'Avenue Mohamed V, Route de Tanger, 14000 Kénitra',
     en: 'Avenue Mohamed V, Route de Tanger, 14000 Kénitra'
@@ -192,39 +192,27 @@ const AS = (i) => `/img/aqua/suites/${AR_SUITE[i % AR_SUITE.length]}.webp`;
 
 export const AQUA_ROOMS = [
   {
-    id: 'sup-terrasse-gl',
-    label:    { fr: 'Supérieure Terrasse GL', en: 'Superior Terrace King' },
-    tag:      { fr: 'Terrasse privée · Vue piscine', en: 'Private terrace · Pool view' },
-    headline: { fr: 'L\'éveil au bord de l\'eau.', en: 'Waking up at the water\'s edge.' },
-    description: {
-      fr: 'Une terrasse privée face à la piscine, décor tropical soigné, lit King Size et lumière naturelle généreuse. La chambre Supérieure Terrasse est pensée pour ceux qui veulent que le luxe commence dès le réveil.',
-      en: 'A private terrace facing the pool, thoughtful tropical décor, King Size bed and generous natural light. The Superior Terrace room is designed for those who want luxury to begin from the moment they wake.'
-    },
-    amenities: { fr: ['Terrasse privée', 'Vue piscine', 'Lit King Size', 'Wi-Fi', 'Climatisation', 'Mini-bar'], en: ['Private terrace', 'Pool view', 'King Size bed', 'Wi-Fi', 'Air conditioning', 'Minibar'] },
-    photos: [AR(0), AR(1), AR(2), AR(3)]
-  },
-  {
     id: 'sup-gl',
     label:    { fr: 'Supérieure GL', en: 'Superior King' },
-    tag:      { fr: 'Vue jardin · King Size', en: 'Garden view · King Size' },
+    tag:      { fr: 'Confort tropical · King Size', en: 'Tropical comfort · King Size' },
     headline: { fr: 'La sérénité tropicale au quotidien.', en: 'Tropical serenity, every day.' },
     description: {
-      fr: 'Baignée de lumière naturelle avec vue sur les jardins tropicaux, notre chambre Supérieure GL est un refuge intimiste. Commencez chaque journée avec la douceur d\'un cadre pensé pour la détente.',
-      en: 'Bathed in natural light overlooking tropical gardens, our Superior GL room is an intimate retreat. Begin each day in the gentle comfort of a space designed for relaxation.'
+      fr: 'Baignée de lumière naturelle dans un cadre tropical soigné, notre chambre Supérieure GL est un refuge intimiste alliant confort et élégance. Décor chaleureux, lit King Size et prestations complètes — pour commencer chaque journée dans la douceur.',
+      en: 'Bathed in natural light in a thoughtful tropical setting, our Superior GL room is an intimate retreat blending comfort and elegance. Warm décor, King Size bed and full amenities — for starting every day in ease.'
     },
-    amenities: { fr: ['Vue jardin', 'Lit King Size', 'Wi-Fi', 'Climatisation', 'Salle de bain', 'TV satellite'], en: ['Garden view', 'King Size bed', 'Wi-Fi', 'Air conditioning', 'Bathroom', 'Satellite TV'] },
-    photos: [AR(4), AR(5), AR(6), AR(7)]
+    amenities: { fr: ['Lit King Size', 'Wi-Fi', 'Climatisation', 'Salle de bain', 'TV satellite', 'Mini-bar'], en: ['King Size bed', 'Wi-Fi', 'Air conditioning', 'Bathroom', 'Satellite TV', 'Minibar'] },
+    photos: [AR(0), AR(1), AR(2), AR(3), AR(4), AR(5), AR(6), AR(7)]
   },
   {
     id: 'deluxe-piscine-gl',
     label:    { fr: 'Deluxe Piscine GL', en: 'Deluxe Pool King' },
-    tag:      { fr: 'Accès direct piscine · Deluxe', en: 'Direct pool access · Deluxe' },
-    headline: { fr: 'Plonger sans quitter sa chambre.', en: 'Dive in without leaving your room.' },
+    tag:      { fr: 'Vue piscine · Deluxe', en: 'Pool view · Deluxe' },
+    headline: { fr: 'La piscine, vue depuis votre chambre.', en: 'The pool, framed by your window.' },
     description: {
-      fr: 'Accès direct à la piscine depuis votre chambre Deluxe. Grandes baies vitrées, espace généreux, literie haut de gamme — pour les amateurs de piscine qui refusent de sacrifier le confort.',
-      en: 'Direct pool access straight from your Deluxe room. Large picture windows, generous space, premium bedding — for pool lovers who refuse to sacrifice comfort.'
+      fr: 'Vue directe sur la piscine depuis votre chambre Deluxe. Grandes baies vitrées, espace généreux, literie haut de gamme — pour les amateurs de piscine qui exigent à la fois le calme et la beauté aquatique.',
+      en: 'A direct pool view from your Deluxe room. Large picture windows, generous space, premium bedding — for pool lovers who want both serenity and aquatic beauty.'
     },
-    amenities: { fr: ['Accès piscine direct', 'Baies vitrées', 'Lit King Size', 'Wi-Fi', 'Mini-bar', 'Coffre-fort'], en: ['Direct pool access', 'Picture windows', 'King Size bed', 'Wi-Fi', 'Minibar', 'Safety box'] },
+    amenities: { fr: ['Vue sur piscine', 'Baies vitrées', 'Lit King Size', 'Wi-Fi', 'Mini-bar', 'Coffre-fort'], en: ['Pool view', 'Picture windows', 'King Size bed', 'Wi-Fi', 'Minibar', 'Safety box'] },
     photos: [AR(8), AR(9), AR(10), AR(11)]
   },
   {
@@ -264,15 +252,15 @@ export const AQUA_ROOMS = [
     photos: [AR(20), AR(21), AR(22), AR(23)]
   },
   {
-    id: 'deluxe-family',
-    label:    { fr: 'Deluxe Family', en: 'Deluxe Family' },
-    tag:      { fr: 'Famille · Espace généreux', en: 'Family · Generous space' },
-    headline: { fr: 'Le luxe du partage familial.', en: 'The luxury of family sharing.' },
+    id: 'suite-confort',
+    label:    { fr: 'Suite Confort', en: 'Suite Confort' },
+    tag:      { fr: 'Confort · Espace généreux', en: 'Comfort · Generous space' },
+    headline: { fr: 'L\'espace comme art de vivre.', en: 'Space as a way of life.' },
     description: {
-      fr: 'Conçue pour les familles, cette chambre spacieuse offre tout le confort pour les parents comme les enfants. Un espace de vie généreux, une salle de bain complète et une décoration chaleureuse et lumineuse.',
-      en: 'Designed for families, this spacious room offers full comfort for parents and children alike. Generous living space, complete bathroom and warm, bright décor.'
+      fr: 'La Suite Confort offre une expérience généreuse dans un cadre tropical lumineux. Espace de vie bien agencé, salle de bain complète et décoration chaleureuse — un séjour confortable et soigné pour profiter pleinement du resort.',
+      en: 'The Suite Confort offers a generous experience in a bright tropical setting. Well-planned living space, full bathroom and warm décor — a comfortable, carefully appointed stay to make the most of the resort.'
     },
-    amenities: { fr: ['Configuration famille', 'Espace généreux', 'Wi-Fi', 'Climatisation', 'Mini-bar', 'Coffre-fort'], en: ['Family layout', 'Generous space', 'Wi-Fi', 'Air conditioning', 'Minibar', 'Safety box'] },
+    amenities: { fr: ['Configuration confort', 'Espace généreux', 'Wi-Fi', 'Climatisation', 'Mini-bar', 'Coffre-fort'], en: ['Comfort layout', 'Generous space', 'Wi-Fi', 'Air conditioning', 'Minibar', 'Safety box'] },
     photos: [AR(24), AR(25), AR(26), AR(27)]
   },
   {
@@ -358,8 +346,8 @@ export const CITY_INFO = {
   },
   mapsUrl: 'https://www.google.com/maps?q=Kenitra',
   tagline: {
-    fr: 'Hôtel 3 étoiles · Restaurant & Bar · Kénitra',
-    en: '3-star hotel · Restaurant & Bar · Kénitra'
+    fr: 'Hôtel 3 étoiles · Restaurant & Soft Bar · Kénitra',
+    en: '3-star hotel · Restaurant & Soft Bar · Kénitra'
   }
 };
 
@@ -432,7 +420,7 @@ export const CITY_ROOMS = [
 export const CITY_STATS = [
   { value: 39, symbol: '◇', label: { fr: 'Chambres & Suites', en: 'Rooms & Suites' } },
   { value: 2,  symbol: '◉', label: { fr: 'Salles de Réunions', en: 'Meeting Rooms'  } },
-  { value: 1,  symbol: '◌', label: { fr: 'Restaurant & Bar',   en: 'Restaurant & Bar'} },
+  { value: 1,  symbol: '◌', label: { fr: 'Restaurant & Soft Bar', en: 'Restaurant & Soft Bar'} },
   { value: 3,  symbol: '✦', label: { fr: 'Étoiles',            en: 'Stars'          } },
 ];
 
@@ -443,7 +431,7 @@ export const CITY_FEATURES = [
     desc: { fr: 'Espaces modulables équipés de vidéoprojecteurs, traiteur et pauses-café pour vos événements.', en: 'Flexible spaces with video projectors, catering and coffee breaks for your events.' } },
   { icon: '◌', title: { fr: 'Localisation centrale', en: 'Central Location' },
     desc: { fr: 'À deux pas des quartiers d\'affaires, des centres commerciaux et des gares de Kénitra.', en: 'Steps from business districts, shopping centers and Kénitra\'s stations.' } },
-  { icon: '✦', title: { fr: 'Restaurant & Bar', en: 'Restaurant & Bar' },
+  { icon: '✦', title: { fr: 'Restaurant & Soft Bar', en: 'Restaurant & Soft Bar' },
     desc: { fr: 'Cuisine variée et équilibrée, petit-déjeuner buffet, room service et ambiance chaleureuse.', en: 'Varied, balanced cuisine, breakfast buffet, room service and a warm atmosphere.' } },
 ];
 
@@ -452,7 +440,7 @@ export const CITY_FEATURES = [
 // ─────────────────────────────────────────────────────────────────────
 
 export const VITALITY_RESTAURANT = {
-  heroImage: '/img/vitality/nuit/photos__2045.webp',
+  heroImage: '/img/vitality/restaurant/image_resto.webp',
   eyebrow: { fr: 'Gastronomie', en: 'Gastronomy' },
   title: { fr: 'Restaurant International', en: 'International Restaurant' },
   sub: { fr: 'Une expérience culinaire à la hauteur de vos ambitions.', en: 'A culinary experience matching your ambitions.' },
@@ -460,32 +448,35 @@ export const VITALITY_RESTAURANT = {
     fr: [
       'Une carte variée avec des plats savoureux du monde entier.',
       'Petit-déjeuner buffet : une sélection généreuse de produits frais et équilibrés.',
-      'Room Service disponible pour un confort optimal en chambre.',
+      'Une ambiance chaleureuse pour vos déjeuners d\'affaires comme vos dîners en privé.',
     ],
     en: [
       'A varied menu featuring delicious dishes from around the world.',
       'Breakfast buffet: a generous selection of fresh, balanced products.',
-      'Room Service available for optimal in-room comfort.',
+      'A warm atmosphere for both business lunches and intimate dinners.',
     ],
   },
   amenities: {
-    fr: ['Cuisine internationale', 'Buffet petit-déjeuner', 'Room Service', 'Dîner à la carte', 'Terrasse', 'Privatisation'],
-    en: ['International cuisine', 'Breakfast buffet', 'Room Service', 'À la carte dinner', 'Terrace', 'Private hire'],
+    fr: ['Cuisine internationale', 'Buffet petit-déjeuner', 'Dîner à la carte', 'Terrasse', 'Privatisation', 'Ambiance feutrée'],
+    en: ['International cuisine', 'Breakfast buffet', 'À la carte dinner', 'Terrace', 'Private hire', 'Refined ambience'],
   },
 };
 
 export const VITALITY_FITNESS = {
-  image: '/img/vitality/couloir/photos__2127.webp',
+  images: [
+    '/img/vitality/fitness/treadmill.webp',
+    '/img/vitality/fitness/gymbox.webp',
+  ],
   eyebrow: { fr: 'Bien-être & Vitalité', en: 'Wellbeing & Vitality' },
-  title: { fr: 'Espace Fitness', en: 'Fitness Center' },
+  title: { fr: 'Espace Fitness & GymBox', en: 'Fitness Center & GymBox' },
   sub: { fr: 'Maintenez votre rythme, où que vous soyez.', en: 'Keep your pace, wherever you are.' },
   body: {
-    fr: 'Salle de fitness entièrement équipée, disponible à toute heure pour les clients de l\'hôtel. Cardio, musculation, étirements — tout est réuni pour ne jamais interrompre votre routine.',
-    en: 'Fully equipped fitness centre, available round the clock for hotel guests. Cardio, weights, stretching — everything in one place so your routine never stops.',
+    fr: 'Salle de fitness entièrement équipée, disponible à toute heure pour les clients de l\'hôtel. Cardio sur tapis de course panoramique, musculation et GymBox — tout est réuni pour ne jamais interrompre votre routine.',
+    en: 'Fully equipped fitness centre, available round the clock for hotel guests. Cardio on panoramic treadmills, weights and GymBox — everything in one place so your routine never stops.',
   },
   amenities: {
-    fr: ['Cardio training', 'Musculation', 'Tapis de course', 'Vélo elliptique', 'Accès 24h/24', 'Serviettes offertes'],
-    en: ['Cardio training', 'Weight training', 'Treadmills', 'Elliptical bike', '24h access', 'Complimentary towels'],
+    fr: ['Cardio training', 'Musculation', 'Tapis de course', 'GymBox · Boxe', 'Casiers sécurisés', 'Serviettes offertes'],
+    en: ['Cardio training', 'Weight training', 'Treadmills', 'GymBox · Boxing', 'Secure lockers', 'Complimentary towels'],
   },
 };
 
@@ -506,17 +497,8 @@ export const VITALITY_MEETINGS = [
     image: '/img/vitality/meet-marrakech/photos__2093.webp',
     photos: [
       '/img/vitality/meet-marrakech/photos__2093.webp',
-      '/img/vitality/meet-marrakech/photos__2094.webp',
-      '/img/vitality/meet-marrakech/photos__2095.webp',
       '/img/vitality/meet-marrakech/photos__2096.webp',
-      '/img/vitality/meet-marrakech/photos__2097.webp',
       '/img/vitality/meet-marrakech/photos__2098.webp',
-      '/img/vitality/meet-marrakech/photos__2099.webp',
-      '/img/vitality/meet-marrakech/photos__2100.webp',
-      '/img/vitality/meet-marrakech/photos__2101.webp',
-      '/img/vitality/meet-marrakech/photos__2102.webp',
-      '/img/vitality/meet-marrakech/photos__2103.webp',
-      '/img/vitality/meet-marrakech/photos__2104.webp',
     ],
   },
   {
@@ -535,12 +517,7 @@ export const VITALITY_MEETINGS = [
     image: '/img/vitality/meet-agadir/photos__2108.webp',
     photos: [
       '/img/vitality/meet-agadir/photos__2108.webp',
-      '/img/vitality/meet-agadir/photos__2114.webp',
-      '/img/vitality/meet-agadir/photos__2115.webp',
       '/img/vitality/meet-agadir/photos__2116.webp',
-      '/img/vitality/meet-agadir/photos__2117.webp',
-      '/img/vitality/meet-agadir/photos__2118.webp',
-      '/img/vitality/meet-agadir/photos__2119.webp',
     ],
   },
   {
@@ -559,13 +536,8 @@ export const VITALITY_MEETINGS = [
     image: '/img/vitality/meet-rabat/photos__2107.webp',
     photos: [
       '/img/vitality/meet-rabat/photos__2107.webp',
-      '/img/vitality/meet-rabat/photos__2135.webp',
       '/img/vitality/meet-rabat/photos__2136.webp',
-      '/img/vitality/meet-rabat/photos__2137.webp',
       '/img/vitality/meet-rabat/photos__2138.webp',
-      '/img/vitality/meet-rabat/photos__2139.webp',
-      '/img/vitality/meet-rabat/photos__2140.webp',
-      '/img/vitality/meet-rabat/photos__2141.webp',
     ],
   },
 ];
@@ -748,59 +720,91 @@ export const AQUA_HIGHLIGHTS = [
   },
 ];
 
+const CG = (name) => `/img/aqua/congres/${name}.webp`;
+
 export const AQUA_CONVENTION = {
-  eyebrow: { fr: 'Événements & Affaires', en: 'Events & Business' },
-  title: { fr: 'Convention Center & Le Ballroom', en: 'Convention Center & The Ballroom' },
+  eyebrow: { fr: 'Palais des Congrès · Waves Aqua Resort', en: 'Convention Center · Waves Aqua Resort' },
+  title: { fr: 'Vos événements méritent un cadre exceptionnel.', en: 'Your events deserve an exceptional setting.' },
   sub: {
-    fr: 'Organisez vos événements professionnels dans nos salles de conférence modernes et parfaitement équipées, ou offrez à vos invités une expérience inoubliable dans notre somptueuse salle de fêtes.',
-    en: 'Host your professional events in our modern, fully-equipped conference rooms, or offer your guests an unforgettable experience in our sumptuous event hall.',
+    fr: 'Trois salles modulables, équipements audiovisuels haute définition et services traiteur sur mesure — pour conférences, séminaires, assemblées et grands événements d\'entreprise.',
+    en: 'Three flexible rooms, HD audio-visual equipment and bespoke catering — for conferences, seminars, assemblies and major corporate events.',
   },
+  videoSrc:    '/videos/aqua-congres.mp4',
+  videoPoster: CG('DJI_0183'),
+  heroImage:   CG('business_center_waves'),
   rooms: [
     {
       name: 'Salle Plénière',
       capacity: 100,
-      tagline: { fr: 'Notre plus grande salle', en: 'Our largest room' },
+      tagline: { fr: 'Grande conférence · Plénière', en: 'Main conference · Plenary' },
       description: {
-        fr: 'Parfaite pour conférences, assemblées et événements d\'envergure.',
-        en: 'Perfect for conferences, assemblies and large-scale events.',
+        fr: 'Notre plus grande salle vous accueille pour conférences plénières, assemblées générales et événements d\'envergure. Équipée d\'un système de sonorisation professionnel, écrans HD et éclairage scénique modulable.',
+        en: 'Our largest room hosts plenary conferences, general assemblies and large-scale events. Equipped with professional sound, HD screens and adjustable stage lighting.',
       },
       equipment: {
-        fr: ['Sonorisation', 'Micros sans fil', 'Vidéoprojecteur', 'Écran LCD', 'Wi-Fi'],
-        en: ['PA system', 'Wireless mics', 'Video projector', 'LCD screen', 'Wi-Fi'],
+        fr: ['Sonorisation professionnelle', 'Micros sans fil', 'Vidéoprojecteur HD', 'Écran LCD géant', 'Éclairage scénique', 'Wi-Fi haut débit'],
+        en: ['Professional PA system', 'Wireless microphones', 'HD video projector', 'Giant LCD screen', 'Stage lighting', 'High-speed Wi-Fi'],
       },
-      layouts: { fr: 'Théâtre, Classe, En U, Cabaret', en: 'Theatre, Classroom, U-shape, Cabaret' },
-      image: '/img/aqua/bronz/photos2273.webp',
+      layouts: { fr: 'Théâtre, Classe, En U, Cabaret, Banquet', en: 'Theatre, Classroom, U-shape, Cabaret, Banquet' },
+      image: CG('business_center_waves'),
+      photos: [
+        CG('business_center_waves'),
+        CG('DSC01160'),
+        CG('DSC01170-HDR'),
+        CG('DSC01176-HDR'),
+        CG('DSC01191'),
+        CG('DSC01221'),
+      ],
     },
     {
       name: 'Salle New York',
       capacity: 30,
       tagline: { fr: 'Workshops & Formations', en: 'Workshops & Training' },
       description: {
-        fr: 'Espace moderne pour workshops, réunions et formations.',
-        en: 'Modern space for workshops, meetings and training sessions.',
+        fr: 'Espace moderne et lumineux dédié aux workshops, formations et réunions de travail. Tableau interactif, visioconférence intégrée et configuration modulable selon vos besoins.',
+        en: 'Modern, bright space designed for workshops, training sessions and working meetings. Interactive board, integrated video conferencing and flexible layout to suit your needs.',
       },
       equipment: {
-        fr: ['Écran LCD', 'Micros avec fil', 'Vidéoprojecteur', 'Tableau interactif', 'Wi-Fi'],
-        en: ['LCD screen', 'Wired mics', 'Video projector', 'Interactive board', 'Wi-Fi'],
+        fr: ['Écran LCD interactif', 'Micros avec fil', 'Visioconférence', 'Tableau interactif', 'Wi-Fi', 'Paperboard'],
+        en: ['Interactive LCD screen', 'Wired microphones', 'Video conferencing', 'Interactive board', 'Wi-Fi', 'Flipchart'],
       },
       layouts: { fr: 'En U, Classe, Théâtre, Cabaret', en: 'U-shape, Classroom, Theatre, Cabaret' },
-      image: '/img/aqua/bronz/photos2281.webp',
+      image: CG('DSC01201'),
+      photos: [
+        CG('DSC01201'),
+        CG('DSC01204'),
+        CG('DSC01206'),
+        CG('IMG_8677'),
+        CG('IMG_8680'),
+      ],
     },
     {
       name: 'Salle Paris',
       capacity: 14,
-      tagline: { fr: 'Réunions Confidentielles', en: 'Private Meetings' },
+      tagline: { fr: 'Réunions & Décisions', en: 'Meetings & Decisions' },
       description: {
-        fr: 'Salle intimiste, idéale pour petits groupes ou réunions confidentielles.',
-        en: 'Intimate room, ideal for small groups or private meetings.',
+        fr: 'Salle intime et confidentielle, idéale pour comités de direction, réunions restreintes et entretiens. Un cadre élégant qui favorise la concentration et la prise de décision.',
+        en: 'Intimate and confidential room, ideal for board meetings, restricted gatherings and interviews. An elegant setting that encourages focus and decision-making.',
       },
       equipment: {
-        fr: ['Écran LCD', 'Paperboard', 'Système audio', 'Micro avec fil'],
-        en: ['LCD screen', 'Flipchart', 'Audio system', 'Wired mic'],
+        fr: ['Écran LCD', 'Paperboard', 'Système audio', 'Micro avec fil', 'Wi-Fi'],
+        en: ['LCD screen', 'Flipchart', 'Audio system', 'Wired microphone', 'Wi-Fi'],
       },
-      layouts: { fr: 'Réunion', en: 'Meeting' },
-      image: '/img/aqua/bronz/photos2285.webp',
+      layouts: { fr: 'Réunion, En U', en: 'Meeting, U-shape' },
+      image: CG('DSC01264'),
+      photos: [
+        CG('DSC01264'),
+        CG('DSC01267'),
+        CG('DSC01273'),
+        CG('IMG_8700'),
+      ],
     },
+  ],
+  specs: [
+    { value: '3',    label: { fr: 'Salles modulables',   en: 'Modular rooms'     } },
+    { value: '100',  label: { fr: 'Invités max.',        en: 'Max guests'        } },
+    { value: 'HD',   label: { fr: 'Équipements A/V',     en: 'A/V Equipment'     } },
+    { value: '24/7', label: { fr: 'Traiteur & service',  en: 'Catering & service'} },
   ],
   ballroomImage: '/img/aqua/bronz/photos2279.webp',
   ballroomSub: {

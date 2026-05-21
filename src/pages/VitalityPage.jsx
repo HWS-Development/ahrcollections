@@ -144,11 +144,39 @@ export default function VitalityPage() {
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7 relative"
           >
+            {/* Decorative champagne frame offset */}
+            <div className="hidden lg:block pointer-events-none absolute -top-6 -right-6 w-full h-full border border-champagne/35" />
+
             <div className="cinema relative overflow-hidden shadow-deep">
-              <img src={introImg} alt="Vitality Terminus" className="w-full h-[340px] sm:h-[460px] lg:h-[580px] object-cover" loading="lazy" />
+              <motion.img
+                src={introImg}
+                alt="Vitality Terminus"
+                className="w-full h-[340px] sm:h-[460px] lg:h-[580px] object-cover"
+                loading="lazy"
+                initial={{ scale: 1.08 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 12, ease: 'linear' }}
+              />
               <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(163,165,114,0.15)] to-transparent mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
               <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
+
+              {/* Corner accents */}
+              <span className="absolute top-6 left-6 w-7 h-7 border-t-2 border-l-2 border-champagne/70 pointer-events-none" />
+              <span className="absolute bottom-6 right-6 w-7 h-7 border-b-2 border-r-2 border-champagne/70 pointer-events-none" />
+
+              {/* Vertical eyebrow ribbon */}
+              <div className="hidden lg:flex absolute top-8 right-8 flex-col items-center gap-3">
+                <span className="w-px h-12 bg-champagne/60" />
+                <span className="font-heading uppercase text-ivory/80 text-[0.55rem] tracking-[0.55em]" style={{ writingMode: 'vertical-rl' }}>
+                  Kénitra · Maroc
+                </span>
+                <span className="w-px h-12 bg-champagne/60" />
+              </div>
             </div>
+
+            {/* Bottom-left floating glass card */}
             <motion.div
               initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -158,6 +186,16 @@ export default function VitalityPage() {
               <p className="serif-flourish text-bordeaux text-xl leading-snug">
                 {t({ fr: '1 min à pied de la gare LGV', en: '1 min walk from the LGV station' })}
               </p>
+            </motion.div>
+
+            {/* Top-right floating stat badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.85 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden md:flex absolute -top-6 right-8 lg:right-16 flex-col items-center bg-bordeaux px-6 py-5 shadow-deep"
+            >
+              <span className="font-heading uppercase text-champagne/60 text-[0.5rem] tracking-[0.5em]">★ ★ ★ ★</span>
+              <span className="font-heading text-ivory text-[1.05rem] tracking-[0.3em] mt-1.5">4 ÉTOILES</span>
             </motion.div>
           </motion.div>
         </div>
@@ -215,7 +253,23 @@ export default function VitalityPage() {
         />
 
         <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(94,26,36,0.18)]">
+          {/* Section heading above the split card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="text-center mb-12 lg:mb-16"
+          >
+            <span className="ornament eyebrow">{t({ fr: 'Saveurs du Monde', en: 'World Flavours' })}</span>
+            <h2 className="mt-5 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.6rem)] leading-[1.05]">
+              {t({ fr: 'Une table, mille horizons.', en: 'One table, a thousand horizons.' })}
+            </h2>
+            <span className="block hairline mx-auto mt-7" />
+          </motion.div>
+
+          <div className="relative grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(94,26,36,0.18)]">
+            {/* Decorative offset champagne frame */}
+            <div className="hidden lg:block pointer-events-none absolute -top-5 -left-5 w-1/2 h-full border border-champagne/35" />
+            <div className="hidden lg:block pointer-events-none absolute -bottom-5 -right-5 w-1/2 h-full border border-bordeaux/15" />
 
             {/* Image column */}
             <motion.div
@@ -224,19 +278,27 @@ export default function VitalityPage() {
               transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
               className="relative min-h-[320px] lg:min-h-[520px] cinema overflow-hidden"
             >
-              <img
+              <motion.img
                 src={VITALITY_RESTAURANT.heroImage}
                 alt="Restaurant Vitality"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
+                initial={{ scale: 1.12 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 14, ease: 'linear' }}
               />
+              <div className="absolute inset-0 bg-gradient-to-br from-bordeaux/15 via-transparent to-ink/35" />
               <div className="pointer-events-none absolute inset-4 border border-champagne/40" />
-              {/* Floating label */}
+              {/* Floating top-left label */}
               <div className="absolute top-8 left-8">
                 <span className="inline-block font-heading uppercase tracking-[0.5em] text-[0.6rem] text-ivory bg-bordeaux px-4 py-2">
                   {t({ fr: 'Restaurant International', en: 'International Restaurant' })}
                 </span>
               </div>
+              {/* Corner accents */}
+              <span className="absolute top-6 right-6 w-6 h-6 border-t-2 border-r-2 border-champagne/60 pointer-events-none" />
+              <span className="absolute bottom-6 left-6 w-6 h-6 border-b-2 border-l-2 border-champagne/60 pointer-events-none" />
             </motion.div>
 
             {/* Text column */}
@@ -291,74 +353,142 @@ export default function VitalityPage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          ESPACE FITNESS — hidden until hotel provides dedicated photos
+          ESPACE FITNESS & GYMBOX — hidden until real local photos exist
       ══════════════════════════════════════════ */}
       {false && (
-      <section className="relative overflow-hidden">
-        <div
-          className="relative min-h-[480px] flex items-center"
-          style={{ background: 'linear-gradient(135deg, #F8F3E8 0%, #F1E6CE 50%, #F8F3E8 100%)' }}
-        >
-          {/* BG image with soft ivory wash */}
-          <div className="absolute inset-0 cinema">
-            <img
-              src={VITALITY_FITNESS.image}
-              alt="Fitness Center"
-              className="w-full h-full object-cover opacity-35"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/85 to-ivory/45" />
-          </div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,rgba(184,140,58,0.18),transparent_60%)]" />
+      <section className="relative bg-ivory overflow-hidden">
+        <motion.span
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
+          transition={{ duration: 1.6 }}
+          className="block h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent origin-center"
+        />
+        <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
+        <div className="absolute -top-32 right-0 w-[600px] h-[600px] bg-champagne/10 blur-3xl pointer-events-none" />
 
-          <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12 w-full py-20">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Text */}
-              <motion.div
-                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-bordeaux">
-                  {t(VITALITY_FITNESS.eyebrow)}
-                </span>
-                <h2 className="mt-5 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]">
-                  {t(VITALITY_FITNESS.title)}
-                </h2>
-                <p className="mt-3 font-display text-ink-soft text-[0.9rem] italic">
-                  {t(VITALITY_FITNESS.sub)}
-                </p>
-                <span className="mt-7 block h-px w-14 bg-bordeaux/50" />
-                <p className="mt-7 font-display text-ink leading-[1.9] text-[0.97rem]">
-                  {t(VITALITY_FITNESS.body)}
-                </p>
-              </motion.div>
+        <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
+          {/* Section heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="text-center mb-12 lg:mb-16"
+          >
+            <span className="ornament eyebrow">{t({ fr: 'Bien-être & Énergie', en: 'Wellbeing & Energy' })}</span>
+            <h2 className="mt-5 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.6rem)] leading-[1.05]">
+              {t({ fr: 'Restez en mouvement.', en: 'Keep moving.' })}
+            </h2>
+            <span className="block hairline mx-auto mt-7" />
+          </motion.div>
 
-              {/* Amenity pills grid */}
-              <motion.div
-                initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="grid grid-cols-2 gap-3"
-              >
+          <div className="relative grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(94,26,36,0.18)]">
+            {/* Decorative offset frame */}
+            <div className="hidden lg:block pointer-events-none absolute -bottom-5 -left-5 w-1/2 h-full border border-champagne/30" />
+            <div className="hidden lg:block pointer-events-none absolute -top-5 -right-5 w-1/2 h-full border border-bordeaux/15" />
+
+            {/* ── Left: Text ── */}
+            <motion.div
+              initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-ivory-50 flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-12 lg:py-16 border border-r-0 border-champagne/40 order-2 lg:order-1"
+            >
+              <span className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-bordeaux">
+                {t(VITALITY_FITNESS.eyebrow)}
+              </span>
+              <h2 className="mt-5 font-heading uppercase text-bordeaux text-[clamp(1.9rem,3.5vw,3rem)] leading-[1.05]">
+                {t(VITALITY_FITNESS.title)}
+              </h2>
+              <p className="mt-3 font-display text-ink-soft text-[0.88rem] italic leading-relaxed">
+                {t(VITALITY_FITNESS.sub)}
+              </p>
+              <span className="mt-7 block h-px w-14 bg-gradient-to-r from-bordeaux/60 to-transparent" />
+              <p className="mt-7 font-display text-ink leading-[1.9] text-[0.95rem]">
+                {t(VITALITY_FITNESS.body)}
+              </p>
+              <div className="mt-9 grid grid-cols-2 gap-2.5">
                 {t(VITALITY_FITNESS.amenities).map((a, i) => (
                   <motion.div
                     key={a}
                     initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.06 * i }}
-                    className="group border border-champagne/50 hover:border-bordeaux px-5 py-4 flex items-center gap-3 transition-colors duration-500 bg-ivory/70"
+                    transition={{ duration: 0.5, delay: 0.05 * i }}
+                    className="group flex items-center gap-2.5 px-4 py-3 border border-champagne/50 hover:border-bordeaux bg-ivory transition-colors duration-400"
                   >
-                    <span className="w-5 h-5 flex-shrink-0 border border-bordeaux/40 group-hover:border-bordeaux flex items-center justify-center transition-colors duration-400">
-                      <span className="w-1.5 h-1.5 bg-bordeaux/60 group-hover:bg-bordeaux transition-colors duration-400" />
+                    <span className="w-4 h-4 flex-shrink-0 border border-bordeaux/40 group-hover:border-bordeaux flex items-center justify-center transition-colors duration-400">
+                      <span className="w-1.5 h-1.5 bg-bordeaux/50 group-hover:bg-bordeaux transition-colors duration-400" />
                     </span>
-                    <span className="font-heading uppercase tracking-[0.3em] text-[0.65rem] text-ink-soft group-hover:text-bordeaux transition-colors duration-400">{a}</span>
+                    <span className="font-heading uppercase tracking-[0.25em] text-[0.62rem] text-ink-soft group-hover:text-bordeaux transition-colors duration-400">{a}</span>
                   </motion.div>
                 ))}
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
+
+            {/* ── Right: Dual stacked images ── */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 1.3, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="relative flex flex-col order-1 lg:order-2 min-h-[420px] lg:min-h-0"
+            >
+              {/* Top image — treadmills */}
+              <div className="relative flex-1 cinema overflow-hidden group">
+                <motion.img
+                  src={VITALITY_FITNESS.images[0]}
+                  alt="Fitness treadmills"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 12, ease: 'linear' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-bordeaux/20 via-transparent to-ink/45" />
+                {/* Label with index */}
+                <div className="absolute top-5 right-5 flex items-center gap-3 bg-bordeaux/95 backdrop-blur-sm px-4 py-2.5 shadow-deep">
+                  <span className="font-heading text-champagne/70 text-[0.55rem] tracking-[0.4em]">01</span>
+                  <span className="w-px h-3 bg-champagne/40" />
+                  <span className="font-heading uppercase tracking-[0.4em] text-[0.58rem] text-ivory">
+                    {t({ fr: 'Cardio & Fitness', en: 'Cardio & Fitness' })}
+                  </span>
+                </div>
+                {/* Corner accents */}
+                <span className="absolute top-4 left-4 w-5 h-5 border-t border-l border-champagne/60 pointer-events-none" />
+                <span className="absolute bottom-4 left-4 w-5 h-5 border-b border-l border-champagne/60 pointer-events-none" />
+              </div>
+              {/* Divider hairline */}
+              <div className="h-px bg-champagne/40" />
+              {/* Bottom image — GymBox */}
+              <div className="relative flex-1 cinema overflow-hidden group">
+                <motion.img
+                  src={VITALITY_FITNESS.images[1]}
+                  alt="GymBox boxing room"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 12, ease: 'linear' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-ink/40 via-transparent to-bordeaux/15" />
+                <div className="absolute bottom-5 left-5 flex items-center gap-3 bg-bordeaux/95 backdrop-blur-sm px-4 py-2.5 shadow-deep">
+                  <span className="font-heading text-champagne/70 text-[0.55rem] tracking-[0.4em]">02</span>
+                  <span className="w-px h-3 bg-champagne/40" />
+                  <span className="font-heading uppercase tracking-[0.4em] text-[0.58rem] text-ivory">
+                    {t({ fr: 'GymBox · Boxe', en: 'GymBox · Boxing' })}
+                  </span>
+                </div>
+                <span className="absolute top-4 right-4 w-5 h-5 border-t border-r border-champagne/60 pointer-events-none" />
+                <span className="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-champagne/60 pointer-events-none" />
+              </div>
+            </motion.div>
+
           </div>
         </div>
+
+        <motion.span
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
+          transition={{ duration: 1.6 }}
+          className="block h-px bg-gradient-to-r from-transparent via-bordeaux/30 to-transparent origin-center"
+        />
       </section>
       )}
 

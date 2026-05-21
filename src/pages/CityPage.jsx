@@ -105,7 +105,7 @@ export default function CityPage() {
   const statsRef = useRef(null);
   const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
 
-  const introImg = `/img/city/lobby/DSC08685.webp`;
+  const introImg = `/img/city/reception/DSC08728.webp`;
 
   return (
     <>

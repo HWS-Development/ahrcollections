@@ -105,7 +105,111 @@ function FeatureCard({ icon, title, desc, delay }) {
   );
 }
 
-/* ─── Meeting room card ─── */
+/* ─── CongrèsRoomCard — photo carousel + rich detail ─── */
+function CongrèsRoomCard({ room, delay }) {
+  const t = useT();
+  const [idx, setIdx] = useState(0);
+  const photos = room.photos || [room.image];
+
+  useEffect(() => {
+    if (photos.length < 2) return;
+    const id = setInterval(() => setIdx(p => (p + 1) % photos.length), 4200);
+    return () => clearInterval(id);
+  }, [photos.length]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative bg-ivory border border-champagne/40 hover:border-bordeaux transition-colors duration-700 overflow-hidden flex flex-col"
+    >
+      {/* Photo area */}
+      <div className="relative h-64 sm:h-72 lg:h-80 cinema overflow-hidden shrink-0">
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={photos[idx]}
+            src={photos[idx]}
+            alt={room.name}
+            loading="lazy"
+            decoding="async"
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        {/* gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 to-transparent" />
+
+        {/* Capacity badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.82 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: delay + 0.35 }}
+          className="absolute top-4 right-4 bg-bordeaux px-4 py-2.5 text-center shadow-deep"
+        >
+          <p className="font-heading uppercase text-ivory/60 text-[0.5rem] tracking-[0.4em]">{t({ fr: 'Capacité', en: 'Capacity' })}</p>
+          <p className="font-heading text-champagne text-2xl leading-none mt-0.5">
+            {room.capacity}<span className="text-[0.6rem] ml-0.5 text-champagne/70">{t({ fr: 'p.', en: 'px' })}</span>
+          </p>
+        </motion.div>
+
+        {/* Tagline */}
+        <div className="absolute bottom-4 left-5">
+          <p className="font-heading uppercase text-ivory/50 text-[0.56rem] tracking-[0.4em]">{t(room.tagline)}</p>
+        </div>
+
+        {/* Photo dots */}
+        {photos.length > 1 && (
+          <div className="absolute bottom-3 right-4 flex gap-1">
+            {photos.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIdx(i)}
+                aria-label={`Photo ${i + 1}`}
+                className={`w-1.5 h-1.5 transition-all duration-400 ${i === idx ? 'bg-champagne scale-125' : 'bg-ivory/40'}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-7 flex flex-col flex-1">
+        <h3 className="font-heading uppercase text-bordeaux tracking-wider text-[1.1rem] leading-tight">
+          {room.name}
+        </h3>
+        <span className="block mt-3 h-px w-10 bg-champagne group-hover:w-20 transition-all duration-500" />
+        <p className="mt-4 font-display text-ink-soft text-[0.9rem] leading-[1.78]">
+          {t(room.description)}
+        </p>
+
+        {/* Equipment */}
+        <ul className="mt-5 space-y-2">
+          {t(room.equipment).map((eq, i) => (
+            <li key={i} className="flex items-center gap-2.5 font-display text-[0.82rem] text-ink-soft">
+              <span className="w-1.5 h-1.5 bg-champagne shrink-0" />
+              {eq}
+            </li>
+          ))}
+        </ul>
+
+        {/* Layouts */}
+        <div className="mt-5 pt-4 border-t border-champagne/30 mt-auto">
+          <p className="font-heading uppercase text-[0.53rem] tracking-[0.4em] text-champagne mb-1.5">
+            {t({ fr: 'Configurations disponibles', en: 'Available layouts' })}
+          </p>
+          <p className="font-display text-[0.82rem] text-ink-soft italic">{t(room.layouts)}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ─── Meeting room card (legacy — kept for backward compat) ─── */
 function MeetingRoomCard({ room, delay }) {
   const t = useT();
   return (
@@ -308,12 +412,112 @@ export default function AquaPage() {
       </div>
 
       {/* ══════════════════════════════════════════
+          AQUAPARC HERO TEASER — full-bleed cinematic
+      ══════════════════════════════════════════ */}
+      <section id="aquaparc-teaser" className="relative overflow-hidden">
+        <div className="relative min-h-[440px] sm:min-h-[520px] lg:min-h-[620px] flex items-end">
+          {/* Background: autoplay aquapark video */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            src="/videos/aqua-aquapark.mp4"
+            poster="/img/aqua/pool/DJI_0097.webp"
+            autoPlay muted loop playsInline preload="metadata"
+          />
+          {/* Overlays: teal gradient + dark base */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#051a2e]/95 via-[#082030]/55 to-[#0a2535]/20" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(163,218,230,0.18),_transparent_60%)]" />
+          <div className="pointer-events-none absolute inset-0 border-[0px]" />
+
+          {/* Top label */}
+          <motion.div
+            initial={{ opacity: 0, y: -12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="absolute top-8 left-8 sm:left-12"
+          >
+            <span className="inline-flex items-center gap-2 font-heading uppercase tracking-[0.5em] text-[0.6rem] text-ivory/80 bg-[rgba(10,60,80,0.55)] backdrop-blur-sm border border-white/10 px-4 py-2">
+              <span className="text-[#5ecfea]">∿</span>
+              {t({ fr: 'Aqua Park · Waves Aqua Resort', en: 'Aqua Park · Waves Aqua Resort' })}
+            </span>
+          </motion.div>
+
+          {/* Main content */}
+          <div className="relative z-10 w-full px-8 sm:px-12 lg:px-20 pb-14 lg:pb-20 grid lg:grid-cols-2 gap-10 items-end">
+            <div>
+              <motion.span
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-[#5ecfea]/80"
+              >
+                {t({ fr: 'Le parc aquatique le plus grand de la région', en: 'The largest water park in the region' })}
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-4 font-heading uppercase text-ivory text-[clamp(2.2rem,4.8vw,4.2rem)] leading-[1.02]"
+              >
+                {t({ fr: 'L\'Aquaparc\nWaves.', en: 'The Waves\nAquaparc.' })}
+              </motion.h2>
+              <span className="block mt-6 h-px w-16 bg-gradient-to-r from-[#5ecfea]/70 to-transparent" />
+            </div>
+
+            <div className="lg:pb-1">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: 0.2 }}
+                className="font-display text-ivory/75 leading-[1.95] text-[0.98rem] max-w-lg"
+              >
+                {t({
+                  fr: 'Plus de 30 toboggans géants, piscine à vagues, rivière lente et espaces VIP — une aventure aquatique hors normes, incluse dans votre séjour ou accessible en ticket journée.',
+                  en: 'Over 30 giant slides, wave pool, lazy river and VIP areas — an extraordinary aquatic adventure, included with your stay or available as a day-pass.'
+                })}
+              </motion.p>
+
+              {/* Quick badges */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: 0.35 }}
+                className="mt-7 flex flex-wrap gap-2.5"
+              >
+                {[
+                  { fr: '30+ Toboggans', en: '30+ Slides' },
+                  { fr: 'Piscine à Vagues', en: 'Wave Pool' },
+                  { fr: 'Rivière Lente', en: 'Lazy River' },
+                  { fr: 'Espace VIP', en: 'VIP Area' },
+                ].map(badge => (
+                  <span
+                    key={badge.fr}
+                    className="inline-block font-heading uppercase tracking-[0.3em] text-[0.58rem] text-ivory/80 bg-white/10 backdrop-blur-sm border border-white/15 px-3 py-1.5"
+                  >
+                    {t(badge)}
+                  </span>
+                ))}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: 0.5 }}
+                className="mt-8 flex gap-4 flex-wrap"
+              >
+                <a
+                  href={AQUA_INFO.bookingUrl}
+                  target="_blank" rel="noreferrer"
+                  className="btn-royal"
+                >
+                  {t({ fr: 'Réserver mon séjour', en: 'Book my stay' })} <span aria-hidden>→</span>
+                </a>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
           ROOMS
       ══════════════════════════════════════════ */}
       <HotelRoomsSection
         rooms={AQUA_ROOMS}
         eyebrow={{ fr: 'Nos Chambres & Suites', en: 'Rooms & Suites' }}
-        title={{ fr: 'Onze univers, une même sérénité.', en: 'Eleven universes, one serenity.' }}
+        title={{ fr: 'Dix univers, une même sérénité.', en: 'Ten universes, one serenity.' }}
         sub={{ fr: 'De la Supérieure Terrasse à la Suite Royale — chaque espace Waves Aqua est une invitation à la douceur de vivre 5 étoiles.', en: 'From the Superior Terrace to the Royal Suite — every Waves Aqua space is an invitation to 5-star soft living.' }}
         bg="bg-mist"
         bookingUrl={AQUA_INFO.bookingUrl}
@@ -553,109 +757,232 @@ export default function AquaPage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          CONVENTION CENTER & LE BALLROOM — hidden until hotel provides dedicated photos
+          LE BALLROOM — standalone banner
       ══════════════════════════════════════════ */}
-      {false && (
-      <section className="relative section-pad bg-ivory-50 overflow-hidden">
-        <div className="absolute -top-32 right-0 w-[500px] h-[500px] bg-champagne/8 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-bordeaux/3 blur-3xl pointer-events-none" />
-
+      <section className="relative section-pad bg-ink overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,167,102,0.08),_transparent_70%)] pointer-events-none" />
         <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12">
-          {/* Header */}
-          <div className="grid lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-5">
-              <span className="ornament eyebrow">{t(AQUA_CONVENTION.eyebrow)}</span>
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <motion.span
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="font-heading uppercase tracking-[0.55em] text-[0.65rem] text-shimmer"
+            >
+              {t({ fr: 'Waves Aqua Resort · Événements', en: 'Waves Aqua Resort · Events' })}
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-heading uppercase text-ivory text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]"
+            >
+              {t({ fr: 'La Salle des Merveilles.', en: 'The Room of Wonders.' })}
+            </motion.h2>
+            <span className="block h-px w-16 bg-champagne/50 mx-auto mt-8" />
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative cinema overflow-hidden shadow-deep min-h-[380px] lg:min-h-[480px] flex items-end"
+          >
+            <img
+              src={AQUA_CONVENTION.ballroomImage}
+              alt="Le Ballroom Waves Aqua Resort"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/15" />
+            <div className="pointer-events-none absolute inset-5 border border-champagne/25" />
+
+            <div className="absolute top-6 left-8">
+              <span className="inline-block font-heading uppercase tracking-[0.5em] text-[0.6rem] text-ivory bg-bordeaux px-4 py-2">
+                {t({ fr: 'Salle des Merveilles', en: 'Room of Wonders' })}
+              </span>
+            </div>
+
+            <div className="relative z-10 w-full p-10 lg:p-14 grid lg:grid-cols-2 gap-8 items-end">
+              <div>
+                <p className="font-heading uppercase tracking-[0.5em] text-[0.65rem] text-champagne/70 mb-4">
+                  {t({ fr: 'Waves Aqua Resort · Le Ballroom', en: 'Waves Aqua Resort · The Ballroom' })}
+                </p>
+                <h3 className="font-heading uppercase text-ivory text-[clamp(1.6rem,3vw,2.8rem)] leading-[1.05]">
+                  {t({ fr: 'Votre plus grand événement mérite le plus beau cadre.', en: 'Your greatest event deserves the finest stage.' })}
+                </h3>
+                <span className="block mt-6 h-px w-14 bg-gradient-to-r from-champagne/60 to-transparent" />
+              </div>
+              <div>
+                <p className="font-display text-ivory/65 leading-[1.9] text-[0.97rem]">
+                  {t(AQUA_CONVENTION.ballroomSub)}
+                </p>
+                <a
+                  href={AQUA_INFO.bookingUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-7 inline-flex items-center gap-2 font-heading uppercase tracking-[0.4em] text-[0.65rem] text-champagne hover:text-ivory transition-colors duration-400"
+                >
+                  {t({ fr: 'Privatiser le Ballroom', en: 'Book the Ballroom' })} <span>→</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          PALAIS DES CONGRÈS — fully redesigned
+      ══════════════════════════════════════════ */}
+      <section id="congres" className="relative overflow-hidden">
+
+        {/* ── Video / Hero Banner ── */}
+        <div className="relative min-h-[480px] sm:min-h-[560px] lg:min-h-[640px] flex items-end overflow-hidden">
+          {AQUA_CONVENTION.videoSrc ? (
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src={AQUA_CONVENTION.videoSrc}
+              poster={AQUA_CONVENTION.videoPoster}
+              autoPlay muted loop playsInline preload="metadata"
+            />
+          ) : (
+            <img
+              src={AQUA_CONVENTION.videoPoster}
+              alt="Palais des Congrès Waves Aqua"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          )}
+          {/* layered gradients — dark at base + teal cinematic tint */}
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/55 to-ink/15" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(163,218,230,0.12),_transparent_60%)]" />
+          <div className="pointer-events-none absolute inset-0 border-[0px]" />
+
+          {/* Top badge */}
+          <div className="absolute top-8 left-8 sm:left-12">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 font-heading uppercase tracking-[0.45em] text-[0.6rem] text-ivory/80 bg-bordeaux/70 backdrop-blur-sm px-4 py-2"
+            >
+              <span className="text-champagne">◆</span>
+              {t({ fr: 'Palais des Congrès', en: 'Convention Center' })}
+            </motion.span>
+          </div>
+
+          {/* Bottom content */}
+          <div className="relative z-10 w-full px-8 sm:px-12 lg:px-20 pb-14 lg:pb-20 grid lg:grid-cols-2 gap-10 items-end">
+            <div>
+              <motion.span
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="font-heading uppercase tracking-[0.5em] text-[0.62rem] text-champagne/80"
+              >
+                Waves Aqua Resort · {t({ fr: 'Événements & Affaires', en: 'Events & Business' })}
+              </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                className="mt-6 font-heading uppercase text-bordeaux text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]"
+                transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-4 font-heading uppercase text-ivory text-[clamp(2rem,4.2vw,3.8rem)] leading-[1.04]"
               >
                 {t(AQUA_CONVENTION.title)}
               </motion.h2>
-              <span className="hairline mt-8" />
+              <span className="block mt-6 h-px w-16 bg-gradient-to-r from-champagne/70 to-transparent" />
             </div>
-            <div className="lg:col-span-7">
+            <div className="lg:pb-1">
               <motion.p
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ duration: 0.9, delay: 0.15 }}
-                className="font-display text-ink-soft leading-[1.95] text-[0.98rem]"
+                transition={{ duration: 0.9, delay: 0.2 }}
+                className="font-display text-ivory/75 leading-[1.9] text-[0.97rem] max-w-lg"
               >
                 {t(AQUA_CONVENTION.sub)}
               </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: 0.4 }}
+                className="mt-8"
+              >
+                <Link
+                  to="/contact"
+                  className="btn-royal"
+                >
+                  {t({ fr: 'Demander un devis', en: 'Request a quote' })} <span aria-hidden>→</span>
+                </Link>
+              </motion.div>
             </div>
           </div>
-
-          {/* Meeting room cards */}
-          <div className="mt-12 grid md:grid-cols-3 gap-5">
-            {AQUA_CONVENTION.rooms.map((room, i) => (
-              <MeetingRoomCard key={room.name} room={room} delay={0.1 * i} />
-            ))}
-          </div>
-
-          {/* CTA strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.4 }}
-            className="mt-10 flex flex-wrap items-center justify-between gap-5 p-6 bg-bordeaux"
-          >
-            <div>
-              <p className="font-heading uppercase tracking-[0.4em] text-[0.6rem] text-champagne/70">{t({ fr: 'Sur demande', en: 'On request' })}</p>
-              <p className="mt-1 font-heading uppercase text-ivory text-[1.05rem]">{t({ fr: 'Demandez un devis pour vos événements.', en: 'Request a quote for your events.' })}</p>
-            </div>
-            <Link to="/contact" className="btn-ghost !border-champagne/60 !text-ivory hover:!bg-ivory hover:!text-bordeaux">
-              {t({ fr: 'Nous contacter', en: 'Contact us' })} <span aria-hidden>→</span>
-            </Link>
-          </motion.div>
         </div>
 
-        {/* Le Ballroom — full-width feature banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mt-14 mx-6 lg:mx-12 xl:mx-20 cinema overflow-hidden shadow-deep min-h-[380px] lg:min-h-[460px] flex items-end"
-        >
-          <img
-            src={AQUA_CONVENTION.ballroomImage}
-            alt="Le Ballroom Waves Aqua"
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/15" />
-          <div className="pointer-events-none absolute inset-5 border border-champagne/25" />
-
-          {/* Ballroom badge */}
-          <div className="absolute top-6 left-8">
-            <span className="inline-block font-heading uppercase tracking-[0.5em] text-[0.6rem] text-ivory bg-bordeaux px-4 py-2">
-              {t({ fr: 'Salle des Merveilles', en: 'Room of Wonders' })}
-            </span>
-          </div>
-
-          <div className="relative z-10 w-full p-10 lg:p-14 grid lg:grid-cols-2 gap-8 items-end">
-            <div>
-              <p className="font-heading uppercase tracking-[0.5em] text-[0.65rem] text-champagne/70 mb-4">
-                {t({ fr: 'Waves Aqua Resort · Le Ballroom', en: 'Waves Aqua Resort · The Ballroom' })}
-              </p>
-              <h3 className="font-heading uppercase text-ivory text-[clamp(1.8rem,3.5vw,3.2rem)] leading-[1.05]">
-                {t({ fr: 'La Salle des Merveilles.', en: 'The Room of Wonders.' })}
-              </h3>
-              <span className="block mt-6 h-px w-14 bg-gradient-to-r from-champagne/60 to-transparent" />
-            </div>
-            <div>
-              <p className="font-display text-ivory/65 leading-[1.9] text-[0.97rem]">
-                {t(AQUA_CONVENTION.ballroomSub)}
-              </p>
-              <Link
-                to="/contact"
-                className="mt-7 inline-flex items-center gap-2 font-heading uppercase tracking-[0.4em] text-[0.65rem] text-champagne hover:text-ivory transition-colors duration-400"
+        {/* ── Specs strip ── */}
+        <div className="bg-bordeaux py-5 overflow-hidden">
+          <div className="max-w-[1500px] mx-auto px-6 lg:px-12 grid grid-cols-2 sm:grid-cols-4 gap-px bg-bordeaux/20">
+            {AQUA_CONVENTION.specs.map((s, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.06 * i }}
+                className="bg-bordeaux px-6 py-5 text-center"
               >
-                {t({ fr: 'Privatiser le Ballroom', en: 'Book the Ballroom' })} <span className="transition-transform duration-400 group-hover:translate-x-1">→</span>
-              </Link>
-            </div>
+                <p className="font-heading text-champagne text-3xl leading-none">{s.value}</p>
+                <p className="mt-2 font-heading uppercase tracking-[0.35em] text-[0.58rem] text-ivory/65">{t(s.label)}</p>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        </div>
+
+        {/* ── Meeting Room Cards ── */}
+        <div className="relative bg-ivory-50 section-pad overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(201,167,102,0.12),_transparent_60%)] pointer-events-none" />
+          <div className="relative max-w-[1500px] mx-auto px-6 lg:px-12">
+
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <motion.span
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="ornament eyebrow"
+              >
+                {t({ fr: 'Nos Salles', en: 'Our Rooms' })}
+              </motion.span>
+              <motion.h3
+                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-5 font-heading uppercase text-bordeaux text-[clamp(1.7rem,3vw,2.8rem)] leading-[1.06]"
+              >
+                {t({ fr: 'Trois espaces, un seul standard : l\'excellence.', en: 'Three spaces, one standard: excellence.' })}
+              </motion.h3>
+            </div>
+
+            {/* 3-col grid → 1-col on mobile */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {AQUA_CONVENTION.rooms.map((room, i) => (
+                <CongrèsRoomCard key={room.name} room={room} delay={0.1 * i} />
+              ))}
+            </div>
+
+            {/* CTA bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.3 }}
+              className="mt-10 flex flex-wrap items-center justify-between gap-5 p-7 lg:p-8 bg-bordeaux"
+            >
+              <div>
+                <p className="font-heading uppercase tracking-[0.45em] text-[0.58rem] text-champagne/70">
+                  {t({ fr: 'Sur devis · Disponibilité en temps réel', en: 'On quote · Real-time availability' })}
+                </p>
+                <p className="mt-1.5 font-heading uppercase text-ivory text-[1.05rem] leading-tight">
+                  {t({ fr: 'Organisez votre événement avec nos équipes.', en: 'Plan your event with our team.' })}
+                </p>
+              </div>
+              <a
+                href={AQUA_INFO.bookingUrl}
+                target="_blank" rel="noreferrer"
+                className="btn-ghost !border-champagne/60 !text-ivory hover:!bg-ivory hover:!text-bordeaux shrink-0"
+              >
+                {t({ fr: 'Nous contacter', en: 'Contact us' })} <span aria-hidden>→</span>
+              </a>
+            </motion.div>
+
+          </div>
+        </div>
       </section>
-      )}
 
       {/* ══════════════════════════════════════════
           FEATURES (4 cards)

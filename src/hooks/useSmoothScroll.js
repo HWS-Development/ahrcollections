@@ -13,6 +13,9 @@ export default function useSmoothScroll() {
       touchMultiplier: 1.4
     });
 
+    // Expose instance so ScrollToTop can reach it
+    window.__lenis = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -36,6 +39,7 @@ export default function useSmoothScroll() {
       cancelAnimationFrame(id);
       document.removeEventListener('click', onClick);
       lenis.destroy();
+      window.__lenis = null;
     };
   }, []);
 }
