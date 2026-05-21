@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block utility paths
+Disallow: /assets/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.ahrcollections.com/sitemap.xml

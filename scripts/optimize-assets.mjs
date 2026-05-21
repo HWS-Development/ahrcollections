@@ -107,8 +107,26 @@ const MAP = {
   },
   'aqua/staff': {
     roots: ['WAVES/waves'],
-    ids: ['DSC09027','DSC09029','DSC09039','DSC09040','DSC09043','DSC09045','DSC09046','DSC09047','DSC09048','DSC09051','DSC09053','DSC09054','DSC09055','DSC09057'],
+    ids: [],
   },
+
+  // ── NEW: drone aerials (best Aquaparc stills for hero / CTA card) ─
+  'aqua/drone': {
+    roots: ['Aquaparkimages-videos/Aquapark'],
+    ids: [],
+  },
+  // ── NEW: We Jump / Edge / Salle de Jeux ───────────────────────
+  'aqua/wejump': {
+    roots: ['salledejeux/salle de jeux'],
+    ids: ['DSC09796','DSC09797','DSC09798','DSC09803','DSC09887','IMG_8851','IMG_8884','IMG_8896','IMG_8913','IMG_8917','IMG_8933','IMG_8391'],
+  },
+  // ── NEW: AquaFit (Move Up Club @ Aqua Resort) ─────────────────
+  'aqua/aquafit': {
+    roots: ['ROYALPLAZA/Moveup&Kidsclub/Move up & Kids club'],
+    ids: ['DSC05621','DSC05636','DSC02213','DSC02223','DSC02194','DSC02181','DSC02043','DSC02046','DSC09595','DSC09615'],
+  },
+  // ── NEW: Palais des Congrès / Ballroom (alias of aqua/congres) ─
+  // (we re-use existing aqua/congres folder; no separate output needed)
 
   // ── Vitality Terminus ─────────────────────────────────────
   'vitality/confort-gl': { roots: ['VITALITY/SuperieurGrandlit/Supérieur Grand lit'], take: 5 },

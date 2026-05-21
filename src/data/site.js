@@ -16,6 +16,14 @@ export const BRAND = {
   address: {
     fr: 'Avenue Mohamed V, Angle Av Al Jahid, Route de Tanger, Kénitra',
     en: 'Avenue Mohamed V, Angle Av Al Jahid, Route de Tanger, Kénitra'
+  },
+  socials: {
+    aquaResort:  'https://www.instagram.com/waves_aqua_resort?igsh=MXUxY3V6NWFsbXRlNw%3D%3D',
+    royalPlaza:  'https://www.instagram.com/royalplaza_kenitra?igsh=MWFxNXdlcmQ0d2duMg==',
+    city:        'https://www.instagram.com/city_hotel_by_waves?igsh=MTUwMDZ6cDY0c2Rwbw%3D%3D',
+    vitality:    'https://www.instagram.com/vitalityterminuskenitra?igsh=MW1lbWp0ZnlxbXRpYg%3D%3D',
+    aquaFit:     'https://www.instagram.com/aqua_fit_kenitra?igsh=MWdkZ3ZqaHR2bW5ydg==',
+    playAndJump: 'https://www.instagram.com/play_and_jump_park?igsh=MXZtZHUwZW1nc3YzZg=='
   }
 };
 
@@ -61,7 +69,8 @@ export const HOTELS = [
       en: 'An exceptional tropical setting in the heart of Kénitra.'
     },
     image: '/img/aqua/pool/DJI_0097.webp',
-    accent: 'aqua'
+    accent: 'aqua',
+    instagram: 'https://www.instagram.com/waves_aqua_resort?igsh=MXUxY3V6NWFsbXRlNw%3D%3D'
   },
   {
     id: 'plaza',
@@ -73,7 +82,8 @@ export const HOTELS = [
       en: 'A refined setting for a demanding clientele.'
     },
     image: '/img/royal/executive/DSC07000.webp',
-    accent: 'bordeaux'
+    accent: 'bordeaux',
+    instagram: 'https://www.instagram.com/royalplaza_kenitra?igsh=MWFxNXdlcmQ0d2duMg=='
   },
   {
     id: 'vitality',
@@ -85,7 +95,8 @@ export const HOTELS = [
       en: 'A strategic location 1 minute from the LGV station.'
     },
     image: '/img/vitality/reception/photos__2130.webp',
-    accent: 'olive'
+    accent: 'olive',
+    instagram: 'https://www.instagram.com/vitalityterminuskenitra?igsh=MW1lbWp0ZnlxbXRpYg=='
   },
   {
     id: 'city',
@@ -97,7 +108,8 @@ export const HOTELS = [
       en: 'An ideal location for both business and leisure stays.'
     },
     image: '/img/city/rooms/DSC08025.webp',
-    accent: 'sand'
+    accent: 'sand',
+    instagram: 'https://www.instagram.com/city_hotel_by_waves?igsh=MTUwMDZ6cDY0c2Rwbw%3D%3D'
   }
 ];
 
@@ -329,27 +341,27 @@ export const AQUA = {
     title:   { fr: 'Un cadre tropical exceptionnel\nau cœur de Kénitra.',
                en: 'An exceptional tropical setting\nat the heart of Kénitra.' },
     sub: {
-      fr: 'Hôtel 5★, aquaparc géant, palais des congrès et bien-être premium — réunis dans un seul complexe.',
-      en: '5-star hotel, vast aquapark, convention center and premium wellness — all in one resort.'
+      fr: 'Là où l’eau, la lumière et l’enfance se rencontrent — un univers tropical sculpté pour les sens, à quelques minutes du centre de Kénitra.',
+      en: 'Where water, light and childhood meet — a tropical world sculpted for the senses, minutes from downtown Kénitra.'
     },
     videoPoster: '/img/aqua/pool/DJI_0097.webp',
     videoSrc:    '/videos/aqua-hero.mp4'
   },
   intro: {
     eyebrow: { fr: 'Bienvenue au Waves Aqua Resort', en: 'Welcome to Waves Aqua Resort' },
-    title:   { fr: 'Le complexe qui réunit tout ce que vous aimez.', en: 'The resort that brings together everything you love.' },
+    title:   { fr: 'Une journée ici se mesure en frissons, en éclats de rire, en silences partagés.', en: 'A day here is measured in shivers, in bursts of laughter, in shared silences.' },
     body: {
       fr: [
-        'Le Waves Aqua Resort est un complexe hôtelier unique combinant luxe et divertissement, dans un cadre tropical enchanteur.',
-        'Avec son hôtel 5 étoiles, son parc aquatique spectaculaire, son palais des congrès moderne et son centre de bien-être haut de gamme,',
-        'le resort est la destination idéale pour les familles, les professionnels et les amateurs de sensations fortes.',
-        'Restaurants à thème, bars en bord de piscine, plages privées : ici, chaque journée invente sa propre lumière.'
+        'Le matin, l’horizon turquoise s’éveille au son lointain des cascades — déjà, les premiers plongeons résonnent dans le grand bassin.',
+        'À midi, les transats deviennent des îles privées, les enfants disparaissent sur les toboggans, et les conversations s’étirent autour d’un déjeuner pieds nus.',
+        'L’après-midi se prolonge au Spa puis sur les plages VIP, avant que la magie du soir ne prenne le relais : grillades en live-cooking, cocktails au coucher du soleil, tempo lounge.',
+        'Le Waves Aqua Resort n’est pas un hôtel — c’est une parenthèse, un terrain de jeu et un refuge, dans un seul et même lieu.'
       ],
       en: [
-        'Waves Aqua Resort is a one-of-a-kind property blending luxury and entertainment in an enchanting tropical setting.',
-        'With its five-star hotel, spectacular aquapark, modern convention center and premium wellness sanctuary,',
-        'the resort is the ideal destination for families, professionals and thrill-seekers alike.',
-        'Themed restaurants, poolside bars, private beaches: here, every day writes its own light.'
+        'Morning unfolds in turquoise, to the distant rumble of cascades — already, the first dives ripple through the great pool.',
+        'By noon, sun loungers become private islands, the children vanish onto the slides, and lunch stretches out, barefoot, around long tables.',
+        'Afternoons drift into the Spa, then onto the VIP beaches, before the evening shifts gear: live-cooking grills, sunset cocktails, lounge tempo.',
+        'Waves Aqua Resort is not a hotel — it is a pause, a playground and a refuge, all at once.'
       ]
     }
   },
@@ -388,27 +400,27 @@ export const VITALITY = {
     title:   { fr: 'À une minute\nde la gare LGV.',
                en: 'One minute\nfrom the LGV station.' },
     sub: {
-      fr: 'Un emplacement stratégique en plein centre-ville — pensé pour les voyageurs d’affaires comme pour les touristes.',
-      en: 'A strategic location in the heart of the city — designed for business travelers and tourists alike.'
+      fr: 'Posez votre valise à une minute du quai LGV — et retrouvez immédiatement le calme, le confort, et le café qui réveille vraiment.',
+      en: 'Drop your bag one minute from the LGV platform — and find instant calm, comfort, and a coffee that actually wakes you up.'
     },
     videoPoster: '/img/vitality/suite-junior/DSC07776.webp',
     videoSrc:    null
   },
   intro: {
     eyebrow: { fr: 'Bienvenue au Vitality Terminus', en: 'Welcome to Vitality Terminus' },
-    title:   { fr: 'Confort, efficacité, bien-être.', en: 'Comfort, efficiency, wellbeing.' },
+    title:   { fr: 'L’efficacité du centre-ville, sans en avoir l’usure.', en: 'The efficiency of downtown — without its wear.' },
     body: {
       fr: [
-        'Le Vitality Terminus est idéalement situé en plein centre-ville de Kénitra, à seulement une minute à pied de la gare LGV.',
-        'Une accessibilité optimale pour les voyageurs d’affaires et les touristes en quête d’une adresse fluide et bien connectée.',
-        'Avec son design moderne, ses chambres soignées et ses services premium, l’hôtel offre une expérience urbaine sur mesure.',
-        'Salles de réunion, business center, restaurant international, espace fitness : tout est réuni pour conjuguer travail, repos et bien-être.'
+        'Vous descendez du train, vous traversez la rue, vous êtes arrivé. Le Vitality Terminus a été pensé pour ce geste-là : un seuil franchi, et la journée change de rythme.',
+        'Les chambres respirent — lignes nettes, textiles doux, lumière maîtrisée. Le Business Center attend votre prochaine visio, le restaurant international votre prochaine pause.',
+        'Au matin, le buffet s’étire jusqu’à tard ; au soir, le fitness reste ouvert quand le reste de la ville s’apaise.',
+        'C’est l’hôtel d’une mobilité fluide — pour ceux qui ne font que passer, et pour ceux qui veulent vraiment être là.'
       ],
       en: [
-        'Vitality Terminus sits in the heart of downtown Kénitra, just one minute’s walk from the LGV high-speed station.',
-        'A seamless gateway for business travelers and tourists looking for a well-connected, frictionless address.',
-        'Modern design, carefully appointed rooms and premium services create a tailor-made urban experience.',
-        'Meeting rooms, business center, international restaurant, fitness space: everything is here to balance work, rest and wellbeing.'
+        'You step off the train, cross the street, and you have arrived. Vitality Terminus is built around that single gesture: one threshold crossed, and the pace of the day shifts.',
+        'Rooms breathe — clean lines, soft textiles, considered light. The Business Center is ready for your next call, the international restaurant for your next pause.',
+        'In the morning, breakfast stretches late; at night, the fitness floor stays open while the rest of the city quiets down.',
+        'This is the hotel of effortless mobility — for those passing through, and for those who truly want to be here.'
       ]
     }
   },
@@ -420,8 +432,8 @@ export const VITALITY = {
       desc: { fr: 'Salles de réunion et visioconférences, coworking, traiteur & pauses-café.',
               en: 'Meeting rooms and video conferencing, coworking, catering & coffee breaks.' } },
     { icon: 'III', title: { fr: 'Restaurant International', en: 'International Restaurant' },
-      desc: { fr: 'Carte du monde, petit-déjeuner buffet et room service à toute heure.',
-              en: 'Cuisine from around the world, breakfast buffet and round-the-clock room service.' } },
+      desc: { fr: 'Carte du monde et petit-déjeuner buffet à savourer toute la matinée.',
+              en: 'Cuisine from around the world with an all-morning breakfast buffet.' } },
     { icon: 'IV', title: { fr: 'Espace Fitness', en: 'Fitness Space' },
       desc: { fr: 'Un espace moderne pour garder la forme pendant votre séjour.',
               en: 'A modern space to stay in shape throughout your stay.' } }
@@ -447,27 +459,27 @@ export const CITY = {
     title:   { fr: 'L’emplacement idéal pour vos séjours\npro & touristiques.',
                en: 'The ideal address for business\n& leisure stays.' },
     sub: {
-      fr: 'Au cœur de Kénitra, à proximité des quartiers d’affaires, des centres commerciaux et des gares.',
-      en: 'In the heart of Kénitra — close to business districts, shopping centers and stations.'
+      fr: 'Une adresse urbaine, un service sincère — pour vos rendez-vous d’affaires, vos visites en famille, vos parenthèses citadines.',
+      en: 'An urban address, a sincere service — for business meetings, family visits, and city pauses.'
     },
     videoPoster: '/img/city/reception/DSC08733.webp',
     videoSrc:    '/videos/city-hero.mp4'
   },
   intro: {
     eyebrow: { fr: 'Bienvenue au City Hôtel', en: 'Welcome to City Hotel' },
-    title:   { fr: 'L’hôtel corporate au cœur de la ville.', en: 'The corporate hotel at the heart of the city.' },
+    title:   { fr: 'L’élégance discrète d’un hôtel qui a choisi la ville.', en: 'The quiet elegance of a hotel that chose the city.' },
     body: {
       fr: [
-        'Situé en plein centre-ville de Kénitra, le City Hôtel bénéficie d’un emplacement stratégique.',
-        'À proximité des principaux quartiers d’affaires, des centres commerciaux et des gares, il offre un accès rapide aux infrastructures essentielles et aux attractions de la ville.',
-        'Conçu pour les professionnels comme pour les voyageurs en quête de confort, l’hôtel propose des chambres modernes, des salles de conférence modulables et un restaurant chaleureux.',
-        'L’adresse idéale pour conjuguer travail, découverte et art de recevoir.'
+        'Au croisement des avenues animées et des rues plus calmes de Kénitra, le City Hôtel by Waves a le bon goût de la discrétion.',
+        'Chambres lumineuses, salles modulables, soft bar à la lumière tamisée : un cadre simple et soigné, où l’on travaille bien et où l’on rentre toujours volontiers.',
+        'Pour le voyageur d’affaires, l’évidence d’un emplacement central. Pour le visiteur du week-end, la promesse d’un point d’ancrage tranquille avant d’explorer le Gharb.',
+        'Ici, l’art de recevoir se mesure aux petites attentions — celles qui ne se remarquent pas, sauf quand elles manquent ailleurs.'
       ],
       en: [
-        'In the heart of downtown Kénitra, City Hotel enjoys a strategic location.',
-        'Close to the main business districts, shopping centers and stations, it offers quick access to the city’s essentials and attractions.',
-        'Designed for professionals as well as travelers seeking comfort, the hotel offers modern rooms, flexible conference spaces and a warm restaurant.',
-        'The ideal address to combine work, discovery and the art of welcoming.'
+        'At the crossroads of Kénitra’s busy avenues and quieter streets, City Hôtel by Waves has the good taste of discretion.',
+        'Bright rooms, flexible meeting spaces, a softly-lit bar: a simple, well-tailored setting — easy to work in, easy to come back to.',
+        'For the business traveler, the obvious appeal of a central address. For the weekend visitor, a calm anchor before exploring the Gharb region.',
+        'Here, hospitality shows in the small attentions — the kind you only notice when they are missing elsewhere.'
       ]
     }
   },
@@ -482,8 +494,8 @@ export const CITY = {
       desc: { fr: 'À deux pas des axes de transport et des principaux centres d’intérêt.',
               en: 'Steps from major transport links and key points of interest.' } },
     { icon: '◎', title: { fr: 'Restaurant & Soft Bar', en: 'Restaurant & Soft Bar' },
-      desc: { fr: 'Cuisine variée, petit-déjeuner buffet, room service et ambiance chaleureuse.',
-              en: 'Varied cuisine, breakfast buffet, room service and a warm atmosphere.' } }
+      desc: { fr: 'Cuisine variée, petit-déjeuner buffet et ambiance chaleureuse.',
+              en: 'Varied cuisine, breakfast buffet and a warm atmosphere.' } }
   ],
   gallery: [
     '/img/city/rooms/DSC08025.webp',
@@ -510,9 +522,9 @@ export const CONTACT = {
     }
   },
   channels: [
-    { label: { fr: 'Téléphone', en: 'Phone' }, value: BRAND.phone, href: `tel:${BRAND.phone.replace(/\s/g,'')}` },
-    { label: { fr: 'Email',     en: 'Email' }, value: BRAND.email, href: `mailto:${BRAND.email}` },
-    { label: { fr: 'Adresse',   en: 'Address' }, value: BRAND.address.fr, href: 'https://www.google.com/maps?q=Kenitra' }
+    { icon: 'phone',   label: { fr: 'Téléphone', en: 'Phone' }, value: BRAND.phone, href: `tel:${BRAND.phone.replace(/\s/g,'')}` },
+    { icon: 'email',   label: { fr: 'Email',     en: 'Email' }, value: BRAND.email, href: `mailto:${BRAND.email}` },
+    { icon: 'address', label: { fr: 'Adresse',   en: 'Address' }, value: BRAND.address.fr, href: 'https://www.google.com/maps?q=Kenitra' }
   ],
   form: {
     firstName: { fr: 'Prénom',                en: 'First name' },

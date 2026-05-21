@@ -8,7 +8,7 @@ const TEXT = '#5E1A24';
 export default function Footer() {
   const t = useT();
   return (
-    <footer style={{ background: '#F6F0E6', color: TEXT }} className="relative overflow-hidden">
+    <footer style={{ background: '#F6F0E6', color: TEXT }} className="relative overflow-hidden pb-[96px] md:pb-0">
       {/* top champagne hairline */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-champagne to-transparent" />
       {/* soft radial */}
@@ -61,15 +61,31 @@ export default function Footer() {
           </p>
           <ul className="mt-5 space-y-3 font-display">
             {HOTELS.map((h) => (
-              <li key={h.id}>
+              <li key={h.id} className="flex items-center justify-between gap-3">
                 <Link
                   to={h.to}
                   style={{ color: TEXT }}
-                  className="group inline-flex items-center gap-2 hover:opacity-60 transition-opacity duration-400"
+                  className="group inline-flex items-center gap-2 hover:opacity-60 transition-opacity duration-400 min-w-0"
                 >
-                  <span className="h-px w-3 bg-current transition-all duration-500 group-hover:w-6" />
+                  <span className="h-px w-3 bg-current transition-all duration-500 group-hover:w-6 flex-shrink-0" />
                   <span className="font-heading uppercase tracking-[0.18em] text-[0.78rem]">{h.name}</span>
                 </Link>
+                {h.instagram && (
+                  <a
+                    href={h.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Instagram ${h.name}`}
+                    style={{ color: TEXT }}
+                    className="opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <rect x="3" y="3" width="18" height="18" rx="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
+                    </svg>
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -78,7 +94,7 @@ export default function Footer() {
         {/* Contact */}
         <div className="lg:col-span-3">
           <p className="font-heading uppercase tracking-[0.42em] text-[0.7rem]" style={{ color: TEXT }}>
-            Contact
+            {t({ fr: 'Contact', en: 'Contact' })}
           </p>
           <ul className="mt-5 space-y-3 font-display text-[0.95rem] leading-relaxed" style={{ color: TEXT }}>
             <li>{t(BRAND.address)}</li>

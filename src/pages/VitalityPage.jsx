@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import PageHero            from '../components/PageHero.jsx';
+import TrustBar            from '../components/TrustBar.jsx';
 import HotelRoomsSection   from '../components/HotelRoomsSection.jsx';
 import { useT }            from '../contexts/LanguageContext.jsx';
 import { VITALITY, HOTELS } from '../data/site.js';
@@ -77,6 +78,8 @@ export default function VitalityPage() {
           logo="/logos/vitality-terminus-logo.svg"
           secondaryHref="#intro"
         />
+
+      <TrustBar />
 
       {/* ══════════════════════════════════════════
           INTRO / SIGNATURE
@@ -195,7 +198,7 @@ export default function VitalityPage() {
               className="hidden md:flex absolute -top-6 right-8 lg:right-16 flex-col items-center bg-bordeaux px-6 py-5 shadow-deep"
             >
               <span className="font-heading uppercase text-champagne/60 text-[0.5rem] tracking-[0.5em]">★ ★ ★ ★</span>
-              <span className="font-heading text-ivory text-[1.05rem] tracking-[0.3em] mt-1.5">4 ÉTOILES</span>
+              <span className="font-heading text-ivory text-[1.05rem] tracking-[0.3em] mt-1.5">{t({ fr: '4 ÉTOILES', en: '4 STARS' })}</span>
             </motion.div>
           </motion.div>
         </div>
@@ -209,7 +212,6 @@ export default function VitalityPage() {
         <div className="relative marquee text-ivory/90 font-heading uppercase tracking-[0.5em] text-[0.72rem]">
           {Array.from({ length: 3 }).flatMap((_, k) =>
             [
-              { fr: 'Room Service',           en: 'Room Service' },
               { fr: 'Voiturier',              en: 'Valet Parking' },
               { fr: 'Conciergerie',           en: 'Concierge' },
               { fr: '24h/24',                 en: '24/7' },
@@ -379,7 +381,7 @@ export default function VitalityPage() {
             <span className="block hairline mx-auto mt-7" />
           </motion.div>
 
-          <div className="relative grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(94,26,36,0.18)]">
+          <div className="relative grid lg:grid-cols-[2fr_3fr] gap-0 items-stretch overflow-hidden shadow-[0_30px_80px_-20px_rgba(94,26,36,0.18)]">
             {/* Decorative offset frame */}
             <div className="hidden lg:block pointer-events-none absolute -bottom-5 -left-5 w-1/2 h-full border border-champagne/30" />
             <div className="hidden lg:block pointer-events-none absolute -top-5 -right-5 w-1/2 h-full border border-bordeaux/15" />
@@ -427,7 +429,7 @@ export default function VitalityPage() {
               initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1.3, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex flex-col order-1 lg:order-2 min-h-[420px] lg:min-h-0"
+              className="relative flex flex-col order-1 lg:order-2 min-h-[560px] sm:min-h-[640px] lg:min-h-[760px]"
             >
               {/* Top image — treadmills */}
               <div className="relative flex-1 cinema overflow-hidden group">

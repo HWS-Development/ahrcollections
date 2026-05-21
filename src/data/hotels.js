@@ -321,13 +321,13 @@ export const AQUA_STATS = [
 ];
 
 export const AQUA_FEATURES = [
-  { icon: '∿', title: { fr: 'Aquaparc géant', en: 'Vast Aquapark' },
+  { icon: '∿', image: '/img/aqua/features/toboggans.webp', title: { fr: 'Aquaparc géant', en: 'Vast Aquapark' },
     desc: { fr: 'Le plus grand de la région : 30+ toboggans, piscine à vagues, rivière lente, plages privées.', en: 'The largest in the region: 30+ slides, wave pool, lazy river, private beaches.' } },
-  { icon: '◉', title: { fr: 'Gastronomie & Loisirs', en: 'Dining & Leisure' },
+  { icon: '◉', image: '/img/aqua/dining/DSC00126.webp', title: { fr: 'Gastronomie & Loisirs', en: 'Dining & Leisure' },
     desc: { fr: 'Le Bronze · Sea Food & Grill, Barbecue à Table, Crepland, Play & Jump Park, bars en bord de piscine.', en: 'Le Bronze · Sea Food & Grill, Barbecue à Table, Crepland, Play & Jump Park, poolside bars.' } },
-  { icon: '◇', title: { fr: 'Centre de bien-être', en: 'Wellness Center' },
+  { icon: '◇', image: '/img/aqua/spa/photos2220.webp', title: { fr: 'Centre de bien-être', en: 'Wellness Center' },
     desc: { fr: 'Spa, hammam traditionnel, salon de beauté et soins relaxants haut de gamme.', en: 'Spa, traditional hammam, beauty salon and premium relaxing treatments.' } },
-  { icon: '◈', title: { fr: 'Palais des Congrès', en: 'Convention Center' },
+  { icon: '◈', image: '/img/aqua/congres/DSC01170-HDR.webp', title: { fr: 'Palais des Congrès', en: 'Convention Center' },
     desc: { fr: 'Espace événementiel moderne pour séminaires, mariages, conférences et célébrations privées.', en: 'Modern event venue for seminars, weddings, conferences and private celebrations.' } },
 ];
 
@@ -373,8 +373,8 @@ export const CITY_ROOMS = [
     tag:      { fr: 'Deux lits · Confort urbain · 25 m²', en: 'Two beds · Urban comfort · 25 m²' },
     headline: { fr: 'Partager la ville, deux à deux.', en: 'Sharing the city, two by two.' },
     description: {
-      fr: 'Articles de toilette gratuits, minibar, coffre-fort et télévision à écran plat — notre Cosy Twin offre tout le nécessaire pour un séjour agréable. Deux lits, une atmosphère urbaine et accueillante.',
-      en: 'Complimentary toiletries, minibar, safe deposit and flat-screen TV — our Cosy Twin has everything needed for a pleasant stay. Two beds, an urban and welcoming atmosphere.'
+      fr: 'Deux lits confortables, atmosphère urbaine et accueillante : la Cosy Twin réunit tout l\'essentiel pour un séjour serein — minibar, coffre-fort, télévision écran plat et articles de toilette offerts.',
+      en: 'Two comfortable beds in a welcoming, urban atmosphere: the Cosy Twin gathers all the essentials for a serene stay — minibar, safe, flat-screen TV and complimentary toiletries.'
     },
     amenities: { fr: ['Lits Jumeaux', 'Mini-bar', 'TV satellite', 'Climatisation', 'Coffre-fort', 'Non-fumeur'], en: ['Twin beds', 'Minibar', 'Satellite TV', 'Air conditioning', 'Safety box', 'Non-smoking'] },
     photos: [CR(8056), CR(8058), CR(8059), CB(8039)]
@@ -432,7 +432,7 @@ export const CITY_FEATURES = [
   { icon: '◌', title: { fr: 'Localisation centrale', en: 'Central Location' },
     desc: { fr: 'À deux pas des quartiers d\'affaires, des centres commerciaux et des gares de Kénitra.', en: 'Steps from business districts, shopping centers and Kénitra\'s stations.' } },
   { icon: '✦', title: { fr: 'Restaurant & Soft Bar', en: 'Restaurant & Soft Bar' },
-    desc: { fr: 'Cuisine variée et équilibrée, petit-déjeuner buffet, room service et ambiance chaleureuse.', en: 'Varied, balanced cuisine, breakfast buffet, room service and a warm atmosphere.' } },
+    desc: { fr: 'Cuisine variée et équilibrée, petit-déjeuner buffet et ambiance chaleureuse.', en: 'Varied, balanced cuisine, breakfast buffet and a warm atmosphere.' } },
 ];
 
 // ─────────────────────────────────────────────────────────────────────
@@ -572,8 +572,8 @@ export const CITY_RESTAURANT = {
     ],
   },
   amenities: {
-    fr: ['Cuisine marocaine & internationale', 'Buffet petit-déjeuner', 'Déjeuner & dîner', 'Soft Bar', 'Terrasse animée', 'Room Service'],
-    en: ['Moroccan & international cuisine', 'Breakfast buffet', 'Lunch & dinner', 'Soft Bar', 'Lively terrace', 'Room Service'],
+    fr: ['Cuisine marocaine & internationale', 'Buffet petit-déjeuner', 'Déjeuner & dîner', 'Soft Bar', 'Terrasse animée'],
+    en: ['Moroccan & international cuisine', 'Breakfast buffet', 'Lunch & dinner', 'Soft Bar', 'Lively terrace'],
   },
 };
 
@@ -606,7 +606,7 @@ export const CITY_MEETINGS = [
       en: ['Wired microphones', 'Video projector', 'Wi-Fi'],
     },
     layouts: { fr: 'En U, Classe, Théâtre, Cabaret', en: 'U-shape, Classroom, Theatre, Cabaret' },
-    image: '/img/city/meeting/DSC08482.webp',
+    image: '/img/city/meeting/DSC08491.webp',
   },
 ];
 
@@ -729,14 +729,14 @@ export const AQUA_HIGHLIGHTS = [
 const CG = (name) => `/img/aqua/congres/${name}.webp`;
 
 export const AQUA_CONVENTION = {
-  eyebrow: { fr: 'Palais des Congrès · Waves Aqua Resort', en: 'Convention Center · Waves Aqua Resort' },
-  title: { fr: 'Vos événements méritent un cadre exceptionnel.', en: 'Your events deserve an exceptional setting.' },
+  eyebrow: { fr: 'Palais des Congrès · Ballroom · Waves Aqua Resort', en: 'Convention Palace · Ballroom · Waves Aqua Resort' },
+  title: { fr: 'Un seul lieu, deux signatures.', en: 'One venue, two signatures.' },
   sub: {
-    fr: 'Trois salles modulables, équipements audiovisuels haute définition et services traiteur sur mesure — pour conférences, séminaires, assemblées et grands événements d\'entreprise.',
-    en: 'Three flexible rooms, HD audio-visual equipment and bespoke catering — for conferences, seminars, assemblies and major corporate events.',
+    fr: 'Palais des Congrès le jour, Ballroom le soir — trois salles modulables, équipements audiovisuels haute définition et services traiteur sur mesure pour conférences, séminaires, mariages et galas.',
+    en: 'Convention Palace by day, Ballroom by night — three flexible rooms, HD audio-visual equipment and bespoke catering for conferences, seminars, weddings and galas.',
   },
-  videoSrc:    '/videos/aqua-congres.mp4',
-  videoPoster: CG('DJI_0183'),
+  videoSrc:    '/videos/aqua-palais.mp4',
+  videoPoster: '/img/aqua/ballroom/palais-poster.webp',
   heroImage:   CG('business_center_waves'),
   rooms: [
     {
@@ -796,7 +796,7 @@ export const AQUA_CONVENTION = {
         fr: ['Écran LCD', 'Paperboard', 'Système audio', 'Micro avec fil', 'Wi-Fi'],
         en: ['LCD screen', 'Flipchart', 'Audio system', 'Wired microphone', 'Wi-Fi'],
       },
-      layouts: { fr: 'Réunion, En U', en: 'Meeting, U-shape' },
+      layouts: { fr: 'Réunion', en: 'Meeting' },
       image: CG('DSC01264'),
       photos: [
         CG('DSC01264'),
@@ -831,15 +831,19 @@ export const AQUA_AQUAPARK_DETAILS = {
   },
   items: [
     { icon: '∿',
+      image: '/img/aqua/aquapark/DSC02610.webp',
       title: { fr: 'Toboggans géants',         en: 'Giant slides' },
       desc:  { fr: 'Sensations fortes garanties sur plus de 30 toboggans.', en: '30+ slides for guaranteed thrills.' } },
     { icon: '~',
+      image: '/img/aqua/features/wave-river.webp',
       title: { fr: 'Piscine à vagues & rivière lente', en: 'Wave pool & lazy river' },
       desc:  { fr: 'Pour un moment de détente aquatique en famille.', en: 'For a relaxing aquatic moment with family.' } },
     { icon: '◌',
+      image: '/img/aqua/features/kids.webp',
       title: { fr: 'Espaces enfants',         en: 'Kids zones' },
       desc:  { fr: 'Jeux interactifs et bassins adaptés aux plus petits.', en: 'Interactive games and pools tailored for little ones.' } },
     { icon: '★',
+      image: '/img/aqua/features/vip-beach.webp',
       title: { fr: 'Plages privées & VIP',    en: 'Private beaches & VIP' },
       desc:  { fr: 'Cabanas, services premium et tranquillité pour une expérience exclusive.', en: 'Cabanas, premium service and quiet for an exclusive experience.' } }
   ],
@@ -854,12 +858,15 @@ export const AQUA_WELLNESS = {
   title:   { fr: 'Un centre dédié au soin du corps et de l’esprit.', en: 'A center devoted to body and mind.' },
   items: [
     { icon: '◇',
+      image: '/img/aqua/spa/photos2230.webp',
       title: { fr: 'Spa & Massages',          en: 'Spa & Massages' },
       desc:  { fr: 'Une sélection de soins relaxants et thérapeutiques par nos experts.', en: 'A curated selection of relaxing and therapeutic treatments by our experts.' } },
     { icon: '◈',
+      image: '/img/aqua/spa/photos2210.webp',
       title: { fr: 'Hammam traditionnel',     en: 'Traditional hammam' },
       desc:  { fr: 'Rituel marocain ancestral pour une purification complète.', en: 'Ancestral Moroccan ritual for a complete purification.' } },
     { icon: '◉',
+      image: '/img/aqua/spa/photos2241.webp',
       title: { fr: 'Salon de beauté',         en: 'Beauty salon' },
       desc:  { fr: 'Soins visage, coiffure et manucure dans un cadre raffiné.', en: 'Facial care, hair and manicure services in a refined setting.' } }
   ]
@@ -870,14 +877,19 @@ export const AQUA_DINING_VENUES = {
   title:   { fr: 'Une offre culinaire variée et innovante.', en: 'A varied and innovative culinary offer.' },
   venues: [
     { name: 'Le Bronze · Sea Food & Grill',
+      image: '/img/aqua/dining/DSC00171.webp',
       desc: { fr: 'Spécialités de fruits de mer et cuisine méditerranéenne.', en: 'Seafood specialties and Mediterranean cuisine.' } },
     { name: 'Barbecue à Table',
+      image: '/img/aqua/bronz/photos2273.webp',
       desc: { fr: 'Grillades en live cooking pour une expérience conviviale.', en: 'Live-cooking grills for a convivial experience.' } },
     { name: 'Play & Jump Park',
+      image: '/img/aqua/wejump/IMG_8884.webp',
       desc: { fr: 'Espace de loisirs interactif pour petits et grands.', en: 'Interactive leisure space for young and old alike.' } },
     { name: 'Crepland & Food Snacks',
+      image: '/img/aqua/dining/DSC00440.webp',
       desc: { fr: 'Crêpes gourmandes et en-cas savoureux à toute heure.', en: 'Gourmet crêpes and savory snacks all day long.' } },
     { name: 'Bars & Lounges',
+      image: '/img/aqua/cocktails/DSC00735.webp',
       desc: { fr: 'Cocktails raffinés et ambiance détente en bord de piscine.', en: 'Refined cocktails and a relaxed poolside ambience.' } }
   ]
 };
@@ -895,6 +907,93 @@ export const AQUA_PACK_OFFER = {
     { fr: 'Pack Hôtel & Aquaparc avec accès exclusif aux attractions.', en: 'Hotel & Aquapark pack with exclusive access to attractions.' }
   ]
 };
+
+// =====================================================================
+// AQUA — Additional experiences (We Jump / Edge, AquaFit, Palais des Congrès, Reels)
+// =====================================================================
+export const AQUA_WEJUMP = {
+  eyebrow:    { fr: 'Salle de jeux · Famille', en: 'Game arcade · Family' },
+  title:      { fr: 'Play & Jump · L\'Edge.', en: 'Play & Jump · The Edge.' },
+  sub: {
+    fr: 'Trampolines géants, parcours d\'agilité, arcades, simulateurs et terrains pour grimper, sauter, défier — une parenthèse adrénaline pour toute la famille au cœur du resort.',
+    en: 'Giant trampolines, agility courses, arcades, simulators and courts to climb, jump, challenge — an adrenaline escape for the whole family at the heart of the resort.'
+  },
+  images: [
+    '/img/aqua/wejump/DSC09796.webp',
+    '/img/aqua/wejump/DSC09797.webp',
+    '/img/aqua/wejump/DSC09803.webp',
+    '/img/aqua/wejump/DSC09887.webp',
+    '/img/aqua/wejump/IMG_8851.webp',
+    '/img/aqua/wejump/IMG_8884.webp',
+    '/img/aqua/wejump/IMG_8896.webp',
+    '/img/aqua/wejump/IMG_8917.webp',
+    '/img/aqua/wejump/IMG_8933.webp'
+  ],
+  badges: [
+    { fr: 'Trampoline Park',  en: 'Trampoline Park' },
+    { fr: 'Edge & Arcades',   en: 'Edge & Arcades' },
+    { fr: 'Parcours Ninja',   en: 'Ninja Course' },
+    { fr: 'Tous les âges',    en: 'All ages' }
+  ],
+  instagram: 'https://www.instagram.com/play_and_jump_park?igsh=MXZtZHUwZW1nc3YzZg=='
+};
+
+export const AQUA_AQUAFIT = {
+  eyebrow:    { fr: 'AquaFit · Move Up Club', en: 'AquaFit · Move Up Club' },
+  title:      { fr: 'Se dépasser, en mode resort.', en: 'Push your limits, resort-style.' },
+  sub: {
+    fr: 'Salle de sport haut-de-gamme, espace cardio, GymBox de combat, coaching personnalisé et cours collectifs : votre routine fitness sans quitter le resort.',
+    en: 'High-end gym, cardio space, combat GymBox, personal coaching and group classes: keep your fitness routine without leaving the resort.'
+  },
+  amenities: {
+    fr: ['Cardio & Musculation', 'GymBox · Boxe', 'Coaching personnel', 'Cours collectifs', 'Vestiaires & douches', 'Accès 7j/7'],
+    en: ['Cardio & Strength',    'GymBox · Boxing','Personal coaching',  'Group classes',  'Locker rooms & showers','7-day access']
+  },
+  images: [
+    '/img/aqua/aquafit/DSC05621.webp',
+    '/img/aqua/aquafit/DSC05636.webp',
+    '/img/aqua/aquafit/DSC02213.webp',
+    '/img/aqua/aquafit/DSC02223.webp',
+    '/img/aqua/aquafit/DSC02194.webp',
+    '/img/aqua/aquafit/DSC02181.webp'
+  ],
+  instagram: 'https://www.instagram.com/aqua_fit_kenitra?igsh=MWdkZ3ZqaHR2bW5ydg=='
+};
+
+export const AQUA_PALAIS = {
+  eyebrow:    { fr: 'Palais des Congrès · Ballroom', en: 'Convention Palace · Ballroom' },
+  title:      { fr: 'Un seul lieu. Deux signatures.', en: 'One venue. Two signatures.' },
+  sub: {
+    fr: 'Le plus grand espace évènementiel de la région — congrès, séminaires, mariages et galas — jusqu\'à 1 200 invités sous un volume cathédrale, en plein cœur du resort.',
+    en: 'The region\'s largest event venue — congresses, seminars, weddings and galas — up to 1,200 guests beneath a cathedral-scale ceiling at the heart of the resort.'
+  },
+  video:  '/videos/aqua-palais.mp4',
+  poster: '/img/aqua/ballroom/palais-poster.webp',
+  stats: [
+    { value: '1 200', label: { fr: 'invités max',    en: 'guests max' } },
+    { value: '1 500', label: { fr: 'm² modulables',   en: 'm² modular' } },
+    { value: '10 m',  label: { fr: 'hauteur sous plafond', en: 'ceiling height' } },
+    { value: '2',     label: { fr: 'noms · 1 lieu',   en: 'names · 1 venue' } }
+  ],
+  gallery: [
+    '/img/aqua/congres/DJI_0183.webp',
+    '/img/aqua/congres/DJI_0185.webp',
+    '/img/aqua/congres/DSC01170-HDR.webp',
+    '/img/aqua/congres/DSC01176-HDR.webp',
+    '/img/aqua/congres/DSC01182-HDR.webp',
+    '/img/aqua/congres/DSC01216-HDR.webp',
+    '/img/aqua/congres/DSC01198.webp',
+    '/img/aqua/congres/DSC01231.webp'
+  ]
+};
+
+export const AQUA_REELS = [
+  { src: '/videos/aqua-reel-1.mp4', poster: '/img/aqua/reels/reel-1.webp', label: { fr: 'Aqua Resort · Vibes',   en: 'Aqua Resort · Vibes' } },
+  { src: '/videos/aqua-reel-2.mp4', poster: '/img/aqua/reels/reel-2.webp', label: { fr: 'Aquaparc · Sensations', en: 'Aquapark · Sensations' } },
+  { src: '/videos/aqua-reel-3.mp4', poster: '/img/aqua/reels/reel-3.webp', label: { fr: 'Pool & Sunset',          en: 'Pool & Sunset' } },
+  { src: '/videos/aqua-reel-4.mp4', poster: '/img/aqua/reels/reel-4.webp', label: { fr: 'Family Moments',         en: 'Family Moments' } },
+  { src: '/videos/aqua-reel-5.mp4', poster: '/img/aqua/reels/reel-5.webp', label: { fr: 'Night Show',             en: 'Night Show' } }
+];
 
 // =====================================================================
 // VITALITY — Spec-aligned additions (Pro services, room amenities, booking)

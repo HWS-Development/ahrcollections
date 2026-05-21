@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import PageHero            from '../components/PageHero.jsx';
+import TrustBar            from '../components/TrustBar.jsx';
 import HotelRoomsSection   from '../components/HotelRoomsSection.jsx';
 import { useT }            from '../contexts/LanguageContext.jsx';
 import { CITY, HOTELS }    from '../data/site.js';
@@ -121,6 +122,8 @@ export default function CityPage() {
           secondaryHref="#intro"
         />
 
+      <TrustBar />
+
       {/* ══════════════════════════════════════════
           INTRO / SIGNATURE
       ══════════════════════════════════════════ */}
@@ -215,7 +218,6 @@ export default function CityPage() {
             [
               { fr: 'Café-Restaurant',    en: 'Café-Restaurant' },
               { fr: 'Bar Lounge',         en: 'Lounge Bar' },
-              { fr: 'Room Service',       en: 'Room Service' },
               { fr: 'Wi-Fi Gratuit',      en: 'Free Wi-Fi' },
               { fr: 'Conciergerie Locale',en: 'Local Concierge' },
               { fr: 'Parking',            en: 'Parking' },

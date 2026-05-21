@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
+import TrustBar from '../components/TrustBar.jsx';
 import { useT } from '../contexts/LanguageContext.jsx';
 import { HOME, HOTELS, BRAND, UI } from '../data/site.js';
 
@@ -19,6 +20,8 @@ export default function HomePage() {
         secondaryHref="#intro"
         noLift
       />
+
+      <TrustBar />
 
       {/* INTRO */}
       <section id="intro" className="relative section-pad bg-ivory overflow-hidden">
@@ -48,7 +51,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-3 lg:gap-4">
               {[
                 { to: '/plaza',     img: '/img/royal/executive/DSC07000.webp',           label: 'Royal Plaza' },
-                { to: '/aqua', img: '/img/aqua/suites/DSC00483.webp',             label: 'Waves Aqua' },
+                { to: '/aqua', img: '/img/aqua/pool/DJI_0097.webp',                label: 'Waves Aqua' },
                 { to: '/vitality', img: '/img/vitality/suite-prestige/photos__2062.webp', label: 'Vitality' },
                 { to: '/city', img: '/img/city/rooms/DSC08025.webp',               label: 'Waves City' },
               ].map((tile, i) => (

@@ -89,7 +89,7 @@ export default function OffersPage() {
               en: 'A specific request? Our team will craft your stay, in your image.'
             })}
           </p>
-          <a href={`mailto:${BRAND.email}`} className="btn-ghost mt-10 text-ivory border-ivory/60 hover:bg-ivory hover:text-bordeaux">
+          <a href={`mailto:${BRAND.email}`} className="btn-ghost mt-10 border-ivory/60 hover:bg-ivory hover:text-bordeaux">
             {t(UI.contactUs)}
           </a>
         </motion.div>

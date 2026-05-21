@@ -50,7 +50,10 @@ export default function ContactPage() {
               className="group relative bg-mist border border-champagne/40 p-7 hover:border-bordeaux transition-colors duration-700 overflow-hidden"
             >
               <span className="absolute inset-0 bg-gradient-to-br from-champagne/0 via-champagne/12 to-bordeaux/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              <p className="eyebrow">{t(c.label)}</p>
+              <div className="flex items-center gap-3">
+                <ChannelIcon name={c.icon} />
+                <p className="eyebrow">{t(c.label)}</p>
+              </div>
               <p className="mt-3 font-display text-ink text-[1.05rem] break-words">{c.value}</p>
               <span className="block mt-4 h-px w-10 bg-champagne group-hover:w-24 transition-all duration-500" />
             </motion.a>
@@ -172,5 +175,26 @@ function Field({ label, name, type = 'text', required = false }) {
         className="mt-2 w-full bg-transparent border-b border-ink/20 focus:border-bordeaux py-3.5 font-display text-ink outline-none transition-colors"
       />
     </div>
+  );
+}
+
+function ChannelIcon({ name }) {
+  const common = { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true };
+  if (name === 'phone') return (
+    <svg {...common} className="text-bordeaux flex-shrink-0">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/>
+    </svg>
+  );
+  if (name === 'email') return (
+    <svg {...common} className="text-bordeaux flex-shrink-0">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m3 7 9 6 9-6"/>
+    </svg>
+  );
+  return (
+    <svg {...common} className="text-bordeaux flex-shrink-0">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
   );
 }

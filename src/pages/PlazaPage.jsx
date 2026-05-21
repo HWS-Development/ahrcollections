@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero.jsx';
+import TrustBar from '../components/TrustBar.jsx';
 import SignatureSection from '../components/SignatureSection.jsx';
 import RoomsSection from '../components/RoomsSection.jsx';
 import RestaurantHallSection from '../components/RestaurantHallSection.jsx';
@@ -18,6 +19,7 @@ export default function PlazaPage() {
   return (
     <>
       <Hero />
+      <TrustBar />
       <SignatureSection />
       <RoomsSection />
       <RestaurantHallSection />
