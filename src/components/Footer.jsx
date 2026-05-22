@@ -126,7 +126,7 @@ export default function Footer() {
           className="max-w-[1600px] mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4 font-heading uppercase tracking-[0.3em] text-[0.62rem]"
           style={{ color: TEXT }}
         >
-          <p>© 2025 {BRAND.name} · {t({ fr: 'Tous droits réservés', en: 'All rights reserved' })}</p>
+          <p>© {new Date().getFullYear()} {BRAND.name} · {t({ fr: 'Tous droits réservés', en: 'All rights reserved' })}</p>
           <p>{t({ fr: 'Conçu avec soin · Kénitra · Maroc', en: 'Crafted with care · Kénitra · Morocco' })}</p>
         </div>
       </div>
